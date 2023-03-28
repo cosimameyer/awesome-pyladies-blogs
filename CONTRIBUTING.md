@@ -4,7 +4,7 @@ This repository relies heavily on the [Awesome R-Ladies blogs repository](https:
 
 It has a similar goal and collects PyLadies blogs. This includes those who identify as a minority gender (including but not limited to cis/trans women, trans men, non-binary, genderqueer, & agender). It would be great to have contributions to this list! If you identify with PyLadies and have a blog, please add yourself.
 
-With your submission, you agree that these entries will be used for the [PyLadies' Mastodon bot](https://botsin.space/@pyladies_bot), which will post (new) PyLadies' bot entries to promote the work of PyLadies around the world. 
+With your submission, you agree that these entries will be used for the [PyLadies' Mastodon bot](https://botsin.space/@pyladies_bot), which will post (new) PyLadies' blog entries to promote the work of PyLadies around the world. 
 
 # Contributing Checklist
 
