@@ -1,0 +1,20 @@
+{
+  "title": "Cosima Meyer",
+  "type": "blog",
+  "url": "https://cosimameyer.com/",
+  "photo_url": "https://cosimameyer.com/images/hero/avatar.jpg",
+  "rss_feed": "https://cosimameyer.com/category/python-post/index.xml",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Cosima Meyer",
+      "social_media": [{
+        "twitter": "cosima_meyer",
+        "mastodon": "@cosima_meyer@mas.to",
+        "github": "cosimameyer",
+        "website": "https://cosimameyer.com/",
+        "linkedin": "cosimameyer/"
+      }]
+    }
+  ]
+}
