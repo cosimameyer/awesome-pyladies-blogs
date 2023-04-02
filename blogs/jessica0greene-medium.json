@@ -1,0 +1,20 @@
+{
+  "title": "Jessica Greene (PyLadies Berlin) Medium account",
+  "type": "blog",
+  "url": "https://medium.com/@jessica0greene",
+  "photo_url": "https://miro.medium.com/v2/resize:fill:96:96/1*vp3dQ60qsoukSFGws6dNlg.jpeg",
+  "rss_feed": "https://medium.com/feed/@jessica0greene",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Jessica Greene",
+      "social_media": [{
+        "twitter": "sleepypioneer",
+        "mastodon": "@sleepypioneer@mastodon.social",
+        "github": "sleepypioneer",
+        "website": "http://onlinegurl.co.uk",
+        "linkedin": "jessica0greene/"
+      }]
+    }
+  ]
+}
