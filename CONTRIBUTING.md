@@ -16,7 +16,7 @@ With your submission, you agree that these entries will be used for the [PyLadie
      - [ ] url (blog URL)
      - [ ] rss_feed (RSS feed for R-related posts. Ideally, use tags or categories to identify your R-related posts. A title-based RSS feed is fine. If you need more input on how to get your RSS, have a look [here](https://zapier.com/blog/how-to-find-rss-feed-url/))
      - [ ] photo_url (logo or profile)
-     - ] language (one of the [ISO 639-1 language codes](https://www.w3schools.com/tags/ref_language_codes.asp))
+     - [ ] language (one of the [ISO 639-1 language codes](https://www.w3schools.com/tags/ref_language_codes.asp))
      - [ ] authors (list of authors)
 
 # Contribution Details
