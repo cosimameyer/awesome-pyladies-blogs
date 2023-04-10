@@ -7,7 +7,7 @@
   "photo_url": "https://raw.githubusercontent.com/RLadies-BA/RLadies-BA/main/content/authors/kari/avatar.jpg",
   "description": "Data Science & Economics. Mostly in spanish, sometimes in english.",
   "language": "es",
-  "authors":
+  "authors": [
     {
       "name": "Karina Bartolome",
       "social_media": [{
