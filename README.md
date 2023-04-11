@@ -14,10 +14,10 @@ all credit goes.
 
 It provides a curated list of awesome blogs by PyLadies and also seeks
 to collect information to further promote blog posts by awesome
-[PyLadies on Mastodon](https://botsin.space/@pyladies_bot).
+[PyLadies on Mastodon](https://botsin.space/@pyladies_bot) 🤖
 
 To contribute to the list, please see the
-[contributing](CONTRIBUTING.md) instructions
+[contributing](CONTRIBUTING.md) guideline ✨
 
 ## List of blogs
 
@@ -26,6 +26,10 @@ Created by accessing the json files in [blogs/](blogs/)
 - [Cosima Meyer](https://cosimameyer.com/) by Cosima Meyer
 - [Jessica Greene (PyLadies Berlin) Medium
   account](https://medium.com/@jessica0greene) by Jessica Greene
+- [Data in life](https://jhylin.github.io/Data_in_life_blog/) by
+  Jennifer HY Lin
+- [Karina Bartolome](https://karbartolome-blog.netlify.app) by Karina
+  Bartolome
 
 ## License
 
