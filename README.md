@@ -24,6 +24,7 @@ To contribute to the list, please see the
 Created by accessing the json files in [blogs/](blogs/)
 
 - [Cosima Meyer](https://cosimameyer.com/) by Cosima Meyer
+- [Emily Riederer](https://emilyriederer.com) by Emily Riederer
 - [Jessica Greene (PyLadies Berlin) Medium
   account](https://medium.com/@jessica0greene) by Jessica Greene
 - [Data in life](https://jhylin.github.io/Data_in_life_blog/) by
