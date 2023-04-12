@@ -80,6 +80,7 @@ There is currently a [workaround](https://github.com/rladies/awesome-rladies-blo
 </details>
 
 <details><summary>Hugo</summary>
+
 ###### Hugo Academic
 
 - Apparently the RSS feed is enabled by default and you can access it by using the field `category` in the YAML of your posts
