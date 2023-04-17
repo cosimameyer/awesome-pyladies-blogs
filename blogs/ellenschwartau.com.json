@@ -1,0 +1,22 @@
+{
+  "title": "Ellens Blog",
+  "subtitle": "Stuff she is interested in, mostly related to her profession as Software Engineer",
+  "type": "blog",
+  "url": "https://ellenschwartau.com",
+  "rss_feed": "http://ellenschwartau.com/feed/",
+  "photo_url": "https://ellenschwartau.com/3dcb1d37-6c2d-41ea-88c1-5dd8f31765e5/",
+  "description": "Short description of what you blog about",
+  "language": "en, de",
+  "authors": [
+    {
+      "name": "Ellen Schwartau",
+      "social_media": [{
+         "twitter": "ellenschwartau",
+         "github": "ellenschwartau",
+         "instagram": "ellllllllln",
+         "website": "www.ellenschwartau.com",
+         "linkedin": "https://www.linkedin.com/in/ellen-schwartau-b53aa5133/",
+      }]
+    }
+  ]
+}
