@@ -31,6 +31,7 @@ Created by accessing the json files in [blogs/](blogs/)
   Jennifer HY Lin
 - [Karina Bartolome](https://karbartolome-blog.netlify.app) by Karina
   Bartolome
+- [Valery C. Briz](https://dev.to/valerybriz) by Valery C. Briz
 
 ## License
 
