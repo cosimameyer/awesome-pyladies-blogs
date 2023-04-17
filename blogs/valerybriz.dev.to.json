@@ -1,0 +1,19 @@
+{
+  "title": "Valery C. Briz",
+  "type": "blog",
+  "url": "https://dev.to/valerybriz",
+  "photo_url": "https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/213848/84c58823-8f3e-4848-8091-c04ac5c81d79.jpeg",
+  "rss_feed": "https://dev.to/feed/valerybriz",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Valery C. Briz",
+      "social_media": [{
+        "twitter": "valerybriz",
+        "mastodon": "@valerybriz@fosstodon.org",
+        "github": "valerybriz",
+        "linkedin": "valerybriz/"
+      }]
+    }
+  ]
+}
