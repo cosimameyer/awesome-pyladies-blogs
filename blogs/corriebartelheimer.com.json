@@ -1,0 +1,21 @@
+{
+  "title": "Samples of Thoughts", 
+  "type": "blog", 
+  "url": "https://www.samples-of-thoughts.com", 
+  "photo_url": "https://www.samples-of-thoughts.com/about/_index_files/circle-cropped.png",
+  "description": "about data, statistics and everything in between",
+  "language": "en", 
+  "rss_feed": "https://www.samples-of-thoughts.com/tags/python/index.xml", 
+  "authors": [ 
+    {
+      "name": "Corrie Bartelheimer", 
+      "social_media": [{
+         "twitter": "corrieaar",
+         "mastodon": "@corrieaar@ohai.social",
+         "github": "corriebar",
+         "website": "corriebartelheimer.com",
+         "linkedin": "corrie-bartelheimer/"
+      }]
+    }
+  ]
+}
