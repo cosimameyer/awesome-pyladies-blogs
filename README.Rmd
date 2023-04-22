@@ -26,7 +26,139 @@ To contribute to the list, please see the [contributing](CONTRIBUTING.md) guidel
 
 ## List of Blogs
 
-Created by accessing the json files in [blogs/](blogs/)
+Created by accessing the json files in [blogs/](blogs/).
+
+### List of Blogs as Tiles 
+```{python, echo=FALSE, eval=TRUE, results='asis'}
+import pandas as pd
+import json
+import os
+
+directory_path = "blogs/"
+
+# Create an empty list to store the loaded JSON data
+json_data = []
+
+# Loop through each file in the directory
+for filename in os.listdir(directory_path):
+    # Check if the file is a JSON file
+    if filename.endswith(".json"):
+        # Open the file and load the JSON data
+        with open(directory_path + filename, "r") as json_file:
+            data = json.load(json_file)
+            json_data.append(data)
+
+json_data.sort(key=lambda x: x["title"])
+
+
+def split(lst,n):
+  return [lst[i::n] for i in range(n)]
+
+# Split data into three chunks
+data_splitted = list(split(json_data, 3))
+
+# Parse data
+def parse_data(data_splitted, i):
+  grid_entries = []
+  for entry in data_splitted[i]:
+    name = entry['authors'][0]['name']
+    photo_url = entry['photo_url']
+    title = entry['title']
+    blog_url = entry['url']
+    
+    grid_entry = f'<a href="{blog_url}"><img width="100" alt="Image of {name}" src="{photo_url}"><br/></a><span class="caption">{name}</span>'
+    grid_entries.append(grid_entry)
+  
+  # Append if there's a different length
+  length_longest_split = len(data_splitted[0])
+  length_split = len(data_splitted[i])
+  if length_split < length_longest_split:
+    missing = length_longest_split - length_split
+    grid_entries = grid_entries + (missing*[''])
+    
+  return grid_entries
+
+data = {}
+
+for i in range(len(data_splitted)):
+  data[f"col_{i}"] = parse_data(data_splitted, i)
+  
+df = pd.DataFrame(
+     data={"col_0": data["col_0"], 
+           "col_1": data["col_1"],
+           "col_2": data["col_2"]}
+ )
+ 
+df.columns = [''] * len(df.columns)
+
+def df_to_markdown(df, float_format='%.2g'):
+    """
+    Export a pandas.DataFrame to markdown-formatted text.
+    DataFrame should not contain any `|` characters.
+    """
+    from os import linesep
+    return linesep.join([
+        '|'.join(df.columns),
+        '|'.join(4 * '-' for i in df.columns),
+        df.to_csv(sep='|', index=False, header=False, float_format=float_format)
+    ]).replace('|', ' | ')
+    
+#to_be_shown = df_to_markdown(df)
+
+to_be_shown = df.to_markdown(index=False)
+print(to_be_shown)
+
+```
+
+```{python, echo = FALSE, results='asis', eval=FALSE}
+import json
+import os
+import pandas as pd
+directory_path = "blogs/"
+
+# Create an empty list to store the loaded JSON data
+json_data = []
+
+# Loop through each file in the directory
+for filename in os.listdir(directory_path):
+    # Check if the file is a JSON file
+    if filename.endswith(".json"):
+        # Open the file and load the JSON data
+        with open(directory_path + filename, "r") as json_file:
+            data = json.load(json_file)
+            json_data.append(data)
+
+json_data.sort(key=lambda x: x["title"])
+
+header = "| | | |"
+first_row = "|:-------------------------:|:-------------------------:|:-------------------------:|"
+
+grid_entries = ""
+# Parse data
+count = 0
+for entry in json_data:
+  count += 1
+  name = entry['authors'][0]['name']
+  photo_url = entry['photo_url']
+  title = entry['title']
+  blog_url = entry['url']
+  if count % 3 == 0:
+    sep = '<br>|'
+  else:
+    sep = ''
+    
+  
+  grid_entry = f'<a href="{blog_url}"><img width="100" alt="Image of {name}" src="{photo_url}">&nbsp;</a><span class="caption">{name}</span>|{sep}'
+  
+  grid_entries += grid_entry
+  
+to_be_returned = f"{header}<br>{first_row}<br>|{grid_entries}"
+
+print(to_be_returned)
+
+```
+
+### List of Blogs as List
 
 ```{r, echo = FALSE, results='asis'}
 json_list <- list.files(here::here("blogs"), "json$", full.names = TRUE)
@@ -41,6 +173,7 @@ invisible(
   })
 )
 
+
 #lapply(dt, function(x){
 #    cat(sprintf(" - ![](%s) [%s](%s) by %s", 
 #                x$photo_url, x$title, x$url,
@@ -50,7 +183,7 @@ invisible(
 
 ```
 
-## Any Questions?
+## Any Open Questions?
 
 If you have any questions or suggestions, please reach out to [Cosima](mailto:contact@cosimameyer.com) or open an [issue](https://github.com/cosimameyer/awesome-pyladies-blogs/issues/new/choose).
 
