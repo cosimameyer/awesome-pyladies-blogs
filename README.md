@@ -21,7 +21,10 @@ To contribute to the list, please see the
 
 Created by accessing the json files in [blogs/](blogs/)
 
+- [Samples of Thoughts](https://www.samples-of-thoughts.com) by Corrie
+  Bartelheimer
 - [Cosima Meyer](https://cosimameyer.com/) by Cosima Meyer
+- [Ellens Blog](https://ellenschwartau.com) by Ellen Schwartau
 - [Emily Riederer](https://emilyriederer.com) by Emily Riederer
 - [Jessica Greene (PyLadies Berlin) Medium
   account](https://medium.com/@jessica0greene) by Jessica Greene
