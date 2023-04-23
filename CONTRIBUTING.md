@@ -27,7 +27,7 @@ Depending on how you are most comfortable, there are several ways to add new ent
 
 ## Option 1: Not Too Familiar with JSON/GitHub?
 
-If you're not familiar with JSON, you can [open an issue](https://github.com/cosimameyer/awesome-pyladies-blogs/issues/new/choose) with your blog info using a GitHub form, and I'll create the JSON for you!
+If you're not familiar with JSON, you can [open an issue](https://github.com/cosimameyer/awesome-pyladies-blogs/issues/new/choose) with your blog info and I'll create the JSON for you!
 
 ## Option 2: Create a New File
 
