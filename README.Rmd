@@ -116,7 +116,7 @@ for filename in os.listdir(directory_path):
             data = json.load(json_file)
             json_data.append(data)
 
-json_data.sort(key=lambda x: x["title"])
+json_data.sort(key=lambda x: x['authors'][0]['name'])
 
 header = "| | | |"
 first_row = "|:-------------------------:|:-------------------------:|:-------------------------:|"
