@@ -47,7 +47,7 @@ Created by accessing the json files in [blogs/](blogs/).
 ## Any Open Questions?
 
 If you have any questions or suggestions, please reach out to
-[Cosima](mailto:contact@cosimameyer.com) or open an
+[Cosima](https://github.com/cosimameyer/) or open an
 [issue](https://github.com/cosimameyer/awesome-pyladies-blogs/issues/new/choose).
 
 ## License
