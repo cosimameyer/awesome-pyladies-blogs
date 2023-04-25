@@ -10,7 +10,6 @@ knitr::opts_chunk$set(
   comment = "#>"
 ) 
 
-install.packages("reticulate")
 library(reticulate)
 ```
 
