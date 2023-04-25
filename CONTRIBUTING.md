@@ -94,6 +94,9 @@ There is currently a [workaround](https://github.com/rladies/awesome-rladies-blo
 - More about [Hugo Portio](https://cosimameyer.com/post/adding-your-hugo-academic-blog-to-r-bloggers-and-python-bloggers/)
 </details>
 
+<details><summary>Medium</summary>
+Medium nicely describes on their website how to [get your RSS feed](https://help.medium.com/hc/en-us/articles/214874118-Using-RSS-feeds-of-profiles-publications-and-topics). Unfortunately it's not possible to have a tag specific feed (yet). To keep the bot sorted, please make sure to only post about Python-related topics (= things that could be interesting to the followers of the bot).</details>
+
 If you want to check how your RSS looks like, you can use [simple pie](https://simplepie.org/demo/).
 
 
