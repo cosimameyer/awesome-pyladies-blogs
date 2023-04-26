@@ -1,0 +1,19 @@
+{
+  "title": "Stefanie Molin",
+  "type": "blog",
+  "url": "https://medium.com/@stefaniemolin",
+  "photo_url": "https://avatars.githubusercontent.com/u/24376333?v=4",
+  "rss_feed": "https://medium.com/feed/@stefaniemolin",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Stefanie Molin",
+      "social_media": [{
+        "twitter": "StefanieMolin",
+        "github": "stefmolin",
+        "orcid": "0009-0001-3359-3346",
+        "linkedin": "stefanie-molin/"
+      }]
+    }
+  ]
+}
