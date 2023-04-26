@@ -1,0 +1,20 @@
+{
+  "title": "Pamela Fox",
+  "type": "blog",
+  "url": "http://blog.pamelafox.org/",
+  "photo_url": "https://developer.microsoft.com/en-us/advocates/media/profiles/pamela-fox.png",
+  "rss_feed": "http://blog.pamelafox.org/feeds/posts/default/?q=label:python",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Pamela Fox",
+      "social_media": [{
+        "twitter": "pamelafox",
+        "mastodon": "@pamelafox@fosstodon.org",
+        "github": "pamelafox",
+        "website": "https://www.pamelafox.org/",
+        "linkedin": "pamela-fox-5668b1b4/"
+      }]
+    }
+  ]
+}

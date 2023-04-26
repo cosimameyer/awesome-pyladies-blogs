@@ -1,0 +1,19 @@
+{
+  "title": "Tuana Celik",
+  "type": "blog",
+  "url": "https://medium.com/@tuanacelik",
+  "photo_url": "https://haystack.deepset.ai/images/authors/tuana-celik.jpg",
+  "rss_feed": "https://medium.com/feed/@tuanacelik",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Tuana Celik",
+      "social_media": [{
+        "twitter": "tuanacelik",
+        "mastodon": "@tuana@sigmoid.social",
+        "github": "tuanacelik",
+        "linkedin": "tuanacelik/"
+      }]
+    }
+  ]
+}
