@@ -1,9 +1,8 @@
 {
   "title": "Always Be Getting Data (ABGD)", //required
-  "subtitle": "subtitle or tagline", //optional
   "type": "blog", //required
   "url": "https://szeitlin.github.io", //required
-  "photo_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgirlgeek.io%2Fspeaker%2Fsamantha-g-zeitlin%2F&psig=AOvVaw2EEzwirNaFWgkbsgDUn0fn&ust=1682459691329000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOip3LDBw_4CFQAAAAAdAAAAABAE", //required
+  "photo_url": "https://girlgeek.io/wp-content/uploads/2020/09/sentry-girl-geek-samantha-g-zeitlin.png",
   "description": "Blog posts on python, management, AWS, spark, and other things I'm learning the hard way",
   "language": "en", //required
   "rss_feed": "szeitlin.github.io/index.xml", //required
@@ -12,18 +11,10 @@
       "name": "Samantha Zeitlin", //required
       "social_media": [{
          "twitter": "SamanthaZeitlin",
-         "mastodon": "@username@server.org",
          "github": "szeitlin",
-         "instagram": "username",
          "youtube": "@samanthazeitlin403",
-         "tiktok": "username",
-         "periscope": "username",
          "researchgate": "Samantha-Zeitlin",
-         "website": "url",
          "linkedin": "sgzeitlin",
-         "facebook": "username",
-         "orcid": "member number",
-         "meetup": "end-url"
       }]
     }
   ]
