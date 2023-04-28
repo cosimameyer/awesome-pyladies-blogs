@@ -7,7 +7,7 @@ on:
 
 jobs:
   knit:
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Install R dependencies
         run: |
