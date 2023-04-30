@@ -56,12 +56,12 @@ If you have any questions or suggestions, please reach out to
 [Cosima](https://linktr.ee/cosima_meyer) or open an
 [issue](https://github.com/cosimameyer/awesome-pyladies-blogs/issues/new/choose).
 
-## License
-
-[![CC0](https://upload.wikimedia.org/wikipedia/commons/6/69/CC0_button.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
-
 ## Credits
 
 This repository relies heavily on the [Awesome R-Ladies blogs
 repository](https://github.com/rladies/awesome-rladies-blogs), to whom
 all credit goes.
+
+## License
+
+[![CC0](https://upload.wikimedia.org/wikipedia/commons/6/69/CC0_button.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
