@@ -1,35 +1,36 @@
 on:
-  push:
-    branches:
-    - main
-    paths:
-    - 'blogs/**'
+  pull_request:
+    types:
+      - closed
 
 jobs:
-  knit:
+  if_merged:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Install R dependencies
-        run: |
-          install.packages(c("jsonlite", "jsonvalidate", "rmarkdown", "reticulate", "here"), 
+    - run: |
+        echo The PR was merged
+    - name: Install R dependencies
+      run: |
+        install.packages(c("jsonlite", "jsonvalidate", "rmarkdown", "reticulate", "here"), 
                            repos = "https://cloud.r-project.org/")
-        shell: Rscript {0}
+      shell: Rscript {0}
         
-      - name: Install Python dependencies
-        uses: py-actions/py-dependency-install@v4          
+    - name: Install Python dependencies
+      uses: py-actions/py-dependency-install@v4          
         
-      - name: Render readme files
-        if: github.event_name == 'push'
-        run: rmarkdown::render("README.Rmd", output_format = "github_document")
-        shell: Rscript {0}
+    - name: Render readme files
+      #if: github.event_name == 'push'
+      run: rmarkdown::render("README.Rmd", output_format = "github_document")
+      shell: Rscript {0}
         
-      - name: Commit data
-        if: github.event_name == 'push'
-        env:
-          GITHUB_PAT: ${{ secrets.SECRET_WRITE }}
-        run: |
-          git config --local user.name "$GITHUB_ACTOR"
-          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git commit blogs/ -m 'Commit cleaned jsons' || echo "No changes to commit"
-          git commit README.md -m 'Re-knit readme files' || echo "No changes to commit"
-          git push origin || echo "Nothing to push"    
+    - name: Commit data
+      #if: github.event_name == 'push'
+      env:
+        GITHUB_PAT: ${{ secrets.SECRET_WRITE }}
+      run: |
+        git config --local user.name "$GITHUB_ACTOR"
+        git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+        git commit blogs/ -m 'Commit cleaned jsons' || echo "No changes to commit"
+        git commit README.md -m 'Re-knit readme files' || echo "No changes to commit"
+        git push origin || echo "Nothing to push"    
