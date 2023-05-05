@@ -1,0 +1,23 @@
+{
+  "title": "Cheuk Ting Ho", //required
+  "subtitle": "Building the Open-source Community", //optional
+  "type": "blog", //required
+  "url": "https://cheuk.dev", //required
+  "photo_url": "https://cheuk.dev/images/logo.png", //required
+  "description": "Python community and my 2 cents.",
+  "language": "en", //required
+  "rss_feed": "https://cheuk.dev/feed.xml", //required if you want your feed to be promoted on Mastodon
+  "authors": [ //required
+    {
+      "name": "Cheuk Ting Ho", //required
+      "social_media": [{
+         "twitter": "@cheukting_ho",
+         "mastodon": "@cheukting_ho@fosstodon.orgg",
+         "github": "Cheukting",
+         "youtube": "%40cheuktingho",
+         "website": "https://cheuk.dev",
+         "linkedin": "cheukting-ho",
+      }]
+    }
+  ]
+}
