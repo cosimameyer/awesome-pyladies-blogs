@@ -1,0 +1,23 @@
+{
+  "title": "Cheuk Ting Ho",
+  "subtitle": "Building the Open-source Community",
+  "type": "blog",
+  "url": "https://cheuk.dev",
+  "photo_url": "https://cheuk.dev/images/logo.png",
+  "description": "Python community and my 2 cents.",
+  "language": "en",
+  "rss_feed": "https://cheuk.dev/feed.xml",
+  "authors": [
+    {
+      "name": "Cheuk Ting Ho",
+      "social_media": [{
+         "twitter": "@cheukting_ho",
+         "mastodon": "@cheukting_ho@fosstodon.orgg",
+         "github": "Cheukting",
+         "youtube": "%40cheuktingho",
+         "website": "https://cheuk.dev",
+         "linkedin": "cheukting-ho"
+      }]
+    }
+  ]
+}
