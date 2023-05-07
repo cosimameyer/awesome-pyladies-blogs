@@ -53,6 +53,10 @@ Created by accessing the json files in [blogs/](blogs/).
 - [Tuana Celik](https://medium.com/@tuanacelik) by Tuana Celik
 - [Valery C. Briz](https://dev.to/valerybriz) by Valery C. Briz
 
+## Updates
+
+You can find all important updates in the discussions [here](https://github.com/cosimameyer/awesome-pyladies-blogs/discussions). 
+
 ## Any Open Questions?
 
 If you have any questions or suggestions, please reach out to
