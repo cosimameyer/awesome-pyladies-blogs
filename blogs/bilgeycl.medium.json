@@ -1,0 +1,21 @@
+{
+    "title": "Bilge Yucel",
+    "type": "blog",
+    "url": "https://medium.com/@bilgeycl",
+    "photo_url": "https://miro.medium.com/v2/1*vq38WKmsK8tz_JXI5scXnw.jpeg",
+    "description": "Blog posts on NLP and open source",
+    "rss_feed": "https://bilgeycl.medium.com/",
+    "language": "en",
+    "authors": [
+      {
+        "name": "Bilge Yucel",
+        "social_media": [{
+          "twitter": "bilgeycl",
+          "mastodon": "@bilgeyucel@sigmoid.social",
+          "github": "bilgeyucel",
+          "linkedin": "bilge-yucel/",
+          "website": "https://bilgeyucel.github.io/"
+        }]
+      }
+    ]
+}
