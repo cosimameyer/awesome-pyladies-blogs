@@ -1,0 +1,19 @@
+{
+    "title": "Déborah Mesquita",
+    "type": "blog",
+    "url": "https://medium.com/@dehhmesquita",
+    "photo_url": "https://avatars.githubusercontent.com/u/2621484?v=4",
+    "description": "Blog posts on data science and MLOps",
+    "rss_feed": "https://medium.com/feed/@dehhmesquita",
+    "language": "en",
+    "authors": [
+      {
+        "name": "Déborah Mesquita",
+        "social_media": [{
+          "github": "dmesquita",
+          "linkedin": "deborahmesquita",
+          "website": "https://deborahmesquita.com/"
+        }]
+      }
+    ]
+}
