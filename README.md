@@ -10,7 +10,7 @@
 
 ## What Is This Repository About?
 
-It provides a curated list of awesome blogs by PyLadies and also seeks
+It provides a curated list of awesome content (blogs and recordings) by PyLadies and also seeks
 to collect information to further promote blog posts by awesome
 [PyLadies on Mastodon](https://botsin.space/@pyladies_bot) 🤖
 
