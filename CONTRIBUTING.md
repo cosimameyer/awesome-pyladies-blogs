@@ -12,7 +12,7 @@ With your submission, you agree that these entries will be used for the [PyLadie
  - [ ] The filename of the entry ends with `.json'.
  - [ ] The json contains at least 
      - [ ] title (blog title)
-     - [ ] type ("blog")
+     - [ ] type ("blog" or "youtube")
      - [ ] url (blog URL)
      - [ ] rss_feed (if you wish to have your blog posts being promoted by the Mastodon bot; the RSS feed should be for Python-related posts)
      - [ ] rss_feed_youtube (if you wish to have your YouTube channel being promoted by the Mastodon bot; the RSS feed should be for Python-related videos)
