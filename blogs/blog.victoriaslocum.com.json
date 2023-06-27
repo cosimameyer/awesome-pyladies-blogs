@@ -1,14 +1,14 @@
 {
-  "title": "Victoria Slocum's blog", //required
-  "subtitle": "Learnings and doings", //optional
-  "type": "blog", //required
-  "url": "https://blog.victoriaslocum.com", //required
-  "photo_url": "https://i.postimg.cc/Yqm5QfGJ/headshot-2.png", //required
+  "title": "Victoria Slocum's blog",
+  "subtitle": "Learnings and doings",
+  "type": "blog",
+  "url": "https://blog.victoriaslocum.com",
+  "photo_url": "https://i.postimg.cc/Yqm5QfGJ/headshot-2.png",
   "description": "Projects, tutorials, and cool things I learn in the AI / Machine Learning space.",
-  "language": "en", //required
-  "authors": [ //required
+  "language": "en",
+  "authors": [
     {
-      "name": "Victoria Slocum", //required
+      "name": "Victoria Slocum",
       "social_media": [{
          "twitter": "victorialslocum",
          "mastodon": "@victorialslocum@sigmoid.social",
