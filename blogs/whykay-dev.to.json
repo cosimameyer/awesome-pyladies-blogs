@@ -1,0 +1,21 @@
+{
+  "title": "whykay @ dev.to",
+  "type": "blog",
+  "url": "https://dev.to/whykay",
+  "photo_url": "https://res.cloudinary.com/practicaldev/image/fetch/s--X3qLsRwL--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/407879/c6e55af6-63e1-4173-bb8c-e504a2a861ad.jpg",
+  "language": "en", 
+  "rss_feed": "https://dev.to/feed/whykay", 
+  "authors": [ 
+    {
+      "name": "Vicky Twomey-Lee",
+      "social_media": [{
+         "twitter": "whykay",
+         "mastodon": "@whykay@mastodon.ie",
+         "github": "whykay",
+         "instagram": "theycallmejanie",
+         "website": "https://beacons.ai/whykay",
+         "linkedin": "vickyleeire"
+      }]
+    }
+  ]
+}
