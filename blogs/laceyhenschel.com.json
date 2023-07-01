@@ -1,0 +1,19 @@
+{
+  "title": "Lacey Henschel's blog",
+  "type": "blog",
+  "url": "https://www.laceyhenschel.com/blog",
+  "photo_url": "https://avatars.githubusercontent.com/u/2286304?v=4",
+  "rss_feed": "http://feeds.feedburner.com/LaceyWilliamsHenschel",
+  "description": "Occasional posts about Python and Django",
+  "language": "en",
+  "authors": [ 
+    {
+      "name": "Lacey Henschel",
+      "social_media": [{
+         "github": "williln",
+         "website": "https://www.laceyhenschel.com",
+         "linkedin": "laceynwilliams"
+      }]
+    }
+  ]
+}
