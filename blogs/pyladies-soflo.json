@@ -8,12 +8,11 @@
   "rss_feed_youtube": "https://www.youtube.com/feeds/videos.xml?channel_id=UCUPLdokEtQlQmbaW9UkJEVQ",
   "authors": [ 
     {
-      "name": "Inessa Pawson"
+      "name": "Inessa Pawson",
       "social_media": [{
-         "twitter": "inessapawson",
-         "github": "InessaPawson",
-         "linkedin": "ipawson/"
-  
+        "twitter": "inessapawson",
+        "github": "InessaPawson",
+        "linkedin": "ipawson/"
       }]
     }
   ]
