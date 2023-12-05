@@ -14,23 +14,23 @@ library(reticulate)
 ```
 
 
-# Awesome PyLadies' Blogs  
+# Awesome PyLadies' Repository  
 <!-- badges: start -->
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 <!-- badges: end -->
 
 ## What Is This Repository About? 
 
-It provides a curated list of awesome blogs by PyLadies and also seeks to collect information to further promote blog posts by awesome [PyLadies on Mastodon](https://botsin.space/@pyladies_bot) 🤖
+It provides a curated list of awesome content by PyLadies and also seeks to collect information to further promote content by awesome [PyLadies on Mastodon](https://botsin.space/@pyladies_bot) 🤖
 
 To contribute to the list, please see the [contributing](CONTRIBUTING.md) guidelines ✨
 
 
-## List of Blogs
+## List of Content
 
-Created by accessing the json files in [blogs/](blogs/).
+<!-- Created by accessing the json files in [blogs/](blogs/).-->
 
-### List of Blogs as Tiles 
+### List of Contributors as Tiles 
 ```{python, echo=FALSE, eval=FALSE, results='asis'}
 # TODO: Make it more beautiful 
 
@@ -151,29 +151,40 @@ print(text)
 ```
 
 
-### List of Blogs as List
+### List of Content as List
 
+#### Blogs
 ```{r, echo = FALSE, results='asis'}
+
 json_list <- list.files(here::here("blogs"), "json$", full.names = TRUE)
 dt <- lapply(json_list, jsonlite::read_json)
-
 invisible(
   lapply(dt, function(x){
-    cat(sprintf(" - [%s](%s) by %s", 
-                x$title, x$url,
-                paste(sapply(x$authors, function(x) x$name), collapse=", ")),
-        sep = "\n")
+    if (x$type=="blog") {
+      cat(sprintf(" - [%s](%s) by %s", 
+                  x$title, x$url,
+                  paste(sapply(x$authors, function(x) x$name), collapse=", ")),
+          sep = "\n")
+    }
   })
 )
+```
 
+#### YouTube Channels
+```{r, echo = FALSE, results='asis'}
 
-#lapply(dt, function(x){
-#    cat(sprintf(" - ![](%s) [%s](%s) by %s", 
-#                x$photo_url, x$title, x$url,
-#                paste(sapply(x$authors, function(x) x$name), collapse=", ")),
-#        sep = "\n")
-#  })
-
+json_list <- list.files(here::here("blogs"), "json$", full.names = TRUE)
+dt <- lapply(json_list, jsonlite::read_json)
+invisible(
+  lapply(dt, function(x){
+    if (x$type=="youtube") {
+      cat(sprintf(" - [%s](%s) by %s", 
+                  x$title, x$url,
+                  paste(sapply(x$authors, function(x) x$name), collapse=", ")),
+          sep = "\n")
+    }
+  })
+)
 ```
 
 ## Any Open Questions?

@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Awesome PyLadies’ Blogs
+# Awesome PyLadies’ Repository
 
 <!-- badges: start -->
 
@@ -10,18 +10,18 @@
 
 ## What Is This Repository About?
 
-It provides a curated list of awesome blogs by PyLadies and also seeks
-to collect information to further promote blog posts by awesome
-[PyLadies on Mastodon](https://botsin.space/@pyladies_bot) 🤖
+It provides a curated list of awesome content by PyLadies and also seeks
+to collect information to further promote content by awesome [PyLadies
+on Mastodon](https://botsin.space/@pyladies_bot) 🤖
 
 To contribute to the list, please see the
 [contributing](CONTRIBUTING.md) guidelines ✨
 
-## List of Blogs
+## List of Content
 
-Created by accessing the json files in [blogs/](blogs/).
+<!-- Created by accessing the json files in [blogs/](blogs/).-->
 
-### List of Blogs as Tiles
+### List of Content as Tiles
 
 |                                                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                                                                |
 |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -34,7 +34,9 @@ Created by accessing the json files in [blogs/](blogs/).
 |                                                        <a href="https://medium.com/@stefaniemolin"><img width="100" alt="Image of Stefanie Molin" src="https://avatars.githubusercontent.com/u/24376333?v=4"><br></a><span class="caption">Stefanie Molin</span>                                                         |                                                       <a href="https://medium.com/@tuanacelik"><img width="100" alt="Image of Tuana Celik" src="https://haystack.deepset.ai/images/authors/tuana-celik.jpg"><br></a><span class="caption">Tuana Celik</span>                                                        |        <a href="https://dev.to/valerybriz"><img width="100" alt="Image of Valery C. Briz" src="https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/213848/84c58823-8f3e-4848-8091-c04ac5c81d79.jpeg"><br></a><span class="caption">Valery C. Briz</span>        |
 | <a href="https://dev.to/whykay"><img width="100" alt="Image of Vicky Twomey-Lee" src="https://media.licdn.com/dms/image/D4E03AQG3lcPFRvoCLA/profile-displayphoto-shrink_800_800/0/1671633150179?e=2147483647&v=beta&t=PIBSiQwOS4UE9OQ31JLrmWUoMEk8a4xSo3cUmiPaxg8"><br></a><span class="caption">Vicky Twomey-Lee</span> |                                                          <a href="https://blog.victoriaslocum.com"><img width="100" alt="Image of Victoria Slocum" src="https://i.postimg.cc/Yqm5QfGJ/headshot-2.png"><br></a><span class="caption">Victoria Slocum</span>                                                          |                                                                                                                                                                                                                                                                                |
 
-### List of Blogs as List
+### List of Content as List
+
+#### Blogs
 
 - [Bilge Yucel](https://medium.com/@bilgeycl) by Bilge Yucel
 - [Victoria Slocum’s blog](https://blog.victoriaslocum.com) by Victoria
@@ -58,6 +60,15 @@ Created by accessing the json files in [blogs/](blogs/).
 - [Lacey Henschel’s blog](https://www.laceyhenschel.com/blog) by Lacey
   Henschel
 - [Pamela Fox](http://blog.pamelafox.org/) by Pamela Fox
+- [Stefanie Molin](https://medium.com/@stefaniemolin) by Stefanie Molin
+- [Always Be Getting Data (ABGD)](https://szeitlin.github.io) by
+  Samantha Zeitlin
+- [Tuana Celik](https://medium.com/@tuanacelik) by Tuana Celik
+- [Valery C. Briz](https://dev.to/valerybriz) by Valery C. Briz
+- [whykay @ dev.to](https://dev.to/whykay) by Vicky Twomey-Lee
+
+#### YouTube Channels
+
 - [PyLadies Bengaluru](https://www.youtube.com/@pyladiesbengaluru7366)
   by PyLadies Bengaluru
 - [PyLadies London](https://www.youtube.com/@pyladieslondon2675) by
@@ -65,12 +76,6 @@ Created by accessing the json files in [blogs/](blogs/).
 - [PyLadies SoFlo YouTube
   channel](https://www.youtube.com/channel/UCUPLdokEtQlQmbaW9UkJEVQ) by
   PyLadies SoFlo
-- [Stefanie Molin](https://medium.com/@stefaniemolin) by Stefanie Molin
-- [Always Be Getting Data (ABGD)](https://szeitlin.github.io) by
-  Samantha Zeitlin
-- [Tuana Celik](https://medium.com/@tuanacelik) by Tuana Celik
-- [Valery C. Briz](https://dev.to/valerybriz) by Valery C. Briz
-- [whykay @ dev.to](https://dev.to/whykay) by Vicky Twomey-Lee
 
 ## Any Open Questions?
 
