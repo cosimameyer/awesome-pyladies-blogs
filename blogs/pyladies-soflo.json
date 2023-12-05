@@ -8,11 +8,12 @@
   "rss_feed_youtube": "https://www.youtube.com/feeds/videos.xml?channel_id=UCUPLdokEtQlQmbaW9UkJEVQ",
   "authors": [ 
     {
-      "name": "Inessa Pawson",
+      "name": "PyLadies SoFlo",
       "social_media": [{
-        "twitter": "inessapawson",
-        "github": "InessaPawson",
-        "linkedin": "ipawson/"
+        "twitter": "PyLadiesSoFlo",
+        "github": "PyLadiesSoFlo",
+        "linkedin": "pyladies-soflo",
+        "meetup": "pyladies-soflo"
       }]
     }
   ]
