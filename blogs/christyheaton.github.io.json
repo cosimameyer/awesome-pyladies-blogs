@@ -1,0 +1,21 @@
+{
+  "title": "Christy Heaton",
+  "subtitle": "Python and maps",
+  "type": "blog",
+  "url": "https://christyheaton.github.io/",
+  "photo_url": "https://christyheaton.github.io/assets/images/Christy.jpg",
+  "rss_feed": "https://christyheaton.github.io/feed.xml",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Christy Heaton",
+      "social_media": [{
+         "mastodon": "@christyheaton@mas.to",
+         "github": "christyheaton",
+         "instagram": "christy.heaton",
+         "website": "https://christyheaton.github.io/",
+         "linkedin": "christyheaton"
+      }]
+    }
+  ]
+}
