@@ -4,6 +4,7 @@
   "type": "blog",
   "url": "https://christyheaton.github.io/",
   "photo_url": "https://christyheaton.github.io/assets/images/Christy.jpg",
+  "rss_feed": "https://christyheaton.github.io/feed.xml",
   "language": "en",
   "authors": [
     {
