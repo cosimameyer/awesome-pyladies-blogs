@@ -1,0 +1,19 @@
+{
+  "title": "Sabrine Bendimerad",
+  "type": "blog", 
+  "url": "https://medium.com/@sabrine.bendimerad1", 
+  "photo_url": "https://i.ibb.co/bNrv9db/1646312123517.jpg",
+  "description": "Blog posts on Machine Learning, Python and statistics",
+  "language": "en", 
+  "rss_feed": "https://medium.com/feed/@sabrine.bendimerad1", 
+  "authors": [ 
+    {
+      "name": "Sabrine Bendimerad", 
+      "social_media": [{
+         "twitter": "BENDIMERADSabr1",
+         "github": "sbendimerad",
+         "linkedin": "sabrine-bendimerad-43570b107/"
+      }]
+    }
+  ]
+}
