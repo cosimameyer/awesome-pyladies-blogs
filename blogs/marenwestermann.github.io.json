@@ -1,0 +1,20 @@
+{
+  "title": "Maren's blog about science and technology", 
+  "type": "blog",
+  "url": "https://marenwestermann.github.io",
+  "photo_url": "https://avatars.githubusercontent.com/u/17019042?v=4",
+  "description": "Short description of what you blog about",
+  "language": "en", 
+  "rss_feed": "https://marenwestermann.github.io/feed.xml", 
+  "authors": [
+    {
+      "name": "Maren Westermann",
+      "social_media": [{
+         "twitter": "MarenWestermann",
+         "mastodon": "@maren@fosstodon.org",
+         "github": "marenwestermann",
+         "linkedin": "dr-maren-westermann-0b8575144"
+      }]
+    }
+  ]
+}
