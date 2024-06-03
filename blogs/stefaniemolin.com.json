@@ -1,9 +1,9 @@
 {
   "title": "Stefanie Molin",
   "type": "blog",
-  "url": "https://medium.com/@stefaniemolin",
-  "photo_url": "https://avatars.githubusercontent.com/u/24376333?v=4",
-  "rss_feed": "https://medium.com/feed/@stefaniemolin",
+  "url": "https://stefaniemolin.com/articles",
+  "photo_url": "https://stefaniemolin.com/assets/portrait.jpeg",
+  "rss_feed": "https://stefaniemolin.com/feeds/articles-rss.xml",
   "language": "en",
   "authors": [
     {
@@ -12,7 +12,8 @@
         "twitter": "StefanieMolin",
         "github": "stefmolin",
         "orcid": "0009-0001-3359-3346",
-        "linkedin": "stefanie-molin/"
+        "linkedin": "stefanie-molin",
+        "website": "https://stefaniemolin.com"
       }]
     }
   ]
