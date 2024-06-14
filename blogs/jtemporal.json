@@ -1,0 +1,19 @@
+{
+    "title": "Jess Temporal",
+    "type": "blog",
+    "url": "https://jtemporal.com/en",
+    "photo_url": "https://github.com/jtemporal.png",
+    "language": "en", 
+    "authors": [ 
+      {
+        "name": "Jess Temporal",
+        "social_media": [{
+           "twitter": "jesstemporal",
+           "mastodon": "@jesstemporal@mastodon.online",
+           "website": "https://jtemporal.com",
+           "github": "jtemporal",
+           "linkedin": "jessicatemporal"
+        }]
+      }
+    ]
+  }
