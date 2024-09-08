@@ -1,0 +1,22 @@
+{
+  "title": "Mariatta's Blog", 
+  "type": "blog",
+  "url": "https://mariatta.ca",
+  "photo_url": "https://github.com/mariatta.png",
+  "description": "Mariatta's Website",
+  "language": "en", 
+  "rss_feed": "https://mariatta.ca/index.xml", 
+  "authors": [
+    {
+      "name": "Mariatta",
+      "social_media": [{
+         "twitter": "mariatta",
+         "mastodon": "@mariatta@fosstodon.org",
+         "github": "mariatta",
+         "linkedin": "mariatta",
+         "instagram": "mariatta81",
+         "youtube": "mariattaw/videos"
+      }]
+    }
+  ]
+}
