@@ -1,0 +1,17 @@
+{
+  "title": "Anja Pilz",
+  "type": "blog",
+  "url": "https://aplz.github.io", 
+  "photo_url": "https://github.com/aplz/aplz.github.io/blob/master/images/avatar_me.jpg", 
+  "language": "en",
+  "authors": [
+    {
+      "name": "Anja Pilz", 
+      "social_media": [{
+         "github": "aplz",
+         "website": "https://aplz.github.io",
+         "linkedin": "anja-pilz",
+      }]
+    }
+  ]
+}
