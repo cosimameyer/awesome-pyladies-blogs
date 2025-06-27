@@ -69,13 +69,15 @@ jobs:
           git remote set-url origin https://x-access-token:${GITHUB_PAT}@github.com/${{ github.repository }}.git
           git push origin $BRANCH_NAME
       
-          # Create pull request JSON
-          echo '{
+          # Create pull request JSON safely
+          cat <<EOF > pr_payload.json
+          {
             "title": "chore: auto-update README",
-            "head": "'$BRANCH_NAME'",
+            "head": "$BRANCH_NAME",
             "base": "main",
             "body": "Automated README update via workflow."
-          }' > pr_payload.json
+          }
+          EOF
       
           # Call GitHub API to open the PR
           curl -s -X POST -H "Authorization: token ${GITHUB_PAT}" -H "Accept: application/vnd.github+json" \
