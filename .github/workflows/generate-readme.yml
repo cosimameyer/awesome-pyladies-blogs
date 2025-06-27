@@ -44,10 +44,20 @@ jobs:
             echo "push=true" >> $GITHUB_OUTPUT
           fi
       
+      - name: Determine branch to push
+        id: vars
+        run: |
+           if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "branch=${{ github.head_ref }}" >> $GITHUB_OUTPUT
+           else
+            echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+           fi
+        
       - name: Push changes with PAT
         if: steps.commit.outputs.push == 'true'
         env:
            PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
-           echo "Pushing changes to branch ${{ github.ref_name }}"
-           git push https://x-access-token:${PAT}@github.com/${{ github.repository }} HEAD:${{ github.ref_name }}
+           echo "Pushing changes to branch ${{ steps.vars.outputs.branch }}"
+           git push https://x-access-token:${PAT}@github.com/${{ github.repository }} HEAD:${{ steps.vars.outputs.branch }}
+        
