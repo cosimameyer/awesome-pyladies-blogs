@@ -2,7 +2,7 @@
   "title": "Anja Pilz",
   "type": "blog",
   "url": "https://aplz.github.io", 
-  "photo_url": "https://github.com/aplz/aplz.github.io/blob/master/images/avatar_me.jpg", 
+  "photo_url": "https://raw.githubusercontent.com/aplz/aplz.github.io/master/images/avatar_me.jpg", 
   "language": "en",
   "authors": [
     {
@@ -10,7 +10,7 @@
       "social_media": [{
          "github": "aplz",
          "website": "https://aplz.github.io",
-         "linkedin": "anja-pilz",
+         "linkedin": "anja-pilz"
       }]
     }
   ]
