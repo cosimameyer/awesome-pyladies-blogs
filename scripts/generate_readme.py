@@ -10,6 +10,17 @@ fallback_images_dir = "img/fallback_images/"
 fallback_images = [f for f in os.listdir(fallback_images_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
 directory_path = "blogs/"
 
+def load_svg_inline_from_url(icon_url, color="black", size=20):
+    try:
+        response = requests.get(icon_url)
+        response.raise_for_status()
+        svg_content = response.text
+
+        svg_content = svg_content.replace('<svg ', f'<svg fill="{color}" width="{size}" height="{size}" ')
+        return svg_content
+    except requests.RequestException:
+        return "" 
+
 def build_social_icons(social_dict, icon_style='image'):
     socials = ""
     base_icon_url = "https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/img/icons/"
@@ -46,10 +57,10 @@ def build_social_icons(social_dict, icon_style='image'):
                 if not icon_url:
                     continue
                 socials += (
-                    f'<a href="{url}" target="_blank">'
-                    f'<img src="{icon_url}" width="20" alt="{platform.capitalize()}" style="margin:0 2px;"/>'
-                    f'</a> '
-                )
+                        f'<a href="{url}" target="_blank" style="margin:0 1px;">'
+                        f'{icon_url}'
+                        f'</a> '
+                    )
 
     return socials
 
@@ -75,7 +86,10 @@ def add_platform_icon(platform: str, base_icon_url: str, url: Optional[str]) -> 
         return None
     
     icon_url = f"{base_icon_url}{platform}.svg"
-    return icon_url
+    
+    svg_icon_html = load_svg_inline_from_url(icon_url, color="#929dad", size=15)
+
+    return svg_icon_html
 
 def build_social_url(platform, handle):
     if not handle:
@@ -144,7 +158,7 @@ def build_social_url(platform, handle):
         if handle.startswith("http"):
             return handle
         handle = handle.lstrip("@")
-        return f"https:/instagram.com/{handle}"
+        return f"https://instagram.com/{handle}"
 
     return None
 
@@ -183,7 +197,7 @@ for entry in json_data:
     social_dict = entry['authors'][0].get('social_media', [{}])[0]
     social_icons = build_social_icons(social_dict)
 
-    grid_entry = f'<a href="{blog_url}"><img width="100" alt="Image of {name}" src="{photo_url}"><br></a><span class="caption">{name}</span><br>{social_icons}|'
+    grid_entry = f'<a href="{blog_url}"><img width="130" alt="Image of {name}" src="{photo_url}"><br></a><span class="caption">{name}</span><br>{social_icons}|'
     if count % 3 == 0:
         grid_entry += '\n|'
     grid_entries += grid_entry
@@ -238,7 +252,7 @@ To contribute, please see [contributing](CONTRIBUTING.md) ✨
 
 ---
 
-f"_Last updated on {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}_"
+_Last updated on {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}_
 
 ## License  
 
