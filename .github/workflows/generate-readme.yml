@@ -54,7 +54,6 @@ jobs:
 
       - name: Push changes with PAT
         if: steps.commit.outputs.push == 'true'
-        run: echo "Changes pushed to main branch."
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.ACTIONS_PAT }}
