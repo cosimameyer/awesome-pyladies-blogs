@@ -103,8 +103,22 @@ print(df.to_markdown(index=False))
 import json
 import os
 import pandas as pd
+import random
+import requests
+
+fallback_images_dir = "fallback_images/"
+fallback_images = [f for f in os.listdir(fallback_images_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
+
 directory_path = "blogs/"
 
+
+def image_exists(url):
+    try:
+        response = requests.head(url, allow_redirects=True, timeout=5)
+        return response.status_code == 200
+    except requests.RequestException:
+        return False
+      
 # Create an empty list to store the loaded JSON data
 json_data = []
 
@@ -128,7 +142,14 @@ count = 0
 for entry in json_data:
   count += 1
   name = entry['authors'][0]['name']
-  photo_url = entry['photo_url']
+  
+  photo_url = entry.get('photo_url')
+
+  if not image_exists(photo_url):
+    fallback_image = random.choice(fallback_images)
+    photo_url = f"https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/{fallback_images_dir}{fallback_image}"
+
+    
   title = entry['title']
   blog_url = entry['url']
   if count % 3 == 0:
