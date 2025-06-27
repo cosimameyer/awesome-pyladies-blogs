@@ -1,9 +1,8 @@
 name: Update README on main
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    branches: [main]
 
 jobs:
   update-readme:
