@@ -47,6 +47,16 @@ jobs:
           else
             echo "changed=true" >> $GITHUB_OUTPUT
 
+      - name: Check for README changes in PR
+        if: github.event_name == 'pull_request'
+        run: |
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No README changes detected during PR try run."
+          else
+            echo "README would be updated by this PR."
+          fi
+            
       - name: Push to temp branch and create PR
         if: github.event_name == 'push' && steps.git-diff.outputs.changed == 'true'
         env:
