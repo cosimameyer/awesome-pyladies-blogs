@@ -39,7 +39,7 @@ jobs:
       - name: Commit changes if any
         id: commit
         run: |
-          git add README.md || true
+          git add README.md
           if git diff-index --quiet HEAD --; then
             echo "No changes to commit"
             echo "push=false" >> $GITHUB_OUTPUT
