@@ -53,16 +53,21 @@ jobs:
           GITHUB_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
           BRANCH_NAME="update/readme-${GITHUB_RUN_NUMBER}"
-
+      
           git checkout -b $BRANCH_NAME
           git commit -m "chore: auto-update README"
           git remote set-url origin https://x-access-token:${GITHUB_PAT}@github.com/${{ github.repository }}.git
           git push origin $BRANCH_NAME
-
-          # Create pull request using GitHub API
-          PR_DATA=$(jq -n --arg head "$BRANCH_NAME" --arg base "main" --arg title "chore: auto-update README" --arg body "Automated README update via workflow." \
-            '{head: $head, base: $base, title: $title, body: $body}')
-          
+      
+          # Create pull request JSON
+          echo '{
+            "title": "chore: auto-update README",
+            "head": "'$BRANCH_NAME'",
+            "base": "main",
+            "body": "Automated README update via workflow."
+          }' > pr_payload.json
+      
+          # Call GitHub API to open the PR
           curl -s -X POST -H "Authorization: token ${GITHUB_PAT}" -H "Accept: application/vnd.github+json" \
             https://api.github.com/repos/${{ github.repository }}/pulls \
-            -d "$PR_DATA"
+            -d @pr_payload.json
