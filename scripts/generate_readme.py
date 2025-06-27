@@ -3,43 +3,56 @@ import json
 import random
 import requests
 from datetime import datetime, timezone
+from typing import Optional
 import urllib.parse
 
-fallback_images_dir = "fallback_images/"
+fallback_images_dir = "img/fallback_images/"
 fallback_images = [f for f in os.listdir(fallback_images_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
 directory_path = "blogs/"
 
-
-def get_fa_icon_class(platform):
-    fa_classes = {
-        "twitter": "fab fa-twitter",
-        "mastodon": "fab fa-mastodon",
-        "github": "fab fa-github",
-        "linkedin": "fab fa-linkedin",
-        "website": "fas fa-globe",
-        "youtube": "fab fa-youtube",
-        "bluesky": "fas fa-comment-dots",
-        "instagram": "fab fa-instagram",
-    }
-    return fa_classes.get(platform, "fas fa-link")
-
 def build_social_icons(social_dict):
     socials = ""
+    base_icon_url = "https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/img/icons/"
 
-    for platform in ["linkedin", "mastodon", "twitter", "github", "website", "youtube", "bluesky", "instagram"]:
+    for platform in social_dict:
         handle = social_dict.get(platform)
         url = build_social_url(platform, handle)
-        if url:
-            fa_class = get_fa_icon_class(platform)
-            socials += (
-                f'<a href="{url}" target="_blank" rel="noopener noreferrer" '
-                f'style="margin:0 6px; color:black; text-decoration:none; font-size:14px;">'
-                f'<i class="{fa_class}" aria-hidden="true"></i>'
-                f'<span class="sr-only">{platform.capitalize()}</span>'
-                f'</a> '
-            )
+        if not url:
+            continue  # skip if no valid url
+        icon_url = add_platform_icon(platform, base_icon_url, url)
+        if not icon_url:
+            continue  # skip if no valid icon
+        socials += (
+            f'<a href="{url}" target="_blank">'
+            f'<img src="{icon_url}" width="20" alt="{platform.capitalize()}" style="margin:0 4px;"/>'
+            f'</a> '
+        )
 
     return socials
+
+
+def add_platform_icon(platform: str, base_icon_url: str, url: Optional[str]) -> Optional[str]:
+    """
+    Construct the full icon URL for a given platform if a URL is provided.
+
+    Args:
+        platform: Name of the platform (e.g., "twitter", "website").
+        base_icon_url: Base URL where icons are hosted.
+        url: The URL to the user profile or site. If None or empty, returns None.
+
+    Returns:
+        A full URL to the platform icon, or None if no URL provided.
+    """
+    if platform == "website":
+        platform = "safari"
+    elif platform == "twitter":
+        platform = "x"
+
+    if not url:
+        return None
+
+    icon_url = f"{base_icon_url}{platform}.svg"
+    return icon_url
 
 def build_social_url(platform, handle):
     if not handle:
