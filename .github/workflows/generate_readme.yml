@@ -1,24 +1,31 @@
-name: Update README on main
+name: Generate README and create PR
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main  # ensures a local main branch exists
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - run: |
+      - name: Install dependencies
+        run: |
           python -m pip install --upgrade pip
           pip install requests
           pip install -r requirements.txt || echo "No requirements.txt found"
@@ -31,13 +38,51 @@ jobs:
           git config user.name "github-actions"
           git config user.email "action@github.com"
 
-      - name: Commit changes if any
+      - name: Check for changes
+        id: git-diff
         run: |
           git add README.md
-          if git diff-index --quiet HEAD --; then
-            echo "No changes."
+          if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
           else
-            git commit -m "chore: auto-update README"
-            git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git
-            git push origin main
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Check for README changes in PR
+        if: github.event_name == 'pull_request'
+        run: |
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No README changes detected during PR try run."
+          else
+            echo "README would be updated by this PR."
+          fi
+
+      - name: Push to temp branch and create PR
+        if: github.event_name == 'push' && steps.git-diff.outputs.changed == 'true'
+        env:
+          GITHUB_PAT: ${{ secrets.ACTIONS_PAT }}
+        run: |
+          BRANCH_NAME="update/readme-${GITHUB_RUN_NUMBER}"
+
+          git checkout -b $BRANCH_NAME
+          git commit -m "chore: auto-update README"
+          git remote set-url origin https://x-access-token:${GITHUB_PAT}@github.com/${{ github.repository }}.git
+          git push origin $BRANCH_NAME
+
+          # Create pull request JSON safely
+          cat <<EOF > pr_payload.json
+          {
+            "title": "chore: auto-update README",
+            "head": "$BRANCH_NAME",
+            "base": "main",
+            "body": "Automated README update via workflow."
+          }
+          EOF
+
+          # Call GitHub API to open the PR
+          curl -s -X POST \
+            -H "Authorization: token ${GITHUB_PAT}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/pulls \
+            -d @pr_payload.json
