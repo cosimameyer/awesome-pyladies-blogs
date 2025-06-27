@@ -25,7 +25,7 @@ jobs:
           pip install requests
 
       - name: Run README generator
-        run: python generate_readme.py
+        run: python scripts/generate_readme.py
 
       - name: Commit and push README
         uses: stefanzweifel/git-auto-commit-action@v5
