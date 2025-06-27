@@ -78,7 +78,7 @@ jobs:
             "base": "main",
             "body": "Automated README update via workflow."
           }
-EOF
+          EOF
 
           # Call GitHub API to open the PR
           curl -s -X POST \
