@@ -37,13 +37,14 @@ for entry in json_data:
     photo_url = entry.get('photo_url')
     if not image_exists(photo_url):
         fallback_image = random.choice(fallback_images)
-        photo_url = f"https://github.com/YOURUSERNAME/YOURREPO/raw/main/{fallback_images_dir}{fallback_image}"
+        photo_url = f"https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/{fallback_images_dir}{fallback_image}"
     blog_url = entry['url']
 
     grid_entry = f'<a href="{blog_url}"><img width="100" alt="Image of {name}" src="{photo_url}"><br></a><span class="caption">{name}</span>|'
     if count % 3 == 0:
         grid_entry += '\n|'
     grid_entries += grid_entry
+
 
 # Build blog list and YouTube list
 blogs = []
@@ -60,6 +61,12 @@ for entry in json_data:
     elif entry_type == "youtube":
         youtube.append(line)
 
+if count % 3 != 0:
+    remaining = 3 - (count % 3)
+    grid_entries += "| " * remaining + "\n|"
+
+full_table = f"{header}\n{first_row}\n|{grid_entries}"
+
 # Combine everything into README.md content
 readme_content = f"""
 # Awesome PyLadies' Repository  
@@ -74,10 +81,7 @@ To contribute, please see [contributing](CONTRIBUTING.md) ✨
 
 ## List of Contributors as Tiles  
 
-{header}
-{first_row}
-|
-{grid_entries}
+{full_table}
 
 ## List of Content  
 
