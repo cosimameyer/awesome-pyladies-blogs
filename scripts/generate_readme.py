@@ -21,7 +21,7 @@ def load_svg_inline_from_url(icon_url, color="black", size=20):
     except requests.RequestException:
         return "" 
 
-def build_social_icons(social_dict, icon_style='image'):
+def build_social_icons(social_dict, icon_style='emoji'):
     socials = ""
     base_icon_url = "https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/img/icons/"
 
