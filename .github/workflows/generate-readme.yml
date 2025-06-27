@@ -46,15 +46,11 @@ jobs:
       - name: Determine branch to push
         id: vars
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            echo "branch=${{ github.head_ref }}" >> $GITHUB_OUTPUT
-          else
-            echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
-          fi
+          echo "branch=${{ github.head_ref }}" >> $GITHUB_OUTPUT
 
       - name: Push changes with PAT
-        if: steps.commit.outputs.push == 'true'
+        if: steps.commit.outputs.push == 'true' && steps.check_branch.outputs.push_allowed == 'true'
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.ACTIONS_PAT }}
-          branch: main
+           github_token: ${{ secrets.ACTIONS_PAT }}
+           branch: ${{ github.head_ref }}
