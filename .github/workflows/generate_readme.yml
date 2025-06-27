@@ -71,13 +71,13 @@ jobs:
 
           # Create pull request JSON safely
           cat <<EOF > pr_payload.json
-{
-  "title": "chore: auto-update README",
-  "head": "$BRANCH_NAME",
-  "base": "main",
-  "body": "Automated README update via workflow."
-}
-EOF
+          {
+            "title": "chore: auto-update README",
+            "head": "$BRANCH_NAME",
+            "base": "main",
+            "body": "Automated README update via workflow."
+          }
+          EOF
 
           # Call GitHub API to open the PR
           curl -s -X POST -H "Authorization: token ${GITHUB_PAT}" -H "Accept: application/vnd.github+json" \
