@@ -39,12 +39,12 @@ jobs:
       - name: Commit changes if any
         id: commit
         run: |
-          git add README.md pyladies_meta_data.pkl || true
+          git add README.md || true
           if git diff-index --quiet HEAD --; then
             echo "No changes to commit"
             echo "push=false" >> $GITHUB_OUTPUT
           else
-            git commit -m "chore: auto-update README and meta data"
+            git commit -m "chore: auto-update README"
             echo "push=true" >> $GITHUB_OUTPUT
           fi
 
