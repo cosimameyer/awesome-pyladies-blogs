@@ -2,7 +2,7 @@ import os
 import json
 import random
 import requests
-from datetime import datetime
+from datetime import datetime, timezone
 
 fallback_images_dir = "fallback_images/"
 fallback_images = [f for f in os.listdir(fallback_images_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
@@ -89,7 +89,7 @@ To contribute, please see [contributing](CONTRIBUTING.md) ✨
 
 ---
 
-_Last updated on {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}_  
+f"_Last updated on {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}_"
 
 ## License  
 
