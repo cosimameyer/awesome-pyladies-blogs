@@ -1,16 +1,16 @@
 {
-  "title": "Anastasia's blog", //required
-  "type": "blog", //required
-  "url": "https://www.karavdina.com/blog", //required
-  "photo_url": "https://static.wixstatic.com/media/160e52_7aba41375ff94da0a34b68dfbb95f603~mv2.jpg", //required
+  "title": "Anastasia's blog",
+  "type": "blog",
+  "url": "https://www.karavdina.com/blog",
+  "photo_url": "https://static.wixstatic.com/media/160e52_7aba41375ff94da0a34b68dfbb95f603~mv2.jpg",
   "description": "ML/AI and building rewarding career in Data",
-  "language": "en", //required
-  "authors": [ //required
+  "language": "en",
+  "authors": [
     {
-      "name": "Anastasia Karavdina", //required
+      "name": "Anastasia Karavdina",
       "social_media": [{
          "website": "https://www.karavdina.com",
-         "linkedin": "dr-anastasia-karavdina",
+         "linkedin": "dr-anastasia-karavdina"
       }]
     }
   ]
