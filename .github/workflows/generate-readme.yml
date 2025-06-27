@@ -26,8 +26,8 @@ jobs:
 
       - name: Run README generator
         run: python scripts/generate_readme.py
-    
-    - name: Commit and push README
+      
+      - name: Commit and push README
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore: auto-generate README.md'
