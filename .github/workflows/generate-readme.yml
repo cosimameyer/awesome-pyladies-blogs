@@ -58,8 +58,8 @@ jobs:
           fi
 
       - name: Push changes with PAT
-        if: steps.commit.outputs.push == 'true'
-        uses: ad-m/github-push-action@master
+        if: steps.commit.outputs.push == 'true' && github.event_name != 'pull_request'
+        uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.ACTIONS_PAT }}
           branch: ${{ steps.vars.outputs.branch }}
