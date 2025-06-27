@@ -10,23 +10,46 @@ fallback_images_dir = "img/fallback_images/"
 fallback_images = [f for f in os.listdir(fallback_images_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
 directory_path = "blogs/"
 
-def build_social_icons(social_dict):
+def build_social_icons(social_dict, icon_style='image'):
     socials = ""
     base_icon_url = "https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/img/icons/"
 
-    for platform in social_dict:
+    ordered_platforms = ["website", "github", "mastodon", "bluesky", "instagram", "youtube", "linkedin", "twitter"]
+
+    emoji_icons = {
+        "website": "🌐",
+        "github": "🐙",
+        "mastodon": "🐘",
+        "bluesky": "🦋",
+        "instagram": "📸",
+        "youtube": "▶️",
+        "linkedin": "🧳",
+        "twitter": "🐦"
+    }
+
+    for platform in ordered_platforms:
         handle = social_dict.get(platform)
         url = build_social_url(platform, handle)
         if not url:
-            continue  # skip if no valid url
-        icon_url = add_platform_icon(platform, base_icon_url, url)
-        if not icon_url:
-            continue  # skip if no valid icon
-        socials += (
-            f'<a href="{url}" target="_blank">'
-            f'<img src="{icon_url}" width="20" alt="{platform.capitalize()}" style="margin:0 4px;"/>'
-            f'</a> '
-        )
+            continue
+
+        if icon_style == 'emoji':
+            label = emoji_icons.get(platform, "🔗")
+            socials += f'<a href="{url}" target="_blank" style="margin:0 4px; font-size:16px; text-decoration:none; color:black;">{label}</a> '
+        else:
+            if platform == "linkedin":
+                socials += (
+                    f''
+                )
+            else:
+                icon_url = add_platform_icon(platform, base_icon_url, url)
+                if not icon_url:
+                    continue
+                socials += (
+                    f'<a href="{url}" target="_blank">'
+                    f'<img src="{icon_url}" width="20" alt="{platform.capitalize()}" style="margin:0 2px;"/>'
+                    f'</a> '
+                )
 
     return socials
 
@@ -46,11 +69,11 @@ def add_platform_icon(platform: str, base_icon_url: str, url: Optional[str]) -> 
     if platform == "website":
         platform = "safari"
     elif platform == "twitter":
-        platform = "x"
+        platform = "x"        
 
     if not url:
         return None
-
+    
     icon_url = f"{base_icon_url}{platform}.svg"
     return icon_url
 
