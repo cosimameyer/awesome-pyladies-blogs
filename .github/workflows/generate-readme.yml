@@ -32,4 +32,4 @@ jobs:
         with:
           commit_message: 'chore: auto-generate README.md'
           file_pattern: 'README.md'
-          token: ${{ secrets.SECRET_WRITE }}
+          token: ${{ secrets.ACTIONS_PAT }}
