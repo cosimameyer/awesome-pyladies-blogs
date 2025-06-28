@@ -62,6 +62,9 @@ To contribute, please see [contributing](CONTRIBUTING.md) ✨
 - [PyLadies Bengaluru](https://www.youtube.com/@pyladiesbengaluru7366) by PyLadies Bengaluru
 - [PyLadies London](https://www.youtube.com/@pyladieslondon2675) by PyLadies London
 - [PyLadies SoFlo YouTube channel](https://www.youtube.com/channel/UCUPLdokEtQlQmbaW9UkJEVQ) by PyLadies SoFlo
+- [PyLadies Berlin YouTube channel](https://www.youtube.com/PyLadiesBerlin)
+- [PyLadies Hamburg YouTube channel](https://www.youtube.com/@HamburgPyLadies/streams)
+- [PyLadies Munich YouTube channel](https://www.youtube.com/@munichpyladies8993)
 
 ---
 
