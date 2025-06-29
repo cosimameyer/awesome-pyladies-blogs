@@ -1,0 +1,87 @@
+name: Auto-update README after merge
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+          pip install -r requirements.txt || echo "No requirements.txt found"
+
+      - name: Run README generator
+        run: python scripts/generate_readme.py
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "action@github.com"
+
+      - name: Check for README changes
+        id: git-diff
+        run: |
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Push update branch and create PR
+        if: steps.git-diff.outputs.changed == 'true'
+        env:
+          GITHUB_PAT: ${{ secrets.ACTIONS_PAT }}
+          BASE_BRANCH: main
+        run: |
+          UPDATE_BRANCH="update/readme-${GITHUB_RUN_NUMBER}"
+
+          # Reset to main clean state
+          git checkout -b "$UPDATE_BRANCH"
+
+          # Commit the updated README ONLY
+          git add README.md
+          git commit -m "chore: auto-update README"
+
+          git remote set-url origin https://x-access-token:${GITHUB_PAT}@github.com/${{ github.repository }}.git
+          git push --force --set-upstream origin "$UPDATE_BRANCH"
+
+          # Check if a PR from this branch exists
+          EXISTING_PR=$(curl -s \
+            -H "Authorization: token ${GITHUB_PAT}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls?head=${{ github.repository_owner }}:$UPDATE_BRANCH" | jq '.[0].number')
+
+          if [[ "$EXISTING_PR" != "null" ]]; then
+            echo "PR #$EXISTING_PR already exists for $UPDATE_BRANCH"
+          else
+            echo "Creating new PR for updated README"
+            curl -s -X POST \
+              -H "Authorization: token ${GITHUB_PAT}" \
+              -H "Accept: application/vnd.github+json" \
+              https://api.github.com/repos/${{ github.repository }}/pulls \
+              -d @- <<EOF
+            {
+              "title": "chore: auto-update README",
+              "head": "$UPDATE_BRANCH",
+              "base": "$BASE_BRANCH",
+              "body": "Automated README update after merge"
+            }
+          EOF
+          fi
