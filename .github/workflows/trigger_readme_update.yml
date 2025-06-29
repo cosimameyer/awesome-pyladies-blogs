@@ -1,39 +1,17 @@
-name: Trigger README Update on Merge
+name: Trigger README update on PR
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
-  detect-merge-and-run:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check if latest commit is a merge commit
-        id: check-merge
-        run: |
-          git fetch origin main --depth=2
-          MERGE_MSG=$(git log -1 --pretty=%B)
-          echo "Commit message: $MERGE_MSG"
-          if [[ "$MERGE_MSG" == Merge\ pull\ request* ]]; then
-            echo "is_merge=true" >> $GITHUB_OUTPUT
-          else
-            echo "is_merge=false" >> $GITHUB_OUTPUT
-          fi
-
-    outputs:
-      is_merge: ${{ steps.check-merge.outputs.is_merge }}
-
-  call-readme-workflow:
-    needs: detect-merge-and-run
-    if: needs.detect-merge-and-run.outputs.is_merge == 'true'
+  call-update-readme:
     uses: ./.github/workflows/update_readme.yml
-    permissions:
-      contents: write
-      pull-requests: write
+    with:
+      head_ref: ${{ github.event.pull_request.head.ref }}
     secrets:
       ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
