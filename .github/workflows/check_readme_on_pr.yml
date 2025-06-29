@@ -32,11 +32,20 @@ jobs:
         run: python scripts/generate_readme.py
 
       - name: Check for README changes
+        id: check_diff
         run: |
           git add README.md
           if ! git diff --cached --quiet; then
-            echo "README would be updated by this PR. Please update README."
-            exit 1   # fail the job, so the PR shows a failing check
+            echo "README would be updated by this PR."
+            # Print warning annotation for GitHub UI (yellow warning)
+            echo "::warning file=README.md::README would be updated by this PR. Please update README."
+            echo "changed=true" >> $GITHUB_OUTPUT
           else
             echo "README is up to date."
+            echo "changed=false" >> $GITHUB_OUTPUT
           fi
+
+      # Optional: add a step to show the warning result in the workflow summary
+      - name: Warn if README out of date
+        if: steps.check_diff.outputs.changed == 'true'
+        run: echo "⚠️ README would be updated by this PR. Once the branch is merged to main, a new PR will be opened with an updated README."
