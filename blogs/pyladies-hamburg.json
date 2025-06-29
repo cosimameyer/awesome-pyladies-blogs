@@ -1,0 +1,20 @@
+{
+    "title": "PyLadies Hamburg",
+    "type": "youtube",
+    "url": "https://www.youtube.com/@HamburgPyLadies",
+    "photo_url": "",
+    "language": "en",
+    "rss_feed_youtube": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3RXyjipkLNG8HhVAzpZBCg",
+    "authors": [
+        {
+            "name": "PyLadies Hamburg",
+            "social_media": [
+                {
+                    "youtube": "https://www.youtube.com/@PyLadiesHamburg",
+                    "linkedin": "pyladies-hamburg",
+                    "meetup": "PyLadies-Hamburg"
+                }
+            ]
+        }
+    ]
+}
