@@ -1,16 +1,11 @@
-name: Generate README and create PR
+name: Update README
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_call:
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   update-readme:
@@ -48,27 +43,17 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Check for README changes in PR
-        if: github.event_name == 'pull_request'
-        run: |
-          git add README.md
-          if git diff --cached --quiet; then
-            echo "No README changes detected during PR try run."
-          else
-            echo "README would be updated by this PR."
-          fi
-
       - name: Push to temp branch and create PR
-        if: github.event_name == 'push' && steps.git-diff.outputs.changed == 'true'
+        if: steps.git-diff.outputs.changed == 'true'
         env:
           GITHUB_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
           BRANCH_NAME="update/readme-${GITHUB_RUN_NUMBER}"
 
-          git checkout -b $BRANCH_NAME
+          git checkout -b "$BRANCH_NAME"
           git commit -m "chore: auto-update README"
           git remote set-url origin https://x-access-token:${GITHUB_PAT}@github.com/${{ github.repository }}.git
-          git push origin $BRANCH_NAME
+          git push --set-upstream origin "$BRANCH_NAME"
 
           # Create pull request JSON safely
           cat <<EOF > pr_payload.json
@@ -80,7 +65,6 @@ jobs:
           }
           EOF
 
-          # Call GitHub API to open the PR
           curl -s -X POST \
             -H "Authorization: token ${GITHUB_PAT}" \
             -H "Accept: application/vnd.github+json" \
