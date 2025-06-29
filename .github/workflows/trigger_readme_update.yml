@@ -1,15 +1,15 @@
 name: Trigger README update on PR
 
 on:
-    push:
-      branches:
-        - main
-    pull_request:
-      branches:
-        - main
-        
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 jobs:

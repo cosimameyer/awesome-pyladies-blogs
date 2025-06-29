@@ -6,6 +6,9 @@ on:
       head_ref:
         required: true
         type: string
+    secrets:
+      ACTIONS_PAT:
+        required: true
 
 permissions:
   contents: write
