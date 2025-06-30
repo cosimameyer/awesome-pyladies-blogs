@@ -1,0 +1,22 @@
+{
+    "title": "PyLadies Berlin",
+    "type": "youtube",
+    "url": "https://www.youtube.com/@PyLadiesBerlin",
+    "photo_url": "",
+    "language": "en",
+    "rss_feed_youtube": "https://www.youtube.com/feeds/videos.xml?channel_id=UCVlzy-BMSYReFD0YnTzoh7w",
+    "authors": [
+        {
+            "name": "PyLadies Berlin",
+            "social_media": [
+                {
+                    "twitter": "https://x.com/pyladiesber",
+                    "youtube": "https://www.youtube.com/@PyLadiesBerlin",
+                    "website": "https://berlin.pyladies.com/en/",
+                    "linkedin": "pyladies-berlin-32879a18a",
+                    "meetup": "PyLadies-Berlin"
+                }
+            ]
+        }
+    ]
+}
