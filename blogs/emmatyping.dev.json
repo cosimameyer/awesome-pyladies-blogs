@@ -1,0 +1,22 @@
+{
+  "title": "Emma's Blog",
+  "type": "blog",
+  "url": "https://emmatyping.dev",
+  "rss_feed": "https://emmatyping.dev/feeds/python/rss.xml",
+  "photo_url": "https://emmatyping.dev/static/EmmaSmith_PfP.png",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Emma Smith",
+      "social_media": [
+        {
+          "bluesky": "@emmatyping.dev",
+          "github": "emmatyping",
+          "linkedin": "emmatyping",
+          "mastodon": "@emmatyping@hachyderm.io",
+          "website": "https://emmatyping.dev"
+        }
+      ]
+    }
+  ]
+}
