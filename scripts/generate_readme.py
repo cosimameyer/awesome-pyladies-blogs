@@ -8,7 +8,7 @@ import urllib.parse
 
 fallback_images_dir = "img/fallback_images/"
 fallback_images = [f for f in os.listdir(fallback_images_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
-directory_path = "blogs/"
+directory_path = "data/content/"
 
 def load_svg_inline_from_url(icon_url, color="black", size=20):
     try:
