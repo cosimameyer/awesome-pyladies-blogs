@@ -1,13 +1,12 @@
 import os
 import json
-import random
 import requests
 from datetime import datetime, timezone
 from typing import Optional
 import urllib.parse
 
 fallback_images_dir = "img/fallback_images/"
-fallback_images = [f for f in os.listdir(fallback_images_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
+fallback_image = "pyladies_bot.png"
 directory_path = "blogs/"
 
 def load_svg_inline_from_url(icon_url, color="black", size=20):
@@ -190,7 +189,6 @@ for entry in json_data:
     name = entry['authors'][0]['name']
     photo_url = entry.get('photo_url')
     if not image_exists(photo_url):
-        fallback_image = random.choice(fallback_images)
         photo_url = f"https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/{fallback_images_dir}{fallback_image}"
     blog_url = entry['url']
     
