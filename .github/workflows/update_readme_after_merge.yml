@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-
+    paths:
+      - 'blogs/**'
+      
 permissions:
   contents: write
   pull-requests: write
