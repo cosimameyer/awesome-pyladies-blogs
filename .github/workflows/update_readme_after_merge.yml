@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - 'blogs/**'
+  schedule:
+    - cron: '0 0 1 * *'
       
 permissions:
   contents: write

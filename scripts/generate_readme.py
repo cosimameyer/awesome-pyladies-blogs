@@ -190,8 +190,7 @@ for entry in json_data:
     name = entry['authors'][0]['name']
     photo_url = entry.get('photo_url')
     if not image_exists(photo_url):
-        fallback_image = random.choice(fallback_images)
-        photo_url = f"https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/{fallback_images_dir}{fallback_image}"
+        photo_url = f"https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/{fallback_images_dir}{random.choice(fallback_images)}"
     blog_url = entry['url']
     
     social_dict = entry['authors'][0].get('social_media', [{}])[0]
