@@ -180,8 +180,9 @@ for filename in os.listdir(directory_path):
 json_data.sort(key=lambda x: x['authors'][0]['name'])
 
 # Build contributors grid table
-header = "| | | |"
-first_row = "|:-------------------------:|:-------------------------:|:-------------------------:|"
+cols = 4
+header = "| " * cols + "|"
+first_row = "|:-------------------------:" * cols + "|"
 grid_entries = ""
 count = 0
 
@@ -192,12 +193,12 @@ for entry in json_data:
     if not image_exists(photo_url):
         photo_url = f"https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/{fallback_images_dir}{random.choice(fallback_images)}"
     blog_url = entry['url']
-    
+
     social_dict = entry['authors'][0].get('social_media', [{}])[0]
     social_icons = build_social_icons(social_dict)
 
     grid_entry = f'<a href="{blog_url}"><img width="130" alt="Image of {name}" src="{photo_url}"><br></a><span class="caption">{name}</span><br>{social_icons}|'
-    if count % 3 == 0:
+    if count % cols == 0:
         grid_entry += '\n|'
     grid_entries += grid_entry
 
@@ -217,8 +218,8 @@ for entry in json_data:
     elif entry_type == "youtube":
         youtube.append(line)
 
-if count % 3 != 0:
-    remaining = 3 - (count % 3)
+if count % cols != 0:
+    remaining = cols - (count % cols)
     grid_entries += "| " * remaining + "\n|"
 
 full_table = f"{header}\n{first_row}\n|{grid_entries}"
