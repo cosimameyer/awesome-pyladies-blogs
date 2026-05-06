@@ -161,7 +161,7 @@ readme_content = f"""
 
 ## What Is This Repository About?  
 
-It provides a curated list of awesome content by PyLadies and collects information to further promote content by [PyLadies on Mastodon](https://botsin.space/@pyladies_bot) 🤖  
+It provides a curated list of awesome content by PyLadies and collects information to further promote content by [PyLadies on social media](https://cosimameyer.github.io/community-bots/) 🤖  
 
 To contribute, please see [contributing](CONTRIBUTING.md) ✨  
 
