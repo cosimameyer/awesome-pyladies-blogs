@@ -1,0 +1,19 @@
+{
+  "name": "singularity-hpc",
+  "description": "Local filesystem registry for containers (intended for HPC) using Lmod or Environment Modules.",
+  "logo_url": "https://raw.githubusercontent.com/singularityhub/singularity-hpc/refs/heads/main/docs/assets/img/shpc.svg",
+  "repo_url": "https://github.com/singularityhub/singularity-hpc",
+  "pypi_url": "https://pypi.org/project/singularity-hpc/",
+  "maintainers": [
+    {
+      "name": "Vanessa Sochat",
+      "social_media": [{
+          "twitter": "vsoch",
+          "mastodon": "@vsoch@mastodon.social",
+          "bluesky": "vsoch.bsky.social",
+          "github": "vsoch",
+          "website": "https://vsoch.github.io/"
+      }]
+    }
+  ]
+}

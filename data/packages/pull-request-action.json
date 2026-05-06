@@ -1,0 +1,19 @@
+{
+  "name": "pull-request-action",
+  "description": "GitHub Action to open a pull request when a branch is pushed or updated.",
+  "logo_url": null,
+  "repo_url": "https://github.com/vsoch/pull-request-action",
+  "pypi_url": "https://pypi.org/project/pull-request-action/",
+  "maintainers": [
+    {
+      "name": "Vanessa Sochat",
+      "social_media": [{
+          "twitter": "vsoch",
+          "mastodon": "@vsoch@mastodon.social",
+          "bluesky": "vsoch.bsky.social",
+          "github": "vsoch",
+          "website": "https://vsoch.github.io/"
+      }]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "CiteLang",
+  "description": "Generate credit summaries and badges for software packages to ensure proper attribution.",
+  "logo_url": "https://raw.githubusercontent.com/vsoch/citelang/refs/heads/main/docs/assets/img/citelang.png",
+  "repo_url": "https://github.com/vsoch/citelang",
+  "pypi_url": "https://pypi.org/project/citelang/",
+  "maintainers": [
+    {
+      "name": "Vanessa Sochat",
+      "social_media": [{
+          "twitter": "vsoch",
+          "mastodon": "@vsoch@mastodon.social",
+          "bluesky": "vsoch.bsky.social",
+          "github": "vsoch",
+          "website": "https://vsoch.github.io/"
+      }]
+    }
+  ]
+}
