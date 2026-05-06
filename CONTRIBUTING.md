@@ -8,7 +8,7 @@ With your submission, you agree that these entries will be used for the [PyLadie
 
 # Contributing Checklist
 
- - [ ] The entry will be added to the [blogs/](blogs/) folder.
+ - [ ] The entry will be added to the [data/content/](data/content/) folder.
  - [ ] The filename of the entry ends with `.json'.
  - [ ] **One file = one piece of content.** If you have both a blog and a YouTube channel (or a podcast), please add a separate file for each. The same author can appear in multiple files.
  - [ ] The json contains at least
@@ -22,17 +22,17 @@ With your submission, you agree that these entries will be used for the [PyLadie
 
 # Contribution Details
 
-All content is listed in the [blogs](blogs/) folder, where each piece of content lives in its own json file. One file describes one blog, one YouTube channel, or one podcast — never several at once. If a contributor has both a blog and a YouTube channel, they will have two files. Follow the instructions below to add to the list. If you have any problems, please create an issue so we can help you.
+All content is listed in the [data/content/](data/content/) folder, where each piece of content lives in its own json file. One file describes one blog, one YouTube channel, or one podcast — never several at once. If a contributor has both a blog and a YouTube channel, they will have two files. Follow the instructions below to add to the list. If you have any problems, please create an issue so we can help you.
 
 Depending on how you are most comfortable, there are several ways to add new entries. 
 
 ## Option 1: Not Too Familiar with JSON/GitHub?
 
-If you're not familiar with JSON, you can [open an issue](https://github.com/cosimameyer/awesome-pyladies-blogs/issues/new/choose) with your blog info and I'll create the JSON for you!
+If you're not familiar with JSON, you can [open an issue](https://github.com/cosimameyer/awesome-pyladies-creations/issues/new/choose) with your blog info and I'll create the JSON for you!
 
 ## Option 2: Create a New File
 
-Create a new file in the [blogs/](blogs/) folder by [using this link](https://github.com/cosimameyer/awesome-pyladies-blogs/new/main/?filename=blogs/your-blog-url.com.json&value=%7B%0A%20%20%22title%22%3A%20%22Your%20title%22%2C%20//required%0A%20%20%22subtitle%22%3A%20%22subtitle%20or%20tagline%22%2C%20//optional%0A%20%20%22type%22%3A%20%22blog%22%2C%20//required%3A%20one%20of%20%22blog%22%2C%20%22youtube%22%2C%20%22podcast%22%0A%20%20%22url%22%3A%20%22https%3A//your_blog.com%22%2C%20//required%0A%20%20%22photo_url%22%3A%20%22https%3A//your_blog.com/your_photo.png%22%2C%20//required%0A%20%20%22description%22%3A%20%22Short%20description%20of%20what%20you%20blog%20about%22%2C%0A%20%20%22language%22%3A%20%22en%22%2C%20//required%0A%20%20%22rss_feed%22%3A%20%22%5Burl%5D/file.xml%22%2C%20//required%20if%20you%20want%20your%20feed%20to%20be%20promoted%20by%20the%20bot%0A%20%20%22authors%22%3A%20%5B%20//required%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22name%22%3A%20%22Your%20Name%22%2C%20//required%0A%20%20%20%20%20%20%22social_media%22%3A%20%5B%7B%0A%20%20%20%20%20%20%20%20%20%22twitter%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22mastodon%22%3A%20%22%40username%40server.org%22%2C%0A%20%20%20%20%20%20%20%20%20%22bluesky%22%3A%20%22%40username.bsky.social%22%2C%0A%20%20%20%20%20%20%20%20%20%22github%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22instagram%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22youtube%22%3A%20%22username/end-url%22%2C%0A%20%20%20%20%20%20%20%20%20%22tiktok%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22website%22%3A%20%22url%22%2C%0A%20%20%20%20%20%20%20%20%20%22linkedin%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22facebook%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22orcid%22%3A%20%22member%20number%22%2C%0A%20%20%20%20%20%20%20%20%20%22meetup%22%3A%20%22end-url%22%0A%20%20%20%20%20%20%7D%5D%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D).
+Create a new file in the [data/content/](data/content/) folder by [using this link](https://github.com/cosimameyer/awesome-pyladies-creations/new/main/?filename=data/content/your-blog-url.com.json&value=%7B%0A%20%20%22title%22%3A%20%22Your%20title%22%2C%20//required%0A%20%20%22subtitle%22%3A%20%22subtitle%20or%20tagline%22%2C%20//optional%0A%20%20%22type%22%3A%20%22blog%22%2C%20//required%3A%20one%20of%20%22blog%22%2C%20%22youtube%22%2C%20%22podcast%22%0A%20%20%22url%22%3A%20%22https%3A//your_blog.com%22%2C%20//required%0A%20%20%22photo_url%22%3A%20%22https%3A//your_blog.com/your_photo.png%22%2C%20//required%0A%20%20%22description%22%3A%20%22Short%20description%20of%20what%20you%20blog%20about%22%2C%0A%20%20%22language%22%3A%20%22en%22%2C%20//required%0A%20%20%22rss_feed%22%3A%20%22%5Burl%5D/file.xml%22%2C%20//required%20if%20you%20want%20your%20feed%20to%20be%20promoted%20by%20the%20bot%0A%20%20%22authors%22%3A%20%5B%20//required%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22name%22%3A%20%22Your%20Name%22%2C%20//required%0A%20%20%20%20%20%20%22social_media%22%3A%20%5B%7B%0A%20%20%20%20%20%20%20%20%20%22twitter%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22mastodon%22%3A%20%22%40username%40server.org%22%2C%0A%20%20%20%20%20%20%20%20%20%22bluesky%22%3A%20%22%40username.bsky.social%22%2C%0A%20%20%20%20%20%20%20%20%20%22github%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22instagram%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22youtube%22%3A%20%22username/end-url%22%2C%0A%20%20%20%20%20%20%20%20%20%22tiktok%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22website%22%3A%20%22url%22%2C%0A%20%20%20%20%20%20%20%20%20%22linkedin%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22facebook%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22orcid%22%3A%20%22member%20number%22%2C%0A%20%20%20%20%20%20%20%20%20%22meetup%22%3A%20%22end-url%22%0A%20%20%20%20%20%20%7D%5D%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D).
 
 This link will fork the repository to your user account, and initiate a new file with some template content in it. After filling the file, please [create a PR to the main branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
@@ -88,7 +88,7 @@ Depending on how your website is set up, the implementation may differ. If you n
 </details>
 
 <details><summary>Distill</summary>
-There is currently a [workaround](https://github.com/rladies/awesome-rladies-blogs/pull/54#issuecomment-1501263818) for adding RSS feeds in distill that works as follows:
+There is currently a [workaround](https://github.com/rladies/awesome-rladies-creations/pull/54#issuecomment-1501263818) for adding RSS feeds in distill that works as follows:
 
 - In distill, there is a categories folder generated when a post is rendered which gets deleted when the blog is rendered
 - Store the folder and add it later because we need a categories folder, containing each specified category with an `index.xml` for each category
