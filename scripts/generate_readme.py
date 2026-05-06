@@ -8,7 +8,7 @@ import urllib.parse
 
 fallback_images_dir = "img/fallback_images/"
 fallback_images = [f for f in os.listdir(fallback_images_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
-directory_path = "blogs/"
+directory_path = "data/content/"
 
 def load_svg_inline_from_url(icon_url, color="black", size=20):
     try:
@@ -23,7 +23,7 @@ def load_svg_inline_from_url(icon_url, color="black", size=20):
 
 def build_social_icons(social_dict, icon_style='emoji'):
     socials = ""
-    base_icon_url = "https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/img/icons/"
+    base_icon_url = "https://github.com/cosimameyer/awesome-pyladies-creations/raw/main/img/icons/"
 
     ordered_platforms = ["website", "github", "mastodon", "bluesky", "instagram", "youtube", "linkedin", "twitter"]
 
@@ -191,7 +191,7 @@ for entry in json_data:
     name = entry['authors'][0]['name']
     photo_url = entry.get('photo_url')
     if not image_exists(photo_url):
-        photo_url = f"https://github.com/cosimameyer/awesome-pyladies-blogs/raw/main/{fallback_images_dir}{random.choice(fallback_images)}"
+        photo_url = f"https://github.com/cosimameyer/awesome-pyladies-creations/raw/main/{fallback_images_dir}{random.choice(fallback_images)}"
     blog_url = entry['url']
 
     social_dict = entry['authors'][0].get('social_media', [{}])[0]

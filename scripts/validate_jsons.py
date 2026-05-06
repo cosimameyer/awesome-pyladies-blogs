@@ -3,7 +3,7 @@ import json
 import sys
 import jsonschema
 
-blogs_dir = "blogs/"
+blogs_dir = "data/content/"
 schema_path = "scripts/.entry_schema.json"
 
 with open(schema_path) as f:

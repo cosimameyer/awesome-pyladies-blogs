@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'blogs/**'
+      - 'data/content/**'
   schedule:
     - cron: '0 0 1 * *'
       
