@@ -1,0 +1,49 @@
+{
+  "name": "Nox",
+  "description": "Flexible test automation for Python.",
+  "logo_url": "https://raw.githubusercontent.com/wntrblm/nox/refs/heads/main/docs/_static/alice.png",
+  "repo_url": "https://github.com/wntrblm/nox",
+  "pypi_url": "https://pypi.org/project/nox/",
+  "maintainers": [
+    {
+      "name": "Thea Flowers",
+      "social_media": [{
+        "github": "theacodes",
+        "twitter": "theacodes",
+        "website": "https://thea.codes/",
+        "mastodon": "stargirl@hachyderm.io",
+        "bluesky": "theacodes.bsky.social"
+      }]
+    },
+    {
+      "name": "Danny Hermes",
+      "social_media": [{
+        "github": "bossylobster"
+      }]
+    },
+    {
+      "name": "Chris Wilcox",
+      "social_media": [{
+        "github": "crwilcox"
+      }]
+    },
+    {
+      "name": "Henry Schreiner",
+      "social_media": [{
+        "github": "henryiii"
+      }]
+    },
+    {
+      "name": "Luke Sneeringer",
+      "social_media": [{
+        "github": "lukesneeringer"
+      }]
+    },
+    {
+      "name": "Diego Ramirez",
+      "social_media": [{
+        "github": "stsewd"
+      }]
+    }
+  ]
+}
