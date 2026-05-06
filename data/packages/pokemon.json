@@ -1,0 +1,21 @@
+{
+  "name": "pokemon",
+  "description": "ascii database of pokemon in Python!",
+  "logo_url": "https://raw.githubusercontent.com/vsoch/pokemon/master/img/avatar.png",
+  "repo_url": "https://github.com/vsoch/pokemon",
+  "pypi_url": "https://pypi.org/project/pokemon/",
+  "maintainers": [
+    {
+      "name": "Vanessa Sochat",
+      "social_media": [
+        {
+          "twitter": "vsoch",
+          "mastodon": "@vsoch@mastodon.social",
+          "bluesky": "vsoch.bsky.social",
+          "github": "vsoch",
+          "website": "https://vsoch.github.io/"
+        }
+      ]
+    }
+  ]
+}
