@@ -32,11 +32,12 @@ If you're not familiar with JSON, you can [open an issue](https://github.com/cos
 
 ## Option 2: Create a New File
 
+### For General Content (Blog, YouTube, Podcast) 
 Create a new file in the [data/content/](data/content/) folder by [using this link](https://github.com/cosimameyer/awesome-pyladies-creations/new/main/?filename=data/content/your-blog-url.com.json&value=%7B%0A%20%20%22title%22%3A%20%22Your%20title%22%2C%20//required%0A%20%20%22subtitle%22%3A%20%22subtitle%20or%20tagline%22%2C%20//optional%0A%20%20%22type%22%3A%20%22blog%22%2C%20//required%3A%20one%20of%20%22blog%22%2C%20%22youtube%22%2C%20%22podcast%22%0A%20%20%22url%22%3A%20%22https%3A//your_blog.com%22%2C%20//required%0A%20%20%22photo_url%22%3A%20%22https%3A//your_blog.com/your_photo.png%22%2C%20//required%0A%20%20%22description%22%3A%20%22Short%20description%20of%20what%20you%20blog%20about%22%2C%0A%20%20%22language%22%3A%20%22en%22%2C%20//required%0A%20%20%22rss_feed%22%3A%20%22%5Burl%5D/file.xml%22%2C%20//required%20if%20you%20want%20your%20feed%20to%20be%20promoted%20by%20the%20bot%0A%20%20%22authors%22%3A%20%5B%20//required%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22name%22%3A%20%22Your%20Name%22%2C%20//required%0A%20%20%20%20%20%20%22social_media%22%3A%20%5B%7B%0A%20%20%20%20%20%20%20%20%20%22twitter%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22mastodon%22%3A%20%22%40username%40server.org%22%2C%0A%20%20%20%20%20%20%20%20%20%22bluesky%22%3A%20%22%40username.bsky.social%22%2C%0A%20%20%20%20%20%20%20%20%20%22github%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22instagram%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22youtube%22%3A%20%22username/end-url%22%2C%0A%20%20%20%20%20%20%20%20%20%22tiktok%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22website%22%3A%20%22url%22%2C%0A%20%20%20%20%20%20%20%20%20%22linkedin%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22facebook%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22orcid%22%3A%20%22member%20number%22%2C%0A%20%20%20%20%20%20%20%20%20%22meetup%22%3A%20%22end-url%22%0A%20%20%20%20%20%20%7D%5D%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D).
 
 This link will fork the repository to your user account, and initiate a new file with some template content in it. After filling the file, please [create a PR to the main branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
-### File Name
+#### File Name
 
 The name of the file should be the URL of the content itself, without `www` or `http(s)://`. This way each file has a unique name and we avoid duplicates.
 
@@ -46,7 +47,7 @@ The name of the file should be the URL of the content itself, without `www` or `
 
 If the same person has both a blog and a YouTube channel, they get **two files** — one for each — and the same `authors` block can appear in both.
 
-### File Content
+#### File Content
 
 Using the link above will create a template for you to start with.
 Fill inn all the information that is relevant for your blog.
@@ -55,13 +56,13 @@ Remove all mentions of `\\required`, these are just for making it clear which in
 Any optional field you don't want to add, you may delete entirely.
 For instance, if you don't have a subtitle or tagline for your blog, remove the entire line of `"subtite": "subtitle or tagline"` rather than leaving it empty with `"subtite": ""`
 
-#### Photo
+##### Photo
 
 The photo url you provide will be displayed as your blogs thumbnail. 
 This may be a picture of you, or if you have a logo for your blog/website, it may be best to use this in stead.
 
 
-#### RSS Feed
+##### RSS Feed
 
 The single `rss_feed` field is used for every content type — the bot picks the right behavior based on `type`.
 
@@ -96,12 +97,12 @@ There is currently a [workaround](https://github.com/rladies/awesome-rladies-cre
 
 <details><summary>Hugo</summary>
 
-###### Hugo Academic
+####### Hugo Academic
 
 - Apparently the RSS feed is enabled by default and you can access it by using the field `category` in the YAML of your posts
 - Further readings for [Hugo Academic](https://cosimameyer.com/post/adding-your-hugo-academic-blog-to-r-bloggers-and-python-bloggers/)
 
-###### Hugo Portio
+####### Hugo Portio
 
 - Copy and paste the content of [this file](https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml) (it’s Hugo’s default RSS settings)
 - Store it under `layouts/_default/rss.xml` (if there is no file, you need to create this one).
@@ -112,13 +113,19 @@ There is currently a [workaround](https://github.com/rladies/awesome-rladies-cre
 <details><summary>Medium</summary>
 Medium nicely describes on their website how to [get your RSS feed](https://help.medium.com/hc/en-us/articles/214874118-Using-RSS-feeds-of-profiles-publications-and-topics). Unfortunately it's not possible to have a tag specific feed (yet). To keep the bot sorted, please make sure to only post about Python-related topics (= things that could be interesting to the followers of the bot).</details>
 
-#### RSS feed for YouTube videos
+##### RSS feed for YouTube videos
 
 For a YouTube entry, set `type: "youtube"` and put the channel or playlist feed URL in `rss_feed`. You first need to get your channel or playlist ID. How to get them is described [here](https://www.youtube.com/watch?v=vdk8dx08ExU).
 Assemble the feed URL together with the base URL:
 
 - For *channels*: `https://www.youtube.com/feeds/videos.xml?channel_id=` + `CHANNEL_ID`
 - For *playlists*: `https://www.youtube.com/feeds/videos.xml?playlist_id=` + `PLAYLIST_ID`
+
+### For Python Libraries
+
+Create a new file in the [data/content/](data/content/) folder by [using this link](https://github.com/cosimameyer/awesome-pyladies-creations/new/main/?filename=data/packages/your-package-name.json&value=%7B%0A%20%20%22name%22%3A%20%22Your%20title%22%2C%20%2F%2Frequired%0A%20%20%22description%22%3A%20%22Short%20description%20of%20what%20you%20package%20is%20about%22%2C%0A%20%20%22logo_url%22%3A%20%22https%3A%2F%2Fgithub.com%2Fusername%2Fpackage%2Fman%2Flogo.png%22%0A%20%20%22repo_url%22%3A%20%22https%3A%2F%2Fgithub.com%2Fusername%2Fpackage%22%2C%0A%20%20%22pypi_url%3A%20%22https%3A%2F%2Fpypi.site%22%2C%0A%20%20%22maintainers%22%3A%20%5B%20%2F%2Frequired%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22name%22%3A%20%22Your%20Name%22%2C%20%2F%2Frequired%0A%20%20%20%20%20%20%22social_media%22%3A%20%5B%7B%0A%20%20%20%20%20%20%20%20%20%22twitter%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22mastodon%22%3A%20%22%40username%40server.org%22%2C%0A%20%20%20%20%20%20%20%20%20%22bluesky%22%3A%20%22username.domain%22%2C%0A%20%20%20%20%20%20%20%20%20%22github%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22instagram%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22youtube%22%3A%20%22username%2Fend-url%22%2C%0A%20%20%20%20%20%20%20%20%20%22tiktok%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22periscope%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22researchgate%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22website%22%3A%20%22url%22%2C%0A%20%20%20%20%20%20%20%20%20%22linkedin%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22facebook%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22orcid%22%3A%20%22member%20number%22%2C%0A%20%20%20%20%20%20%20%20%20%22meetup%22%3A%20%22end-url%22%0A%20%20%20%20%20%20%7D%5D%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D)
+
+## General Remarks
 
 #### Authors
 
