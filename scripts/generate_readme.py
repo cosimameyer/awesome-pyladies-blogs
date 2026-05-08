@@ -10,6 +10,7 @@ import urllib.parse
 fallback_images_dir = "img/fallback_images/"
 content_directory = "data/content/"
 packages_directory = "data/packages/"
+software_directory = "data/software/"
 
 if os.path.exists(fallback_images_dir):
     fallback_images = [f for f in os.listdir(fallback_images_dir) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif'))]
@@ -95,6 +96,7 @@ def load_json_files(path):
 
 content_data = load_json_files(content_directory)
 package_data = load_json_files(packages_directory)
+software_data = load_json_files(software_directory)
 
 content_data.sort(key=lambda x: x.get('authors', [{}])[0].get('name', 'Unknown'))
 
@@ -119,7 +121,7 @@ if count % cols != 0: grid_entries += "| " * (cols - (count % cols)) + "\n|"
 full_table = f"{'| ' * cols}|\n{'|:---:' * cols}|\n|{grid_entries}"
 
 # 3. Build Categorized Lists
-blogs, youtube, podcasts, libraries = [], [], [], []
+blogs, youtube, podcasts, libraries, other_software = [], [], [], [], []
 
 def format_entry_line(entry, is_package=False):
     # Surgical fix for authors vs maintainers
@@ -128,11 +130,11 @@ def format_entry_line(entry, is_package=False):
         authors_str = "Unknown"
     else:
         authors_str = ", ".join([a.get("name", "Unknown") for a in authors_list])
-    
+
     # Surgical fix for naming and URLs in packages
     title = entry.get('title') or entry.get('name', 'Untitled')
-    url = entry.get('url') or entry.get('repo_url') or '#'
-    
+    url = entry.get('url') or entry.get('website_url') or entry.get('repo_url') or '#'
+
     return f"- [{title}]({url}) by {authors_str}"
 
 for entry in content_data:
@@ -145,12 +147,18 @@ for entry in content_data:
 for entry in package_data:
     libraries.append(format_entry_line(entry, is_package=True))
 
+for entry in software_data:
+    other_software.append(format_entry_line(entry))
+
 # 4. Generate README
 sections = []
 if blogs: sections.extend(["### Blogs", os.linesep.join(blogs)])
 if youtube: sections.extend(["### YouTube Channels", os.linesep.join(youtube)])
 if podcasts: sections.extend(["### Podcasts", os.linesep.join(podcasts)])
-if libraries: sections.extend(["### Python Libraries", os.linesep.join(libraries)])
+if libraries or other_software:
+    sections.append("### Software")
+    if libraries: sections.extend(["#### Python Libraries", os.linesep.join(libraries)])
+    if other_software: sections.extend(["#### Other Software", os.linesep.join(other_software)])
 
 readme_content = f"""
 # Awesome PyLadies' Repository  
