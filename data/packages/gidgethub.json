@@ -1,0 +1,22 @@
+{
+"name": "gidgethub",
+"description": "An async GitHub API library for Python.",
+"logo_url": null,
+"repo_url": "https://github.com/gidgethub/gidgethub",
+"pypi_url": "https://pypi.org/project/gidgethub/",
+"maintainers": [
+    {
+    "name": "Mariatta Wijaya",
+    "social_media": [{
+        "twitter": "mariatta",
+        "mastodon": "@mariatta@fosstodon.org",
+        "github": "mariatta",
+        "website": "https://mariatta.ca",
+        "linkedin": "mariatta"
+    }]
+    },
+    {
+        "name": "Brett Cannon" 
+    }
+]
+}
