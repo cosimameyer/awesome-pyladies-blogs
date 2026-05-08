@@ -1,0 +1,18 @@
+{
+  "name": "Witch Hazel",
+  "description": "A color scheme inspired by magic and nature.",
+  "website_url": "https://witchhazel.thea.codes",
+  "repo_url": "https://github.com/theacodes/witchhazel",
+  "maintainers": [
+    {
+      "name": "Thea Flowers",
+      "social_media": [{
+        "github": "theacodes",
+        "twitter": "theacodes",
+        "website": "https://thea.codes/",
+        "mastodon": "stargirl@hachyderm.io",
+        "bluesky": "theacodes.bsky.social"
+      }]
+    }
+  ]
+}
