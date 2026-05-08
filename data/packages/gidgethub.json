@@ -2,7 +2,7 @@
 "name": "gidgethub",
 "description": "An async GitHub API library for Python.",
 "logo_url": null,
-"repo_url": "https://github.com/brettcannon/gidgethub",
+"repo_url": "https://github.com/gidgethub/gidgethub",
 "pypi_url": "https://pypi.org/project/gidgethub/",
 "maintainers": [
     {
