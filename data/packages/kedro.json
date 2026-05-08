@@ -1,0 +1,23 @@
+{
+    "name": "Kedro",
+    "description": "An open-source Python framework for creating reproducible, maintainable and modular data science code.",
+    "logo_url": "https://raw.githubusercontent.com/kedro-org/kedro/main/docs/source/_static/kedro_logo.png",
+    "repo_url": "https://github.com/kedro-org/kedro",
+    "pypi_url": "https://pypi.org/project/kedro/",
+    "maintainers": [
+      {
+        "name": "Merel Theisen",
+        "social_media": [{
+          "github": "merelcht",
+          "linkedin": "mereltheisen",
+          "website": "https://www.mereltheisen.com/"
+        }]
+      },
+      { "name": "Yetunde Dada",
+        "social_media": [{
+          "github": "yetudada",
+          "linkedin": "yetudada"
+        }]
+      }
+    ]
+}
