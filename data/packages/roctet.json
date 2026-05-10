@@ -1,0 +1,24 @@
+{
+    "name": "roctet",
+    "description": "Generate diverse score-target datasets with the same AUROC value, ala Anscombe's Quartet",
+    "logo_url": null,
+    "repo_url": "https://github.com/emilyriederer/roctet",
+    "pypi_url": "https://pypi.org/project/roctet/",
+    "maintainers": [
+        {
+            "name": "Emily Riederer",
+            "social_media": [
+                {
+                    "twitter": "emilyriederer",
+                    "mastodon": "@emilyriederer@mastodon.social",
+                    "github": "emilyriederer",
+                    "website": "emilyriederer.com",
+                    "linkedin": "emilyriederer/",
+                    "facebook": "emilyriederer",
+                    "orcid": "0000-0002-1788-7934",
+                    "bluesky": "@emilyriederer.bsky.social"
+                }
+            ]
+        }
+    ]
+}
