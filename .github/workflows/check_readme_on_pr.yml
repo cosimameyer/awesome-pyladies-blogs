@@ -31,6 +31,9 @@ jobs:
       - name: Validate blog JSON files
         run: python scripts/validate_jsons.py
 
+      - name: Validate package JSON files
+        run: python scripts/validate_packages.py
+
       - name: Run README generator
         run: python scripts/generate_readme.py
 

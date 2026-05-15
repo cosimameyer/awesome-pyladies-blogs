@@ -3,13 +3,13 @@ import json
 import sys
 import jsonschema
 
-blogs_dir = "data/content/"
-schema_path = "scripts/.entry_schema.json"
+packages_dir = "data/packages/"
+schema_path = "scripts/.package_schema.json"
 
 with open(schema_path) as f:
     schema = json.load(f)
 
-files = os.listdir(blogs_dir)
+files = os.listdir(packages_dir)
 
 non_json = [f for f in files if not f.endswith(".json")]
 if non_json:
@@ -20,13 +20,13 @@ if non_json:
 
 errors = []
 for filename in files:
-    path = os.path.join(blogs_dir, filename)
+    path = os.path.join(packages_dir, filename)
     with open(path) as f:
         data = json.load(f)
     validator = jsonschema.Draft4Validator(schema)
-    file_errors = list(validator.iter_errors(data))
-    for err in file_errors:
-        errors.append(f"{filename}: {err.message} (path: {'/'.join(str(p) for p in err.absolute_path)})")
+    for err in validator.iter_errors(data):
+        loc = "/".join(str(p) for p in err.absolute_path)
+        errors.append(f"{filename}: {err.message}" + (f" (path: {loc})" if loc else ""))
 
 if errors:
     print("Validation failed:")
@@ -34,4 +34,4 @@ if errors:
         print(f"  {e}")
     sys.exit(1)
 
-print(f"All {len(files)} JSON files are valid.")
+print(f"All {len(files)} package JSON files are valid.")
