@@ -1,9 +1,13 @@
 {
   "name": "Nox",
+  "title": "Nox",
   "description": "Flexible test automation for Python.",
   "logo_url": "https://raw.githubusercontent.com/wntrblm/nox/refs/heads/main/docs/_static/alice.png",
   "repo_url": "https://github.com/wntrblm/nox",
+  "bug_reports_url": "https://github.com/wntrblm/nox/issues",
   "pypi_url": "https://pypi.org/project/nox/",
+  "docs_url": "https://nox.thea.codes",
+  "last_updated": "2026-04-10",
   "maintainers": [
     {
       "name": "Thea Flowers",

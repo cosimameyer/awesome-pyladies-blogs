@@ -1,9 +1,13 @@
 {
   "name": "expfactory",
+  "title": "Expfactory",
   "description": "Software to generate a reproducible container with a battery of experiments.",
   "logo_url": "https://raw.githubusercontent.com/expfactory/expfactory/refs/heads/master/docs/img/expfactoryticketyellow.png",
   "repo_url": "https://github.com/expfactory/expfactory",
+  "bug_reports_url": "https://github.com/expfactory/expfactory/issues",
   "pypi_url": "https://pypi.org/project/expfactory/",
+  "docs_url": null,
+  "last_updated": "2021-01-13",
   "maintainers": [
     {
       "name": "Vanessa Sochat",

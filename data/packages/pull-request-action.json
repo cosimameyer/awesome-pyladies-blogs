@@ -1,9 +1,13 @@
 {
   "name": "pull-request-action",
+  "title": "Pull Request Action",
   "description": "GitHub Action to open a pull request when a branch is pushed or updated.",
   "logo_url": null,
   "repo_url": "https://github.com/vsoch/pull-request-action",
+  "bug_reports_url": "https://github.com/vsoch/pull-request-action/issues",
   "pypi_url": "https://pypi.org/project/pull-request-action/",
+  "docs_url": null,
+  "last_updated": "2024-03-14",
   "maintainers": [
     {
       "name": "Vanessa Sochat",

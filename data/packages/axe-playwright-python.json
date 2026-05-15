@@ -1,9 +1,13 @@
 {
     "name": "axe-playwright-python",
+    "title": "Axe Playwright Python",
     "description": "Automated web accessibility testing using axe-core engine and Playwright.",
     "logo_url": null,
     "repo_url": "https://github.com/pamelafox/axe-playwright-python",
+    "bug_reports_url": "https://github.com/pamelafox/axe-playwright-python/issues",
     "pypi_url": "https://pypi.org/project/axe-playwright-python/",
+    "docs_url": "https://pamelafox.github.io/axe-playwright-python",
+    "last_updated": "2025-12-01",
     "maintainers": [
         {
         "name": "Pamela Fox",
