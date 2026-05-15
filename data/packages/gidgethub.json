@@ -1,9 +1,13 @@
 {
 "name": "gidgethub",
+"title": "Gidgethub",
 "description": "An async GitHub API library for Python.",
 "logo_url": null,
 "repo_url": "https://github.com/gidgethub/gidgethub",
+"bug_reports_url": "https://github.com/gidgethub/gidgethub/issues",
 "pypi_url": "https://pypi.org/project/gidgethub/",
+"docs_url": "https://gidgethub.readthedocs.io",
+"last_updated": "2025-06-03",
 "maintainers": [
     {
     "name": "Mariatta Wijaya",

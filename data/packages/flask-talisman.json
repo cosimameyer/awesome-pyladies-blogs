@@ -1,9 +1,13 @@
 {
   "name": "flask-talisman",
+  "title": "Flask-Talisman",
   "description": "A small Flask extension that handles HTTP security headers for you.",
   "logo_url": null,
   "repo_url": "https://github.com/wntrblm/flask-talisman",
+  "bug_reports_url": "https://github.com/wntrblm/flask-talisman/issues",
   "pypi_url": "https://pypi.org/project/flask-talisman/",
+  "docs_url": null,
+  "last_updated": "2023-08-03",
   "maintainers": [
     {
       "name": "Thea Flowers",

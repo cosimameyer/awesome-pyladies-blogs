@@ -1,9 +1,13 @@
 {
   "name": "singularity-compose",
+  "title": "Singularity Compose",
   "description": "A simple orchestration library for Singularity containers, akin to Docker Compose.",
   "logo_url": null,
   "repo_url": "https://github.com/singularityhub/singularity-compose",
+  "bug_reports_url": "https://github.com/singularityhub/singularity-compose/issues",
   "pypi_url": "https://pypi.org/project/singularity-compose/",
+  "docs_url": null,
+  "last_updated": "2024-05-11",
   "maintainers": [
     {
       "name": "Vanessa Sochat",
