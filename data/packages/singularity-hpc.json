@@ -6,7 +6,7 @@
   "repo_url": "https://github.com/singularityhub/singularity-hpc",
   "bug_reports_url": "https://github.com/singularityhub/singularity-hpc/issues",
   "pypi_url": "https://pypi.org/project/singularity-hpc/",
-  "pkdown_url": null,
+  "docs_url": null,
   "last_updated": "2025-04-12",
   "maintainers": [
     {
