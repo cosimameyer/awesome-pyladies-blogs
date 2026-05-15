@@ -6,7 +6,7 @@
   "repo_url": "https://github.com/vsoch/pull-request-action",
   "bug_reports_url": "https://github.com/vsoch/pull-request-action/issues",
   "pypi_url": "https://pypi.org/project/pull-request-action/",
-  "docs_url": null,
+  "pkdown_url": null,
   "last_updated": "2024-03-14",
   "maintainers": [
     {

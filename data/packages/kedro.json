@@ -6,7 +6,7 @@
     "repo_url": "https://github.com/kedro-org/kedro",
     "bug_reports_url": "https://github.com/kedro-org/kedro/issues",
     "pypi_url": "https://pypi.org/project/kedro/",
-    "docs_url": "https://docs.kedro.org",
+    "pkdown_url": "https://docs.kedro.org",
     "last_updated": "2026-04-07",
     "maintainers": [
       {
