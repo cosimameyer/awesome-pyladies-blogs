@@ -6,7 +6,7 @@
   "repo_url": "https://github.com/coiled/dask-bigquery",
   "bug_reports_url": "https://github.com/coiled/dask-bigquery/issues",
   "pypi_url": "https://pypi.org/project/dask-bigquery/",
-  "last_updated": "2026-05-16",
+  "last_updated": "2024-07-25",
   "maintainers": [
     {
       "name": "Naty Clementi",
