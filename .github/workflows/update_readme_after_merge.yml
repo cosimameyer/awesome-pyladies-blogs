@@ -49,7 +49,7 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Push update branch and create PR
+      - name: Push update branch, create PR, and auto-merge
         if: steps.git-diff.outputs.changed == 'true'
         env:
           GITHUB_PAT: ${{ secrets.ACTIONS_PAT }}
@@ -75,18 +75,30 @@ jobs:
 
           if [[ "$EXISTING_PR" != "null" ]]; then
             echo "PR #$EXISTING_PR already exists for $UPDATE_BRANCH"
+            PR_NUMBER="$EXISTING_PR"
           else
             echo "Creating new PR for updated README"
-            curl -s -X POST \
+            PR_NUMBER=$(curl -s -X POST \
               -H "Authorization: token ${GITHUB_PAT}" \
               -H "Accept: application/vnd.github+json" \
               https://api.github.com/repos/${{ github.repository }}/pulls \
-              -d @- <<EOF
-            {
-              "title": "chore: auto-update README",
-              "head": "$UPDATE_BRANCH",
-              "base": "$BASE_BRANCH",
-              "body": "Automated README update after merge"
-            }
-          EOF
+              -d "{
+                \"title\": \"chore: auto-update README\",
+                \"head\": \"$UPDATE_BRANCH\",
+                \"base\": \"$BASE_BRANCH\",
+                \"body\": \"Automated README update after merge\"
+              }" | jq '.number')
+            echo "Created PR #$PR_NUMBER"
           fi
+
+          # Merge the PR automatically
+          echo "Merging PR #$PR_NUMBER"
+          curl -s -X PUT \
+            -H "Authorization: token ${GITHUB_PAT}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/${PR_NUMBER}/merge" \
+            -d "{
+              \"merge_method\": \"squash\",
+              \"commit_title\": \"chore: auto-update README\",
+              \"commit_message\": \"Automated README update\"
+            }"
