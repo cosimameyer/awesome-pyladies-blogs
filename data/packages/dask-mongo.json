@@ -1,0 +1,16 @@
+{
+  "name": "dask-mongo",
+  "title": "dask-mongo",
+  "description": "Dask integration for MongoDB — read and write MongoDB data using Dask for distributed computing.",
+  "logo_url": "https://github.com/ncclementi.png",
+  "repo_url": "https://github.com/coiled/dask-mongo",
+  "pypi_url": "https://pypi.org/project/dask-mongo/",
+  "maintainers": [
+    {
+      "name": "Naty Clementi",
+      "social_media": [{
+        "github": "ncclementi"
+      }]
+    }
+  ]
+}
