@@ -1,0 +1,16 @@
+{
+  "title": "Naty Clementi at Ibis Project Blog",
+  "type": "blog",
+  "url": "https://ibis-project.org/posts/",
+  "photo_url": "https://github.com/ncclementi.png",
+  "rss_feed": "https://ibis-project.org/posts.xml",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Naty Clementi",
+      "social_media": [{
+        "github": "ncclementi"
+      }]
+    }
+  ]
+}
