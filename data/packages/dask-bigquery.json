@@ -4,7 +4,9 @@
   "description": "Dask integration for Google BigQuery via the BigQuery Storage API — supports reading and writing data with Dask.",
   "logo_url": "https://github.com/ncclementi.png",
   "repo_url": "https://github.com/coiled/dask-bigquery",
+  "bug_reports_url": "https://github.com/coiled/dask-bigquery/issues",
   "pypi_url": "https://pypi.org/project/dask-bigquery/",
+  "last_updated": "2026-05-16",
   "maintainers": [
     {
       "name": "Naty Clementi",
