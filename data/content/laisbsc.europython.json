@@ -1,0 +1,17 @@
+{
+  "title": "Laís Carvalho at EuroPython Blog",
+  "type": "blog",
+  "url": "https://blog.europython.eu/author/lais/",
+  "photo_url": "https://github.com/laisbsc.png",
+  "rss_feed": "https://blog.europython.eu/rss/",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Laís Carvalho",
+      "social_media": [{
+        "github": "laisbsc",
+        "twitter": "lais_bsc"
+      }]
+    }
+  ]
+}
