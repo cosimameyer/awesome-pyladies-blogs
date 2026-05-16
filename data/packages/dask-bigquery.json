@@ -11,6 +11,24 @@
       "social_media": [{
         "github": "ncclementi"
       }]
+    },
+    {
+      "name": "Jim Bourbeau",
+      "social_media": [{
+        "github": "jrbourbeau"
+      }]
+    },
+    {
+      "name": "bnaul",
+      "social_media": [{
+        "github": "bnaul"
+      }]
+    },
+    {
+      "name": "icherniavska",
+      "social_media": [{
+        "github": "icherniavska"
+      }]
     }
   ]
 }
