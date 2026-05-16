@@ -67,7 +67,13 @@ To contribute, please see [contributing](CONTRIBUTING.md) ✨
 - [PyLadies SoFlo YouTube channel](https://www.youtube.com/channel/UCUPLdokEtQlQmbaW9UkJEVQ) by PyLadies SoFlo
 ### Software
 #### Python Libraries
+- [Flask-Talisman](https://github.com/wntrblm/flask-talisman) by Thea Flowers, jonakemon, Jannis Leidel
+- [CiteLang](https://github.com/vsoch/citelang) by Vanessa Sochat
+- [Singularity HPC](https://github.com/singularityhub/singularity-hpc) by Vanessa Sochat
+- [Axe Playwright Python](https://github.com/pamelafox/axe-playwright-python) by Pamela Fox
+- [Pull Request Action](https://github.com/vsoch/pull-request-action) by Vanessa Sochat
 - [Nox](https://github.com/wntrblm/nox) by Thea Flowers, Danny Hermes, Chris Wilcox, Henry Schreiner, Luke Sneeringer, Diego Ramirez
+- [Roctet](https://github.com/emilyriederer/roctet) by Emily Riederer
 - [Kedro](https://github.com/kedro-org/kedro) by Merel Theisen, Yetunde Dada
 - [axe-playwright-python](https://github.com/pamelafox/axe-playwright-python) by Pamela Fox
 - [singularity-hpc](https://github.com/singularityhub/singularity-hpc) by Vanessa Sochat
@@ -85,7 +91,7 @@ To contribute, please see [contributing](CONTRIBUTING.md) ✨
 
 ---
 
-_Last updated on 2026-05-10 19:31 UTC_
+_Last updated on 2026-05-15 09:00 UTC_
 
 ## License  
 
