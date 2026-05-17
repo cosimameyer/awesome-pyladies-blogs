@@ -1,0 +1,16 @@
+{
+  "title": "Pamela Fox",
+  "type": "youtube",
+  "url": "https://www.youtube.com/@PamelaFox",
+  "photo_url": "https://github.com/pamelafox.png",
+  "rss_feed": "https://www.youtube.com/feeds/videos.xml?channel_id=UCLiRR1PKZmFyupKBsSqpr9g",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Pamela Fox",
+      "social_media": [{
+        "github": "pamelafox"
+      }]
+    }
+  ]
+}
