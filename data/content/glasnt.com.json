@@ -1,0 +1,17 @@
+{
+  "title": "glasnt has thoughts",
+  "type": "blog",
+  "url": "https://glasnt.com/blog",
+  "photo_url": "https://github.com/glasnt.png",
+  "rss_feed": "https://glasnt.com/blog/feed.xml",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Katie McLaughlin",
+      "social_media": [{
+        "github": "glasnt",
+        "mastodon": "@glasnt@cloudisland.nz"
+      }]
+    }
+  ]
+}
