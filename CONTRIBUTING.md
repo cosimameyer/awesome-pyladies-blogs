@@ -1,6 +1,18 @@
+# Welcome!
+
+Thank you for your interest in contributing to **awesome-pyladies-creations**! This repository collects blogs, YouTube channels, podcasts, and Python packages created by PyLadies members from around the world. The goal is to make this work more visible and to celebrate the community's contributions.
+
+There are two main ways to contribute:
+- **Content** (blogs, YouTube channels, podcasts) → add a file to [`data/content/`](data/content/)
+- **Python packages** → add a file to [`data/packages/`](data/packages/)
+
+Not sure where to start? [Open an issue](https://github.com/cosimameyer/awesome-pyladies-creations/issues/new/choose) and I'll help you out!
+
+---
+
 # About 
 
-This repository relies heavily on the [Awesome R-Ladies blogs repository](https://github.com/rladies/awesome-rladies-blogs), to whom all credit goes. I can only repeat their words and their excellent description of how to submit a new entry below:
+This repository relies heavily on the [Awesome R-Ladies+ blogs repository](https://github.com/rladies/awesome-rladies-blogs), to whom all credit goes. I can only repeat their words and their excellent description of how to submit a new entry below:
 
 It has a similar goal and collects PyLadies blogs. This includes those who identify as a minority gender (including but not limited to cis/trans women, trans men, non-binary, genderqueer, & agender). It would be great to have contributions to this list! If you identify with PyLadies and have a blog, please add yourself.
 
@@ -28,7 +40,12 @@ Depending on how you are most comfortable, there are several ways to add new ent
 
 ## Option 1: Not Too Familiar with JSON/GitHub?
 
-If you're not familiar with JSON, you can [open an issue](https://github.com/cosimameyer/awesome-pyladies-creations/issues/new/choose) with your blog info and I'll create the JSON for you!
+If you're not familiar with JSON, open a pre-filled issue and I'll create the JSON for you!
+
+- [Add a blog](https://github.com/cosimameyer/awesome-pyladies-creations/issues/new?title=New%20entry%3A%20%5Bblog%5D%20%3CBlog%20Name%3E&body=%2A%2ABlog%20name%2A%2A%3A%20%0A%2A%2AURL%2A%2A%3A%20%0A%2A%2ARSS%20feed%2A%2A%20%28optional%20%E2%80%94%20a%20Python-specific%20feed%20is%20preferred%20if%20available%29%3A%20%0A%2A%2AAuthor%20name%2A%2A%3A%20%0A%2A%2ALanguage%2A%2A%20%28ISO%20639-1%2C%20e.g.%20%60en%60%29%3A%20%0A%2A%2ASocial%20media%2A%2A%20%28GitHub%2C%20Twitter/X%2C%20Mastodon%2C%20LinkedIn%2C%20etc.%29%3A%20%0A)
+- [Add a YouTube channel](https://github.com/cosimameyer/awesome-pyladies-creations/issues/new?title=New%20entry%3A%20%5Byoutube%5D%20%3CChannel%20Name%3E&body=%2A%2AChannel%20name%2A%2A%3A%20%0A%2A%2AURL%2A%2A%3A%20%0A%2A%2ARSS%20feed%2A%2A%20%28channel%20or%20playlist%20feed%20URL%29%3A%20%0A%2A%2AAuthor/organizer%20name%2A%2A%3A%20%0A%2A%2ALanguage%2A%2A%20%28ISO%20639-1%2C%20e.g.%20%60en%60%29%3A%20%0A%2A%2ASocial%20media%2A%2A%20%28GitHub%2C%20Twitter/X%2C%20Mastodon%2C%20LinkedIn%2C%20etc.%29%3A%20%0A)
+- [Add a podcast](https://github.com/cosimameyer/awesome-pyladies-creations/issues/new?title=New%20entry%3A%20%5Bpodcast%5D%20%3CPodcast%20Name%3E&body=%2A%2APodcast%20name%2A%2A%3A%20%0A%2A%2AURL%2A%2A%3A%20%0A%2A%2ARSS%20feed%2A%2A%3A%20%0A%2A%2AHost/author%20name%2A%2A%3A%20%0A%2A%2ALanguage%2A%2A%20%28ISO%20639-1%2C%20e.g.%20%60en%60%29%3A%20%0A%2A%2ASocial%20media%2A%2A%20%28GitHub%2C%20Twitter/X%2C%20Mastodon%2C%20LinkedIn%2C%20etc.%29%3A%20%0A)
+- [Add a Python package](https://github.com/cosimameyer/awesome-pyladies-creations/issues/new?title=New%20entry%3A%20%5Bpackage%5D%20%3CPackage%20Name%3E&body=%2A%2APackage%20name%2A%2A%3A%20%0A%2A%2APyPI%20URL%2A%2A%3A%20%0A%2A%2ARepository%20URL%2A%2A%3A%20%0A%2A%2AMaintainer%20name%28s%29%2A%2A%3A%20%0A%2A%2ASocial%20media%2A%2A%20%28GitHub%2C%20etc.%29%3A%20%0A)
 
 ## Option 2: Create a New File
 
@@ -89,7 +106,7 @@ Depending on how your website is set up, the implementation may differ. If you n
 </details>
 
 <details><summary>Distill</summary>
-There is currently a [workaround](https://github.com/rladies/awesome-rladies-creations/pull/54#issuecomment-1501263818) for adding RSS feeds in distill that works as follows:
+There is currently a [workaround](https://github.com/rladies/awesome-rladies-creations/pull/54#issuecomment-1501263818) for adding RSS feeds in distill (from the R-Ladies+ repo) that works as follows:
 
 - In distill, there is a categories folder generated when a post is rendered which gets deleted when the blog is rendered
 - Store the folder and add it later because we need a categories folder, containing each specified category with an `index.xml` for each category

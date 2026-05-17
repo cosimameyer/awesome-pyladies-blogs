@@ -27,6 +27,8 @@ for filename in files:
     file_errors = list(validator.iter_errors(data))
     for err in file_errors:
         errors.append(f"{filename}: {err.message} (path: {'/'.join(str(p) for p in err.absolute_path)})")
+    if data.get("type") == "podcast" and not data.get("rss_feed"):
+        errors.append(f"{filename}: 'rss_feed' is required for podcast entries")
 
 if errors:
     print("Validation failed:")
