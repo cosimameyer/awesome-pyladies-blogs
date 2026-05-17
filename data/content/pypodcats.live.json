@@ -1,0 +1,17 @@
+{
+  "title": "PyPodcats",
+  "type": "podcast",
+  "url": "https://pypodcats.live",
+  "photo_url": "https://github.com/pypodcats.png",
+  "rss_feed": "https://pypodcats.live/episodes/index.xml",
+  "language": "en",
+  "authors": [
+    {
+      "name": "PyPodcats",
+      "social_media": [{
+        "github": "pypodcats",
+        "twitter": "pypodcats"
+      }]
+    }
+  ]
+}
