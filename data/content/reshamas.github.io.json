@@ -1,0 +1,16 @@
+{
+  "title": "Reshama Shaikh",
+  "type": "blog",
+  "url": "https://reshamas.github.io",
+  "photo_url": "https://github.com/reshamas.png",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Reshama Shaikh",
+      "social_media": [{
+        "github": "reshamas",
+        "twitter": "reshamas"
+      }]
+    }
+  ]
+}
