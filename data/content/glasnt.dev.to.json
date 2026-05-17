@@ -1,0 +1,16 @@
+{
+  "title": "Katie McLaughlin",
+  "type": "blog",
+  "url": "https://dev.to/glasnt",
+  "photo_url": "https://github.com/glasnt.png",
+  "rss_feed": "https://dev.to/feed/glasnt",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Katie McLaughlin",
+      "social_media": [{
+        "github": "glasnt"
+      }]
+    }
+  ]
+}
