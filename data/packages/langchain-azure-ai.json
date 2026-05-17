@@ -9,9 +9,21 @@
   "last_updated": "2026-04-23",
   "maintainers": [
     {
+      "name": "langchain",
+      "social_media": [{
+        "github": "langchain-ai"
+      }]
+    },
+    {
       "name": "Marlene Mhangami",
       "social_media": [{
         "github": "marlenezw"
+      }]
+    },
+    {
+      "name": "santiagxf",
+      "social_media": [{
+        "github": "santiagxf"
       }]
     }
   ]
