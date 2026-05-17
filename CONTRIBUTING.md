@@ -1,3 +1,15 @@
+# Welcome!
+
+Thank you for your interest in contributing to **awesome-pyladies-creations**! This repository collects blogs, YouTube channels, podcasts, and Python packages created by PyLadies members from around the world. The goal is to make this work more visible and to celebrate the community's contributions.
+
+There are two main ways to contribute:
+- **Content** (blogs, YouTube channels, podcasts) → add a file to [`data/content/`](data/content/)
+- **Python packages** → add a file to [`data/packages/`](data/packages/)
+
+Not sure where to start? [Open an issue](https://github.com/cosimameyer/awesome-pyladies-creations/issues/new/choose) and I'll help you out!
+
+---
+
 # About 
 
 This repository relies heavily on the [Awesome R-Ladies blogs repository](https://github.com/rladies/awesome-rladies-blogs), to whom all credit goes. I can only repeat their words and their excellent description of how to submit a new entry below:
