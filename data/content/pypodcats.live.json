@@ -12,6 +12,30 @@
         "github": "pypodcats",
         "twitter": "pypodcats"
       }]
+    },
+    {
+      "name": "Cheuk Ting Ho",
+      "social_media": [{
+        "github": "Cheukting"
+      }]
+    },
+    {
+      "name": "Mariatta Wijaya",
+      "social_media": [{
+        "github": "Mariatta"
+      }]
+    },
+    {
+      "name": "Tereza Iofciu",
+      "social_media": [{
+        "github": "terezaif"
+      }]
+    },
+    {
+      "name": "Georgi Ker",
+      "social_media": [{
+        "github": "georgically"
+      }]
     }
   ]
 }
