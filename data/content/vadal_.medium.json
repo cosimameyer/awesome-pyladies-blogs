@@ -1,0 +1,17 @@
+{
+  "title": "Vasiliki Adalakiari",
+  "type": "blog",
+  "url": "https://medium.com/@vadal_",
+  "photo_url": "https://github.com/vadal.png",
+  "rss_feed": "https://medium.com/feed/@vadal_",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Vasiliki Adalakiari",
+      "social_media": [{
+        "github": "vadal",
+        "linkedin": "vadalakiari"
+      }]
+    }
+  ]
+}
