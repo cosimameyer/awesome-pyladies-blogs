@@ -11,12 +11,16 @@ permissions:
 
 jobs:
   check-readme:
+    # Skip auto-generated README update PRs — they are the update, not missing it
+    if: "!startsWith(github.head_ref, 'update/readme-')"
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          # Use SHA (immutable) instead of ref (branch name) so checkout
+          # still works if the branch is deleted before this job runs
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - uses: actions/setup-python@v5
         with:
