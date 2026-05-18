@@ -625,12 +625,6 @@ def section_about():
       </div>
 
       <div class="about-body">
-        <h3>What is this?</h3>
-        <p>
-          This is a personal, independent project — not an official PyLadies initiative.
-          It is not affiliated with or endorsed by the PyLadies organisation.
-        </p>
-
         <h3>Where does this content come from?</h3>
         <p>
           Everything featured here is sourced from the open-source repository
