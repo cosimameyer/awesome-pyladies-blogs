@@ -1,6 +1,6 @@
 {
   "name": "singularity-compose",
-  "title": "Singularity Compose",
+  "title": "singularity-compose",
   "description": "A simple orchestration library for Singularity containers, akin to Docker Compose.",
   "logo_url": null,
   "repo_url": "https://github.com/singularityhub/singularity-compose",

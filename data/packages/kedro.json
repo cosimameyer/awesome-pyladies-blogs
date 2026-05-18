@@ -1,6 +1,6 @@
 {
-    "name": "Kedro",
-    "title": "Kedro",
+    "name": "kedro",
+    "title": "kedro",
     "description": "An open-source Python framework for creating reproducible, maintainable and modular data science code.",
     "logo_url": "https://raw.githubusercontent.com/kedro-org/kedro/main/docs/source/_static/kedro_logo.png",
     "repo_url": "https://github.com/kedro-org/kedro",

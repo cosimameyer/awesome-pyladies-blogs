@@ -1,6 +1,6 @@
 {
-  "name": "Nox",
-  "title": "Nox",
+  "name": "nox",
+  "title": "nox",
   "description": "Flexible test automation for Python.",
   "logo_url": "https://raw.githubusercontent.com/wntrblm/nox/refs/heads/main/docs/_static/alice.png",
   "repo_url": "https://github.com/wntrblm/nox",
