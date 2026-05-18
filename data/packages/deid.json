@@ -1,0 +1,18 @@
+{
+  "name": "deid",
+  "title": "deid",
+  "description": "Best-effort de-identification of DICOM medical images using Python and pydicom.",
+  "logo_url": "https://github.com/vsoch.png",
+  "repo_url": "https://github.com/pydicom/deid",
+  "bug_reports_url": "https://github.com/pydicom/deid/issues",
+  "pypi_url": "https://pypi.org/project/deid/",
+  "last_updated": "2026-01-12",
+  "maintainers": [
+    {
+      "name": "Vanessa Sochat",
+      "social_media": [{
+        "github": "vsoch"
+      }]
+    }
+  ]
+}

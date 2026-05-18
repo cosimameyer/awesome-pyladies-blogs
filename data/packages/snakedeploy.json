@@ -1,0 +1,24 @@
+{
+  "name": "snakedeploy",
+  "title": "snakedeploy",
+  "description": "Deployment and maintenance toolbox for Snakemake workflows.",
+  "logo_url": "https://github.com/vsoch.png",
+  "repo_url": "https://github.com/snakemake/snakedeploy",
+  "bug_reports_url": "https://github.com/snakemake/snakedeploy/issues",
+  "pypi_url": "https://pypi.org/project/snakedeploy/",
+  "last_updated": "2026-02-13",
+  "maintainers": [
+    {
+      "name": "Vanessa Sochat",
+      "social_media": [{
+        "github": "vsoch"
+      }]
+    },
+    {
+      "name": "johanneskoester",
+      "social_media": [{
+        "github": "johanneskoester"
+      }]
+    }
+  ]
+}

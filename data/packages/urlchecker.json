@@ -1,0 +1,24 @@
+{
+  "name": "urlchecker",
+  "title": "urlchecker",
+  "description": "A tool to collect and validate URLs across static files — useful for checking links in code and documentation.",
+  "logo_url": "https://github.com/vsoch.png",
+  "repo_url": "https://github.com/urlstechie/urlchecker-python",
+  "bug_reports_url": "https://github.com/urlstechie/urlchecker-python/issues",
+  "pypi_url": "https://pypi.org/project/urlchecker/",
+  "last_updated": "2024-02-03",
+  "maintainers": [
+    {
+      "name": "Vanessa Sochat",
+      "social_media": [{
+        "github": "vsoch"
+      }]
+    },
+    {
+      "name": "SuperKogito",
+      "social_media": [{
+        "github": "SuperKogito"
+      }]
+    }
+  ]
+}
