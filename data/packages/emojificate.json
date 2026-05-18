@@ -1,0 +1,18 @@
+{
+  "name": "emojificate",
+  "title": "emojificate",
+  "description": "Convert emoji in HTML to accessible fallback images with alt text, title text, and aria labels.",
+  "logo_url": "https://github.com/glasnt.png",
+  "repo_url": "https://github.com/glasnt/emojificate",
+  "bug_reports_url": "https://github.com/glasnt/emojificate/issues",
+  "pypi_url": "https://pypi.org/project/emojificate/",
+  "last_updated": "2023-01-12",
+  "maintainers": [
+    {
+      "name": "Katie McLaughlin",
+      "social_media": [{
+        "github": "glasnt"
+      }]
+    }
+  ]
+}
