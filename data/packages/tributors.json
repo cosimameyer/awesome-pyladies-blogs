@@ -16,6 +16,7 @@
     },
     {
       "name": "yarikoptic",
+      "pyladies": false,
       "social_media": [{
         "github": "yarikoptic"
       }]

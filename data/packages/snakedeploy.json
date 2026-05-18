@@ -16,6 +16,7 @@
     },
     {
       "name": "johanneskoester",
+      "pyladies": false,
       "social_media": [{
         "github": "johanneskoester"
       }]

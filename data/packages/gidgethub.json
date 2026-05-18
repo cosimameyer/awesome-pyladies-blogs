@@ -20,7 +20,8 @@
     }]
     },
     {
-        "name": "Brett Cannon" 
+        "name": "Brett Cannon",
+        "pyladies": false
     }
 ]
 }
