@@ -1,0 +1,15 @@
+{
+  "title": "Laís Carvalho",
+  "type": "blog",
+  "url": "https://dev.to/laisbsc",
+  "rss_feed": "https://dev.to/feed/laisbsc",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Laís Carvalho",
+      "social_media": [{
+        "github": "laisbsc"
+      }]
+    }
+  ]
+}
