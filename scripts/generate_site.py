@@ -374,8 +374,13 @@ def hero_wordmark_html(color="#EE264D"):
     with open(_WORDMARK_PATH, encoding="utf-8") as f:
         svg = f.read()
 
-    # Replace every explicit fill color with the brand red
-    svg = re.sub(r'fill:#[0-9a-fA-F]{3,6}', f'fill:{color}', svg)
+    # Replace only non-black fills with the brand red (preserves black outline/shadow)
+    def recolor(m):
+        h = m.group(1).lstrip('#')
+        h = (h[0]*2 + h[1]*2 + h[2]*2) if len(h) == 3 else h  # expand shorthand
+        r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+        return m.group(0) if r < 40 and g < 40 and b < 40 else f'fill:{color}'
+    svg = re.sub(r'fill:(#[0-9a-fA-F]{3,6})', recolor, svg)
 
     # Add viewBox from the existing width/height so CSS scaling preserves aspect ratio
     w_m = re.search(r'\bwidth="([^"]+)"', svg)
@@ -428,6 +433,7 @@ def nav_html(css_path="assets/style.css", home="index.html", active=""):
         {nav_link("people.html", "People", "people")}
         {nav_link("content.html", "Content", "content")}
         {nav_link("packages.html", "Packages", "packages")}
+        {nav_link("about.html", "About", "about")}
       </ul>
       <a class="nav-cta" href="https://github.com/cosimameyer/awesome-pyladies-creations" target="_blank" rel="noopener">
         {gh_svg} Contribute
@@ -606,6 +612,53 @@ def section_featured(label, title, desc, cards, grid_class, view_all_href, secti
   </section>"""
 
 
+def section_about():
+    return """
+  <section class="section">
+    <div class="container about-wrap">
+
+      <div class="section-header">
+        <div>
+          <p class="section-label">About</p>
+          <h2 class="section-title">About This Directory</h2>
+        </div>
+      </div>
+
+      <div class="about-body">
+        <h3>Where does this content come from?</h3>
+        <p>
+          Everything featured here is sourced from the open-source repository
+          <a href="https://github.com/cosimameyer/awesome-pyladies-creations"
+             target="_blank" rel="noopener">awesome-pyladies-creations</a> on GitHub —
+          a community-curated list of blogs, YouTube channels, podcasts, and Python packages
+          created by PyLadies members. The site is rebuilt automatically whenever new entries
+          are added to the repository.
+        </p>
+
+        <h3>Want to be added?</h3>
+        <p>
+          If you're a PyLadies member and would like your work featured, contributions are
+          very welcome! Check out the
+          <a href="https://github.com/cosimameyer/awesome-pyladies-creations/blob/main/CONTRIBUTING.md"
+             target="_blank" rel="noopener">contributing guide</a> — it only takes one JSON file.
+        </p>
+
+        <h3>Don't want to be featured?</h3>
+        <p>
+          If you'd prefer your content or profile not to appear on this site, please don't
+          hesitate to reach out. You can
+          <a href="https://github.com/cosimameyer/awesome-pyladies-creations/issues/new"
+             target="_blank" rel="noopener">open an issue on GitHub</a>
+          or contact me directly via
+          <a href="https://cosimameyer.com" target="_blank" rel="noopener">cosimameyer.com</a>
+          and I'll take care of it as soon as possible.
+        </p>
+      </div>
+
+    </div>
+  </section>"""
+
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
@@ -619,13 +672,13 @@ def main():
 
     all_data = package_data + software_data
 
-    n_people   = count_unique_people(content_data, all_data)
     n_blogs    = sum(1 for e in content_data if e.get("type") == "blog")
     n_youtube  = sum(1 for e in content_data if e.get("type") == "youtube")
     n_podcasts = sum(1 for e in content_data if e.get("type") == "podcast")
     n_packages = len(all_data)
 
     registry = build_person_registry(content_data, all_data)
+    n_people   = len(registry)  # count after pyladies:false filter is applied
     registry_sorted = sorted(registry.items(), key=lambda kv: kv[0])
 
     all_people_cards  = [render_person_card(n, p) for n, p in registry_sorted]
@@ -710,6 +763,13 @@ def main():
 
     with open(os.path.join(ROOT, "docs", "packages.html"), "w", encoding="utf-8") as f:
         f.write(packages_page)
+
+    # ── about.html ────────────────────────────────────────────────────────────
+    about_page = nav_html(home="index.html", active="about") + \
+        section_about() + footer_html(updated)
+
+    with open(os.path.join(ROOT, "docs", "about.html"), "w", encoding="utf-8") as f:
+        f.write(about_page)
 
     print(
         f"Generated index.html (shows {FEATURED_PEOPLE}/{len(all_people_cards)} people, "

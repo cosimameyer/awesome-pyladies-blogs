@@ -769,6 +769,13 @@ h1 {
 }
 
 /* ── CTA section ──────────────────────────────────────── */
+.about-body { max-width: 680px; }
+.about-body h3 { font-size: 18px; font-weight: 700; color: var(--slate-900); margin: 32px 0 8px; }
+.about-body h3:first-child { margin-top: 0; }
+.about-body p { font-size: 15px; line-height: 1.7; color: var(--slate-600); }
+.about-body a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
+.about-body a:hover { color: var(--red-dark); }
+
 .cta-section {
   background: var(--red);
   padding: 72px 24px;

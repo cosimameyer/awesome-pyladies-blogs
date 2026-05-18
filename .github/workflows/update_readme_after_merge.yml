@@ -45,7 +45,7 @@ jobs:
       - name: Check for changes
         id: git-diff
         run: |
-          git add README.md docs/index.html docs/people.html docs/content.html docs/packages.html
+          git add README.md docs/index.html docs/people.html docs/content.html docs/packages.html docs/about.html
           if git diff --cached --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
@@ -64,7 +64,7 @@ jobs:
           git checkout -b "$UPDATE_BRANCH"
 
           # Commit updated README and site
-          git add README.md docs/index.html docs/people.html docs/content.html docs/packages.html
+          git add README.md docs/index.html docs/people.html docs/content.html docs/packages.html docs/about.html
           git commit -m "chore: auto-update README and site"
 
           git remote set-url origin https://x-access-token:${GITHUB_PAT}@github.com/${{ github.repository }}.git
