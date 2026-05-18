@@ -342,11 +342,11 @@ def count_unique_people(content_data, package_data):
 
 def build_stats_html(n_people, n_blogs, n_youtube, n_podcasts, n_packages):
     items = [
-        (n_people,   "Creators"),
-        (n_blogs,    "Blogs"),
-        (n_youtube,  "YouTube Channels"),
-        (n_podcasts, "Podcasts"),
-        (n_packages, "Packages"),
+        (f"{n_people}+", "Creators"),
+        (n_blogs,         "Blogs"),
+        (n_youtube,       "YouTube Channels"),
+        (n_podcasts,      "Podcasts"),
+        (n_packages,      "Packages"),
     ]
     parts = []
     for num, label in items:
@@ -702,7 +702,6 @@ def main():
       {hero_wordmark_html()}
       <p class="hero-sub">A curated directory of content, tools, and packages created by PyLadies members — celebrating their voices and work in the Python ecosystem.</p>
       <div class="hero-stats">{stats}</div>
-      <p class="hero-growing">…and many more PyLadies out there yet to be featured.</p>
       <div class="hero-actions">
         <a href="people.html" class="btn-primary">Explore the Directory</a>
         <a href="https://github.com/cosimameyer/awesome-pyladies-creations/blob/main/CONTRIBUTING.md"
