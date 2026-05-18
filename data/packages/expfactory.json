@@ -1,6 +1,6 @@
 {
   "name": "expfactory",
-  "title": "Expfactory",
+  "title": "expfactory",
   "description": "Software to generate a reproducible container with a battery of experiments.",
   "logo_url": "https://raw.githubusercontent.com/expfactory/expfactory/refs/heads/master/docs/img/expfactoryticketyellow.png",
   "repo_url": "https://github.com/expfactory/expfactory",

@@ -1,6 +1,6 @@
 {
   "name": "pokemon",
-  "title": "Pokemon",
+  "title": "pokemon",
   "description": "ascii database of pokemon in Python!",
   "logo_url": "https://raw.githubusercontent.com/vsoch/pokemon/master/img/avatar.png",
   "repo_url": "https://github.com/vsoch/pokemon",
