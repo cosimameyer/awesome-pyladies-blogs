@@ -1,0 +1,18 @@
+{
+  "name": "spython",
+  "title": "spython",
+  "description": "A Python command-line tool for working with Singularity containers.",
+  "logo_url": "https://github.com/vsoch.png",
+  "repo_url": "https://github.com/singularityhub/singularity-cli",
+  "bug_reports_url": "https://github.com/singularityhub/singularity-cli/issues",
+  "pypi_url": "https://pypi.org/project/spython/",
+  "last_updated": "2024-09-15",
+  "maintainers": [
+    {
+      "name": "Vanessa Sochat",
+      "social_media": [{
+        "github": "vsoch"
+      }]
+    }
+  ]
+}
