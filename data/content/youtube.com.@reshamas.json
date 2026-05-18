@@ -1,0 +1,16 @@
+{
+  "title": "Reshama Shaikh",
+  "type": "youtube",
+  "url": "https://www.youtube.com/@reshamas",
+  "photo_url": "https://github.com/reshamas.png",
+  "rss_feed": "https://www.youtube.com/feeds/videos.xml?channel_id=UCg4KQCow9KAqrAmKb0SxXUA",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Reshama Shaikh",
+      "social_media": [{
+        "github": "reshamas"
+      }]
+    }
+  ]
+}
