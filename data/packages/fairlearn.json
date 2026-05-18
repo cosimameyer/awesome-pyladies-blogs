@@ -1,9 +1,12 @@
 {
   "name": "fairlearn",
+  "title": "fairlearn",
   "description": "A Python package to assess and improve fairness of machine learning models.",
   "logo_url": "https://raw.githubusercontent.com/fairlearn/fairlearn/refs/heads/main/docs/_static/images/fairlearn-favicon.ico",
   "repo_url": "https://github.com/fairlearn/fairlearn",
   "pypi_url": "https://pypi.org/project/fairlearn/",
+  "last_updated": "2025-10-19",
+  "bug_reports_url": "https://github.com/fairlearn/fairlearn/issues",
   "maintainers": [
     {
       "name": "Hilde Weerts",
