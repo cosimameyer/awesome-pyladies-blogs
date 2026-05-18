@@ -1,0 +1,17 @@
+{
+  "title": "A blog by Karolina Surma",
+  "type": "blog",
+  "url": "https://karolinasurma.eu",
+  "photo_url": "https://github.com/befeleme.png",
+  "rss_feed": "https://karolinasurma.eu/feeds/all.atom.xml",
+  "language": "en",
+  "authors": [
+    {
+      "name": "Karolina Surma",
+      "social_media": [{
+        "github": "befeleme",
+        "mastodon": "@karo@floss.social"
+      }]
+    }
+  ]
+}
