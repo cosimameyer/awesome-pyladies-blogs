@@ -635,10 +635,11 @@ def section_about():
         <p>
           Everything featured here is sourced from the open-source repository
           <a href="https://github.com/cosimameyer/awesome-pyladies-creations"
-             target="_blank" rel="noopener">awesome-pyladies-creations</a> on GitHub —
-          a personally maintained list of blogs, YouTube channels, podcasts, and Python packages
-          created by PyLadies members. The site rebuilds automatically whenever new entries
-          are added to the repository.
+             target="_blank" rel="noopener">awesome-pyladies-creations</a> on GitHub.
+          Each person is reached out to individually before being added — so while this is
+          a personally maintained project, the list is community-driven at heart.
+          The site rebuilds automatically whenever new entries are added, and more
+          PyLadies members are joining all the time.
         </p>
 
         <h3>Want to be added?</h3>
