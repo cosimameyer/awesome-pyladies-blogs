@@ -1,6 +1,6 @@
 {
     "name": "axe-playwright-python",
-    "title": "Axe Playwright Python",
+    "title": "axe-playwright-python",
     "description": "Automated web accessibility testing using axe-core engine and Playwright.",
     "logo_url": null,
     "repo_url": "https://github.com/pamelafox/axe-playwright-python",
