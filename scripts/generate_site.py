@@ -455,7 +455,6 @@ def footer_html(updated):
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>Built from <a href="https://github.com/cosimameyer/awesome-pyladies-creations" target="_blank" rel="noopener">awesome-pyladies-creations</a> · CC0 · updated {updated}</span>
-      <span class="footer-pyladies"><a href="https://pyladies.com" target="_blank" rel="noopener">PyLadies</a></span>
     </div>
   </footer>
 </body>
