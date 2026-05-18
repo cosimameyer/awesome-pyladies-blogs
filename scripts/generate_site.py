@@ -700,8 +700,9 @@ def main():
       <div class="hero-badge">Open Source · Community · Python</div>
       <h1>Awesome</h1>
       {hero_wordmark_html()}
-      <p class="hero-sub">A personal curation of content, tools, and packages created by PyLadies members — celebrating their voices and work in the Python ecosystem.</p>
+      <p class="hero-sub">A curated directory of content, tools, and packages created by PyLadies members — celebrating their voices and work in the Python ecosystem.</p>
       <div class="hero-stats">{stats}</div>
+      <p class="hero-growing">…and many more PyLadies out there yet to be featured.</p>
       <div class="hero-actions">
         <a href="people.html" class="btn-primary">Explore the Directory</a>
         <a href="https://github.com/cosimameyer/awesome-pyladies-creations/blob/main/CONTRIBUTING.md"

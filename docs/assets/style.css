@@ -189,6 +189,12 @@ h1 {
   max-width: 540px;
   margin: 48px auto 48px;
 }
+.hero-growing {
+  font-size: 14px;
+  color: rgba(255,255,255,.4);
+  margin: 16px auto 0;
+  font-style: italic;
+}
 
 .hero-stats {
   display: flex;
