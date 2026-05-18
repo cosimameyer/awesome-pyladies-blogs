@@ -7,7 +7,13 @@
   "language": "en",
   "authors": [
     {
-      "name": "PyPodcats"
+      "name": "PyPodcats",
+      "social_media": [{
+        "twitter": "pypodcats",
+        "mastodon": "fosstodon.org/@pypodcats",
+        "youtube": "@PyPodcats",
+        "website": "https://pypodcats.live"
+      }]
     },
     {
       "name": "Cheuk Ting Ho",
