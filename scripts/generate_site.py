@@ -455,7 +455,7 @@ def footer_html(updated):
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>Built from <a href="https://github.com/cosimameyer/awesome-pyladies-creations" target="_blank" rel="noopener">awesome-pyladies-creations</a> · CC0 · updated {updated}</span>
-      <span class="footer-pyladies">Part of the <a href="https://pyladies.com" target="_blank" rel="noopener">PyLadies</a> community</span>
+      <span class="footer-pyladies">A fan project celebrating <a href="https://pyladies.com" target="_blank" rel="noopener">PyLadies</a> — not an official PyLadies resource</span>
     </div>
   </footer>
 </body>
@@ -625,13 +625,19 @@ def section_about():
       </div>
 
       <div class="about-body">
+        <h3>What is this?</h3>
+        <p>
+          This is a personal, independent project — not an official PyLadies initiative.
+          It is not affiliated with or endorsed by the PyLadies organisation.
+        </p>
+
         <h3>Where does this content come from?</h3>
         <p>
           Everything featured here is sourced from the open-source repository
           <a href="https://github.com/cosimameyer/awesome-pyladies-creations"
              target="_blank" rel="noopener">awesome-pyladies-creations</a> on GitHub —
-          a community-curated list of blogs, YouTube channels, podcasts, and Python packages
-          created by PyLadies members. The site is rebuilt automatically whenever new entries
+          a personally maintained list of blogs, YouTube channels, podcasts, and Python packages
+          created by PyLadies members. The site rebuilds automatically whenever new entries
           are added to the repository.
         </p>
 
@@ -700,7 +706,7 @@ def main():
       <div class="hero-badge">Open Source · Community · Python</div>
       <h1>Awesome</h1>
       {hero_wordmark_html()}
-      <p class="hero-sub">A curated directory of content, tools, and packages created by PyLadies — celebrating the voices and work of our community members in the Python ecosystem.</p>
+      <p class="hero-sub">A personal curation of content, tools, and packages created by PyLadies members — celebrating their voices and work in the Python ecosystem.</p>
       <div class="hero-stats">{stats}</div>
       <div class="hero-actions">
         <a href="people.html" class="btn-primary">Explore the Directory</a>
