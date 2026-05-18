@@ -21,30 +21,35 @@
     },
     {
       "name": "Danny Hermes",
+      "pyladies": false,
       "social_media": [{
         "github": "bossylobster"
       }]
     },
     {
       "name": "Chris Wilcox",
+      "pyladies": false,
       "social_media": [{
         "github": "crwilcox"
       }]
     },
     {
       "name": "Henry Schreiner",
+      "pyladies": false,
       "social_media": [{
         "github": "henryiii"
       }]
     },
     {
       "name": "Luke Sneeringer",
+      "pyladies": false,
       "social_media": [{
         "github": "lukesneeringer"
       }]
     },
     {
       "name": "Diego Ramirez",
+      "pyladies": false,
       "social_media": [{
         "github": "stsewd"
       }]

@@ -18,6 +18,7 @@
     },
     {
       "name": "Adrin Jalali",
+      "pyladies": false,
       "social_media": [
         {
           "github": "adrinjalali"
@@ -26,6 +27,7 @@
     },
     {
       "name": "Miroslav Dudík",
+      "pyladies": false,
       "social_media": [
         {
           "github": "MiroDudik"
@@ -34,6 +36,7 @@
     },
     {
       "name": "Roman Lutz",
+      "pyladies": false,
       "social_media": [
         {
           "github": "romanlutz"
@@ -61,6 +64,7 @@
     },
     {
       "name": "Richard Edgar",
+      "pyladies": false,
       "social_media": [
         {
           "github": "riedgar-ms"
@@ -69,6 +73,7 @@
     },
     {
       "name": "Michael Madaio",
+      "pyladies": false,
       "social_media": [
         {
           "github": "mmadaio"
@@ -77,6 +82,7 @@
     },
     {
       "name": "Tahar Allouche",
+      "pyladies": false,
       "social_media": [
         {
           "github": "taharallouche"
