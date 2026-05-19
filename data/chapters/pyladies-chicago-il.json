@@ -1,0 +1,11 @@
+{
+  "name": "PyLadies Chicago",
+  "city": "Chicago",
+  "country": "USA",
+  "email": "chicago@pyladies.com",
+  "website": "http://chicago.pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/PyLadiesChicago",
+    "meetup": "https://www.meetup.com/Chicago-PyLadies/"
+  }
+}
