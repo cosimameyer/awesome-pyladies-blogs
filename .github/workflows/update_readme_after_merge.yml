@@ -34,15 +34,18 @@ jobs:
       - name: Run README generator
         run: python scripts/generate_readme.py
 
+      - name: Run site generator
+        run: python scripts/generate_site.py
+
       - name: Configure git
         run: |
           git config user.name "github-actions"
           git config user.email "action@github.com"
 
-      - name: Check for README changes
+      - name: Check for changes
         id: git-diff
         run: |
-          git add README.md
+          git add README.md docs/index.html docs/people.html docs/content.html docs/packages.html docs/about.html
           if git diff --cached --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
@@ -60,9 +63,9 @@ jobs:
           # Reset to main clean state
           git checkout -b "$UPDATE_BRANCH"
 
-          # Commit the updated README ONLY
-          git add README.md
-          git commit -m "chore: auto-update README"
+          # Commit updated README and site
+          git add README.md docs/index.html docs/people.html docs/content.html docs/packages.html docs/about.html
+          git commit -m "chore: auto-update README and site"
 
           git remote set-url origin https://x-access-token:${GITHUB_PAT}@github.com/${{ github.repository }}.git
           git push --force --set-upstream origin "$UPDATE_BRANCH"
@@ -83,10 +86,10 @@ jobs:
               -H "Accept: application/vnd.github+json" \
               https://api.github.com/repos/${{ github.repository }}/pulls \
               -d "{
-                \"title\": \"chore: auto-update README\",
+                \"title\": \"chore: auto-update README and site\",
                 \"head\": \"$UPDATE_BRANCH\",
                 \"base\": \"$BASE_BRANCH\",
-                \"body\": \"Automated README update after merge\"
+                \"body\": \"Automated README and GitHub Pages site update after merge\"
               }" | jq '.number')
             echo "Created PR #$PR_NUMBER"
           fi
@@ -99,6 +102,6 @@ jobs:
             "https://api.github.com/repos/${{ github.repository }}/pulls/${PR_NUMBER}/merge" \
             -d "{
               \"merge_method\": \"squash\",
-              \"commit_title\": \"chore: auto-update README\",
-              \"commit_message\": \"Automated README update\"
+              \"commit_title\": \"chore: auto-update README and site\",
+              \"commit_message\": \"Automated README and GitHub Pages site update\"
             }"
