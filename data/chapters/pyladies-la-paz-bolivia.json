@@ -1,0 +1,11 @@
+{
+  "name": "PyLadies La Paz",
+  "city": "La Paz",
+  "country": "Bolivia",
+  "email": "lp@pyladies.com",
+  "website": "https://www.meetup.com/La-Paz-PyLadies-Meetup",
+  "social_media": {
+    "twitter": "https://twitter.com/PyLadiesLaPaz",
+    "facebook": "https://facebook.com/PyLadiesLaPaz"
+  }
+}
