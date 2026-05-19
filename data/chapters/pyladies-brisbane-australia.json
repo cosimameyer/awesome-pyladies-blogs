@@ -1,0 +1,12 @@
+{
+  "name": "PyLadies Brisbane",
+  "city": "Brisbane",
+  "country": "Australia",
+  "email": "brisbane@pyladies.com",
+  "social_media": {
+    "github": "https://github.com/BrisbanePyLadies",
+    "twitter": "https://twitter.com/PyLadiesBNE",
+    "linkedin": "https://www.linkedin.com/company/pyladiesbrisbane/",
+    "meetup": "https://www.meetup.com/BrisbanePyLadies/"
+  }
+}
