@@ -11,7 +11,8 @@ This folder is for PyLadies members who want to appear on the website but don't 
 ```json
 {
   "name": "Jane Doe",
-  "photo_url": "https://link-to-your-photo.jpg",
+  "photo_url": "https://github.com/janedoe.png",
+  "chapter": "",
   "social_media": [
     {
       "website":   "https://janedoe.com",
@@ -29,10 +30,24 @@ This folder is for PyLadies members who want to appear on the website but don't 
 
 4. Open a pull request — that's it!
 
+## Chapter organizers
+
+If you're a PyLadies chapter organizer, add your chapter name to the `"chapter"` field:
+
+```json
+{
+  "name": "Jane Doe",
+  "chapter": "PyLadies Berlin",
+  ...
+}
+```
+
+This will add a **Chapter Organizer** tag to your card and display your chapter name below your name.  
+Leave `"chapter"` empty (or omit it) if you're not an organizer.
+
 ## Notes
 
-- `photo_url` should be a publicly accessible image (e.g., your GitHub avatar URL).  
+- `photo_url` should be a publicly accessible image.  
   GitHub avatar: `https://github.com/<username>.png`
 - Leave any social fields empty (`""`) that you don't want to share.
-- Your entry will show a "Member" tag on the People page.
 - If you have content (blog, package, etc.) in `data/content/` or `data/packages/`, you don't need an entry here — you're already in the directory.

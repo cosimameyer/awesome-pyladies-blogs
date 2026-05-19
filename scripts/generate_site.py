@@ -120,12 +120,12 @@ def avatar_fallback(name):
 TAG_CLASS = {
     "blog": "tag-blog", "youtube": "tag-youtube",
     "podcast": "tag-podcast", "package": "tag-package",
-    "member": "tag-member",
+    "member": "tag-member", "organizer": "tag-organizer",
 }
 TYPE_LABEL = {
     "blog": "Blog", "youtube": "YouTube",
     "podcast": "Podcast", "package": "Package",
-    "member": "Member",
+    "member": "Member", "organizer": "Chapter Organizer",
 }
 BADGE_CLASS = {
     "blog": "badge-blog", "youtube": "badge-youtube", "podcast": "badge-podcast",
@@ -148,6 +148,7 @@ class PersonProfile:
         self.social   = {}   # merged {platform: handle}, first value wins per platform
         self.url      = ""   # primary link (first content entry > first package)
         self.photo_url = ""  # first non-empty photo URL
+        self.chapter  = ""   # PyLadies chapter name if organizer
 
 
 def build_person_registry(content_data, all_package_data, people_data=None):
@@ -205,8 +206,12 @@ def build_person_registry(content_data, all_package_data, people_data=None):
         if name not in registry:
             registry[name] = PersonProfile()
         p = registry[name]
-        if "member" not in p.types:
-            p.types.append("member")
+        chapter = person.get("chapter", "")
+        ptype = "organizer" if chapter else "member"
+        if ptype not in p.types:
+            p.types.append(ptype)
+        if chapter and not p.chapter:
+            p.chapter = chapter
         if not p.photo_url:
             p.photo_url = person.get("photo_url", "")
         merge_social(p, person.get("social_media", []))
@@ -226,7 +231,8 @@ def render_person_card(name, profile):
         for t in profile.types
     )
     url = escape(profile.url) if profile.url and profile.url != "#" else ""
-    search_text = escape(name.lower())
+    chapter_html = f'<p class="person-chapter">{escape(profile.chapter)}</p>' if profile.chapter else ""
+    search_text = escape(f"{name} {profile.chapter}".lower())
     click_js = f"window.open('{url}','_blank','noopener')" if url else ""
     role_attr = ' role="link" tabindex="0"' if url else ""
     onclick_attr = f' onclick="{click_js}"' if click_js else ""
@@ -238,6 +244,7 @@ def render_person_card(name, profile):
                onerror="this.src='{fallback}'"/>
           <div class="person-info">
             <h3 class="person-name">{escape(name)}</h3>
+            {chapter_html}
             <div class="person-tags">{tags_html}</div>
           </div>
           <div class="person-social">{social_html}</div>
@@ -543,9 +550,10 @@ JS_PACKAGES = """
 
 # ── Section builders ────────────────────────────────────────────────────────────
 
-def section_people_full(people_cards, n_podcasts, n_members=0):
-    podcast_btn = "<button class='filter-btn' data-filter='podcast'>Podcasters</button>" if n_podcasts else ""
-    member_btn  = "<button class='filter-btn' data-filter='member'>Members</button>" if n_members else ""
+def section_people_full(people_cards, n_podcasts, n_members=0, n_organizers=0):
+    podcast_btn   = "<button class='filter-btn' data-filter='podcast'>Podcasters</button>" if n_podcasts else ""
+    member_btn    = "<button class='filter-btn' data-filter='member'>Members</button>" if n_members else ""
+    organizer_btn = "<button class='filter-btn' data-filter='organizer'>Chapter Organizers</button>" if n_organizers else ""
     return f"""
   <section class="section" id="people">
     <div class="container">
@@ -564,6 +572,7 @@ def section_people_full(people_cards, n_podcasts, n_members=0):
         {podcast_btn}
         <button class="filter-btn" data-filter="package">Package Maintainers</button>
         {member_btn}
+        {organizer_btn}
       </div>
       <div class="people-grid">{"".join(people_cards)}</div>
     </div>
@@ -762,11 +771,12 @@ def main():
     with open(os.path.join(ROOT, "docs", "index.html"), "w", encoding="utf-8") as f:
         f.write(index)
 
-    n_members = sum(1 for _, p in registry_sorted if "member" in p.types)
+    n_members    = sum(1 for _, p in registry_sorted if "member" in p.types)
+    n_organizers = sum(1 for _, p in registry_sorted if "organizer" in p.types)
 
     # ── people.html ───────────────────────────────────────────────────────────
     people_page = nav_html(home="index.html", active="people") + \
-        section_people_full(all_people_cards, n_podcasts, n_members) + \
+        section_people_full(all_people_cards, n_podcasts, n_members, n_organizers) + \
         footer_html(updated) + JS_PEOPLE
 
     with open(os.path.join(ROOT, "docs", "people.html"), "w", encoding="utf-8") as f:
