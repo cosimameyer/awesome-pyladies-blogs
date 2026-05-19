@@ -14,6 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT_DIR  = os.path.join(ROOT, "data", "content")
 PACKAGES_DIR = os.path.join(ROOT, "data", "packages")
 SOFTWARE_DIR = os.path.join(ROOT, "data", "software")
+CHAPTERS_DIR = os.path.join(ROOT, "data", "chapters")
 OUT_FILE     = os.path.join(ROOT, "docs", "index.html")
 
 # ── Inline SVG paths for social platforms ──────────────────────────────────────
@@ -28,9 +29,12 @@ SVG_PATHS = {
     "instagram": "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z",
     # Archive/package box — represents PyPI (a package index)
     "pypi": "M1.5 9.75A.75.75 0 0 1 2.25 9h19.5a.75.75 0 0 1 0 1.5H2.25a.75.75 0 0 1-.75-.75zM2.25 4.5A2.25 2.25 0 0 0 0 6.75v.75c0 .414.336.75.75.75h22.5A.75.75 0 0 0 24 7.5v-.75A2.25 2.25 0 0 0 21.75 4.5H2.25zm-.75 6.75v7.5A2.25 2.25 0 0 0 3.75 21h16.5A2.25 2.25 0 0 0 22.5 18.75v-7.5H1.5zm9 2.25h3a.75.75 0 0 1 0 1.5h-3a.75.75 0 0 1 0-1.5z",
+    "meetup": "M19.24 12.94c-.195-.047-.415-.023-.592.068l-.067.038c-.386.217-.856.327-1.396.327-1.004 0-1.75-.383-2.217-1.14-.12-.196-.22-.408-.298-.63l2.944-1.228a.844.844 0 0 0 .476-.468.834.834 0 0 0-.013-.648L16.9 7.198a.843.843 0 0 0-1.087-.42l-5.057 2.109a3.87 3.87 0 0 0-.38-.507C9.67 7.6 8.573 7.15 7.27 7.15c-1.206 0-2.27.43-3.08 1.244C3.393 9.21 2.96 10.32 2.96 11.63c0 1.31.434 2.42 1.23 3.234.807.814 1.87 1.244 3.08 1.244.733 0 1.416-.183 1.98-.527a3.99 3.99 0 0 0 1.12-1.03l1.025 2.382a.843.843 0 0 0 1.087.42l.648-.27c.43-.18.632-.673.452-1.1l-.836-1.94a4.33 4.33 0 0 0 .79.886c.69.573 1.572.879 2.55.879.805 0 1.534-.19 2.165-.566l.115-.068a.844.844 0 0 0 .297-1.14.844.844 0 0 0-.42-.316zM7.27 14.42c-.69 0-1.265-.23-1.71-.686-.44-.452-.663-1.05-.663-1.777 0-.728.223-1.327.663-1.78.445-.457 1.02-.688 1.71-.688.69 0 1.262.23 1.703.684.266.273.456.61.558.988L7.28 12.22a.845.845 0 0 0-.452 1.1.844.844 0 0 0 1.1.452l2.19-.913a3.19 3.19 0 0 1-.143.697c-.378.96-1.16 1.463-2.705 1.464z",
+    "facebook": "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z",
+    "map-pin": "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z",
 }
 
-PLATFORM_ORDER = ["website", "github", "mastodon", "bluesky", "linkedin", "youtube", "twitter", "instagram"]
+PLATFORM_ORDER = ["website", "github", "mastodon", "bluesky", "linkedin", "youtube", "twitter", "instagram", "meetup", "facebook"]
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
@@ -78,6 +82,10 @@ def build_social_url(platform, handle):
         return handle if handle.startswith("http") else f"https://bsky.app/profile/{handle.lstrip('@')}"
     if platform == "instagram":
         return handle if handle.startswith("http") else f"https://instagram.com/{handle.lstrip('@')}"
+    if platform == "meetup":
+        return handle if handle.startswith("http") else f"https://www.meetup.com/{handle}"
+    if platform == "facebook":
+        return handle if handle.startswith("http") else f"https://facebook.com/{handle}"
     return None
 
 
@@ -321,6 +329,47 @@ def render_package_card(pkg):
         </div>"""
 
 
+def render_chapter_card(chapter):
+    name     = escape(chapter.get("name", ""))
+    city     = escape(chapter.get("city", ""))
+    country  = escape(chapter.get("country", ""))
+    location = f"{city}, {country}" if city and country else city or country
+    social   = chapter.get("social_media", {})
+    website  = escape(chapter.get("website", "") or social.get("website", "") or "")
+    url      = website or "#"
+    search_text = escape(f"{chapter.get('name','')} {city} {country}".lower())
+
+    # Build social icons — chapters store full URLs directly
+    icon_html = []
+    for platform in ["website", "github", "linkedin", "twitter", "instagram", "meetup", "facebook", "youtube", "mastodon", "bluesky"]:
+        raw = social.get(platform) or (chapter.get("website") if platform == "website" else None)
+        if not raw:
+            continue
+        link_url = build_social_url(platform, raw)
+        if not link_url:
+            continue
+        svg = social_icon_svg(platform, 14)
+        if svg:
+            icon_html.append(
+                f'<a href="{escape(link_url)}" target="_blank" rel="noopener" '
+                f'title="{platform}" class="social-icon" onclick="event.stopPropagation()">{svg}</a>'
+            )
+
+    pin_svg = social_icon_svg("map-pin", 14)
+    onclick_attr = f' onclick="window.open(\'{url}\',\'_blank\',\'noopener\')"' if url != "#" else ""
+    role_attr    = ' role="link" tabindex="0"' if url != "#" else ""
+    social_joined = "".join(icon_html)
+    return f"""
+        <div class="chapter-card" data-search="{search_text}"{role_attr}{onclick_attr}>
+          <div class="chapter-card-header">
+            <span class="chapter-pin">{pin_svg}</span>
+            <span class="chapter-location">{escape(location)}</span>
+          </div>
+          <h3 class="chapter-name">{name}</h3>
+          <div class="chapter-social">{social_joined}</div>
+        </div>"""
+
+
 # ── Counts & stats ─────────────────────────────────────────────────────────────
 
 FEATURED_PEOPLE   = 10
@@ -340,9 +389,10 @@ def count_unique_people(content_data, package_data):
     return len(names)
 
 
-def build_stats_html(n_people, n_blogs, n_youtube, n_podcasts, n_packages):
+def build_stats_html(n_people, n_blogs, n_youtube, n_podcasts, n_packages, n_chapters=0):
     items = [
         (f"{n_people}+", "Creators"),
+        (n_chapters,      "Chapters"),
         (n_blogs,         "Blogs"),
         (n_youtube,       "YouTube Channels"),
         (n_podcasts,      "Podcasts"),
@@ -432,6 +482,7 @@ def nav_html(css_path="assets/style.css", home="index.html", active=""):
       <ul class="nav-links">
         {nav_link("people.html", "People", "people")}
         {nav_link("content.html", "Content", "content")}
+        {nav_link("chapters.html", "Chapters", "chapters")}
         {nav_link("packages.html", "Packages", "packages")}
         {nav_link("about.html", "About", "about")}
       </ul>
@@ -522,6 +573,16 @@ JS_PACKAGES = """
     });
   </script>"""
 
+JS_CHAPTERS = """
+  <script>
+    document.querySelector('.search-input')?.addEventListener('input', function() {
+      const q = this.value.toLowerCase();
+      document.querySelectorAll('.chapter-card').forEach(card => {
+        card.style.display = (!q || card.dataset.search.includes(q)) ? '' : 'none';
+      });
+    });
+  </script>"""
+
 
 # ── Section builders ────────────────────────────────────────────────────────────
 
@@ -587,6 +648,23 @@ def section_packages_full(package_cards):
       </div>
       {search_bar_html("Search packages…")}
       <div class="packages-grid">{"".join(package_cards)}</div>
+    </div>
+  </section>"""
+
+
+def section_chapters_full(chapter_cards):
+    return f"""
+  <section class="section section-alt" id="chapters">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="section-label">Global Community</p>
+          <h2 class="section-title">PyLadies Chapters</h2>
+        </div>
+        <p class="section-desc">PyLadies chapters around the world — find your local community.</p>
+      </div>
+      {search_bar_html("Search chapters by city or country…")}
+      <div class="chapters-grid">{"".join(chapter_cards)}</div>
     </div>
   </section>"""
 
@@ -661,14 +739,19 @@ def section_about():
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 
+FEATURED_CHAPTERS = 6
+
+
 def main():
     content_data  = load_json_files(CONTENT_DIR)
     package_data  = load_json_files(PACKAGES_DIR)
     software_data = load_json_files(SOFTWARE_DIR)
+    chapters_data = load_json_files(CHAPTERS_DIR)
 
     content_data.sort(key=lambda x: x.get("authors", [{}])[0].get("name", ""))
     package_data.sort(key=lambda x: x.get("name", ""))
     software_data.sort(key=lambda x: x.get("name", ""))
+    chapters_data.sort(key=lambda x: x.get("name", ""))
 
     all_data = package_data + software_data
 
@@ -676,6 +759,7 @@ def main():
     n_youtube  = sum(1 for e in content_data if e.get("type") == "youtube")
     n_podcasts = sum(1 for e in content_data if e.get("type") == "podcast")
     n_packages = len(all_data)
+    n_chapters = len(chapters_data)
 
     registry = build_person_registry(content_data, all_data)
     n_people   = len(registry)  # count after pyladies:false filter is applied
@@ -684,10 +768,11 @@ def main():
     all_people_cards  = [render_person_card(n, p) for n, p in registry_sorted]
     all_content_cards = [render_content_card(e) for e in content_data]
     all_package_cards = [render_package_card(p) for p in all_data]
+    all_chapter_cards = [render_chapter_card(c) for c in chapters_data]
 
     # Pass all cards — JS on the index page will randomly pick N to show on each load
 
-    stats = build_stats_html(n_people, n_blogs, n_youtube, n_podcasts, n_packages)
+    stats = build_stats_html(n_people, n_blogs, n_youtube, n_podcasts, n_packages, n_chapters)
     updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     gh_svg = social_icon_svg("github", 16)
 
@@ -717,15 +802,19 @@ def main():
   {section_featured("Reading &amp; Watching", "Content", "Blogs, YouTube channels, and podcasts produced by PyLadies members.",
       all_content_cards, "content-grid", "content.html", "featured-content", alt_bg=True)}
 
+  {section_featured("Global Community", "PyLadies Chapters", "PyLadies chapters around the world — find your local community.",
+      all_chapter_cards, "chapters-grid", "chapters.html", "featured-chapters", alt_bg=False)}
+
   {section_featured("Open Source", "Packages &amp; Tools", "Python packages and software built and maintained by PyLadies members.",
-      all_package_cards, "packages-grid", "packages.html", "featured-packages", alt_bg=False)}
+      all_package_cards, "packages-grid", "packages.html", "featured-packages", alt_bg=True)}
 """ + footer_html(updated) + f"""
   <script>
     window.addEventListener('DOMContentLoaded', function() {{
       [
-        ['#featured-people .person-card',   {FEATURED_PEOPLE}],
-        ['#featured-content .content-card', {FEATURED_CONTENT}],
-        ['#featured-packages .package-card',{FEATURED_PACKAGES}]
+        ['#featured-people .person-card',     {FEATURED_PEOPLE}],
+        ['#featured-content .content-card',   {FEATURED_CONTENT}],
+        ['#featured-chapters .chapter-card',  {FEATURED_CHAPTERS}],
+        ['#featured-packages .package-card',  {FEATURED_PACKAGES}]
       ].forEach(function(pair) {{
         var sel = pair[0], n = pair[1];
         var cards = Array.from(document.querySelectorAll(sel));
@@ -764,6 +853,14 @@ def main():
     with open(os.path.join(ROOT, "docs", "packages.html"), "w", encoding="utf-8") as f:
         f.write(packages_page)
 
+    # ── chapters.html ─────────────────────────────────────────────────────────
+    chapters_page = nav_html(home="index.html", active="chapters") + \
+        section_chapters_full(all_chapter_cards) + \
+        footer_html(updated) + JS_CHAPTERS
+
+    with open(os.path.join(ROOT, "docs", "chapters.html"), "w", encoding="utf-8") as f:
+        f.write(chapters_page)
+
     # ── about.html ────────────────────────────────────────────────────────────
     about_page = nav_html(home="index.html", active="about") + \
         section_about() + footer_html(updated)
@@ -774,8 +871,9 @@ def main():
     print(
         f"Generated index.html (shows {FEATURED_PEOPLE}/{len(all_people_cards)} people, "
         f"{FEATURED_CONTENT}/{len(all_content_cards)} content, "
+        f"{FEATURED_CHAPTERS}/{len(all_chapter_cards)} chapters, "
         f"{FEATURED_PACKAGES}/{len(all_package_cards)} packages randomly) + "
-        f"people.html · content.html · packages.html"
+        f"people.html · content.html · chapters.html · packages.html · about.html"
     )
 
 
