@@ -1,7 +1,7 @@
 {
   "name": "data-morph-ai",
   "title": "data-morph-ai",
-  "description": "Morph your data into different shapes using AI — generates animated transitions between datasets like those in the Datasaurus Dozen.",
+  "description": "Data Morph transforms an input dataset of 2D points into select shapes, while preserving the summary statistics to a given number of decimal points through simulated annealing. It is intended to be used as a teaching tool to illustrate the importance of data visualization.",
   "logo_url": "https://stefaniemolin.com/data-morph/stable/_static/logo.png",
   "repo_url": "https://github.com/stefmolin/data-morph",
   "bug_reports_url": "https://github.com/stefmolin/data-morph/issues",
