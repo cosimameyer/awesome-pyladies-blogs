@@ -1,0 +1,10 @@
+{
+  "name": "PyLadies Raleigh-Durham",
+  "city": "Raleigh-Durham",
+  "country": "USA",
+  "email": "rdu@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/pyladiesrdu",
+    "meetup": "https://www.meetup.com/pyladies-rdu/"
+  }
+}
