@@ -1,0 +1,12 @@
+{
+  "name": "PyLadies Duque de Caxias",
+  "city": "Duque de Caxias",
+  "country": "Brazil",
+  "email": "duquedecaxias@pyladies.com",
+  "website": "http://duquedecaxias.pyladies.com/",
+  "social_media": {
+    "github": "https://github.com/pyladies-dcaxias",
+    "twitter": "https://twitter.com/PyLadiesCaxias",
+    "facebook": "https://facebook.com/PyLadiesDuqueDeCaxias"
+  }
+}
