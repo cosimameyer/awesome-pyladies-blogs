@@ -1,0 +1,9 @@
+{
+  "name": "PyLadies Denver",
+  "city": "Denver",
+  "country": "USA",
+  "email": "denver@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/PyLadiesDEN"
+  }
+}
