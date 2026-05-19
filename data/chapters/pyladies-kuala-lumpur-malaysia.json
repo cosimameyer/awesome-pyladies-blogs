@@ -1,0 +1,11 @@
+{
+  "name": "PyLadies Kuala Lumpur",
+  "city": "Kuala Lumpur",
+  "country": "Malaysia",
+  "email": "kl@pyladies.com",
+  "website": "http://kl.pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/PyLadiesKL",
+    "meetup": "https://www.meetup.com/PyLadies-KL/"
+  }
+}

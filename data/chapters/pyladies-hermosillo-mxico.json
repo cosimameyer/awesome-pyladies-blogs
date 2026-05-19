@@ -1,0 +1,13 @@
+{
+  "name": "PyLadies Hermosillo",
+  "city": "Hermosillo",
+  "country": "Mexico",
+  "email": "hermosillo@pyladies.com",
+  "website": "https://hermosillo.pyladies.com",
+  "social_media": {
+    "github": "https://github.com/PyladiesHermosillo",
+    "twitter": "https://twitter.com/PyLadiesHMO",
+    "facebook": "https://facebook.com/pyladiesHMO",
+    "meetup": "https://www.meetup.com/PyLadiesHMO/"
+  }
+}

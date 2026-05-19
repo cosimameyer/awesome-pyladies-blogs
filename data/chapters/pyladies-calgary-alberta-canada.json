@@ -1,0 +1,10 @@
+{
+  "name": "PyLadies Calgary",
+  "city": "Calgary",
+  "country": "Canada",
+  "email": "calgary@pyladies.com",
+  "social_media": {
+    "github": "https://github.com/pyladiescalgary",
+    "twitter": "https://twitter.com/PyladiesCalgary"
+  }
+}

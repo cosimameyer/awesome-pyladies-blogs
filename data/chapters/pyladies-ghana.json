@@ -1,0 +1,11 @@
+{
+  "name": "PyLadies Ghana",
+  "city": "Various",
+  "country": "Ghana",
+  "email": "ghana@pyladies.com",
+  "website": "https://ghana.pyladies.com",
+  "social_media": {
+    "github": "https://github.com/PyladiesGhana",
+    "twitter": "https://twitter.com/PyladiesGhana"
+  }
+}

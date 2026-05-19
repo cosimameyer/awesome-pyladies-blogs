@@ -1,0 +1,9 @@
+{
+  "name": "PyLadies Maputo",
+  "city": "Maputo",
+  "country": "Mozambique",
+  "email": "maputo@pyladies.com",
+  "social_media": {
+    "meetup": "https://www.meetup.com/pyladies-mpt/"
+  }
+}

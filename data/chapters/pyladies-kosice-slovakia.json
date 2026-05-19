@@ -1,0 +1,9 @@
+{
+  "name": "PyLadies Kosice",
+  "city": "Kosice",
+  "country": "Slovakia",
+  "email": "kosice@pyladies.org",
+  "social_media": {
+    "facebook": "https://facebook.com/PyLadiesKosice"
+  }
+}

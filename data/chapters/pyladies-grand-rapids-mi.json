@@ -1,0 +1,12 @@
+{
+  "name": "PyLadies Grand Rapids",
+  "city": "Grand Rapids",
+  "country": "USA",
+  "email": "grandrapids@pyladies.com",
+  "website": "http://grandrapids.pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/PyladiesGR",
+    "facebook": "https://facebook.com/pyladiesgrandrapids",
+    "meetup": "https://www.meetup.com/PyLadiesGrandRapids/"
+  }
+}

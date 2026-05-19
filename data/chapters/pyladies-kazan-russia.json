@@ -1,0 +1,10 @@
+{
+  "name": "PyLadies Kazan",
+  "city": "Kazan",
+  "country": "Russia",
+  "email": "kzn@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/pyladieskzn",
+    "facebook": "https://facebook.com/pyladieskzn"
+  }
+}

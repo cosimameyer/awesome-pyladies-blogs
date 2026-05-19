@@ -1,0 +1,9 @@
+{
+  "name": "PyLadies Boulder",
+  "city": "Boulder",
+  "country": "USA",
+  "email": "boulder@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/PyLadiesCO"
+  }
+}

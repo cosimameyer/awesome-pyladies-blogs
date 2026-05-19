@@ -1,0 +1,10 @@
+{
+  "name": "PyLadies São Luís",
+  "city": "São Luís",
+  "country": "Brazil",
+  "email": "saoluis@pyladies.org",
+  "social_media": {
+    "twitter": "https://twitter.com/PyladiesSlz",
+    "facebook": "https://facebook.com/PyLadiesSLZ"
+  }
+}

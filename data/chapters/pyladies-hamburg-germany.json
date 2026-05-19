@@ -1,0 +1,11 @@
+{
+  "name": "PyLadies Hamburg",
+  "city": "Hamburg",
+  "country": "Germany",
+  "email": "hamburg@pyladies.com",
+  "website": "http://hamburg.pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/PyLadiesHH",
+    "meetup": "https://www.meetup.com/PyLadies-Hamburg/"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "PyLadies Atlanta",
+  "city": "Atlanta",
+  "country": "USA",
+  "email": "atl@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/pyladiesATL"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "PyLadies Mexico City",
+  "city": "Mexico City",
+  "country": "Mexico",
+  "email": "mx@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/MxPyladies",
+    "meetup": "https://www.meetup.com/Mexico-City-Pyladies-Meetup/"
+  }
+}

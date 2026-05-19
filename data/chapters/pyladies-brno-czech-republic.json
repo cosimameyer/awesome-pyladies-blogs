@@ -1,0 +1,10 @@
+{
+  "name": "PyLadies Brno",
+  "city": "Brno",
+  "country": "Czech Republic",
+  "email": "brno@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/pyladiesCZ",
+    "meetup": "https://www.meetup.com/pyladiescz/"
+  }
+}

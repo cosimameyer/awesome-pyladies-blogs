@@ -1,0 +1,9 @@
+{
+  "name": "PyLadies Helsinki",
+  "city": "Helsinki",
+  "country": "Finland",
+  "email": "helsinki@pyladies.com",
+  "social_media": {
+    "meetup": "https://www.meetup.com/Helsinki-Pyladies/"
+  }
+}
