@@ -1,7 +1,7 @@
 {
   "name": "exif-stripper",
   "title": "exif-stripper",
-  "description": "Pre-commit hook to strip EXIF metadata from image files before they are committed to a repository.",
+  "description": "An easy-to-use tool to ensure image EXIF metadata is removed. Mainly for use as a pre-commit hook.",
   "logo_url": "https://github.com/stefmolin.png",
   "repo_url": "https://github.com/stefmolin/exif-stripper",
   "bug_reports_url": "https://github.com/stefmolin/exif-stripper/issues",
