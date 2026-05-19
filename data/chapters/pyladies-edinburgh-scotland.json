@@ -1,0 +1,10 @@
+{
+  "name": "PyLadies Edinburgh",
+  "city": "Edinburgh",
+  "country": "Scotland",
+  "email": "edinburgh@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/PyLadiesEdin",
+    "meetup": "https://www.meetup.com/PyLadiesEdinburgh/"
+  }
+}
