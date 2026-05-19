@@ -1,0 +1,11 @@
+{
+  "name": "PyLadies Berlin",
+  "city": "Berlin",
+  "country": "Germany",
+  "email": "berlin@pyladies.com",
+  "website": "http://berlin.pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/PyLadiesBer",
+    "meetup": "https://www.meetup.com/PyLadies-Berlin/"
+  }
+}
