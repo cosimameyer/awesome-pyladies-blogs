@@ -1,0 +1,10 @@
+{
+  "name": "PyLadies Dallas",
+  "city": "Dallas",
+  "country": "USA",
+  "email": "mavs@pyladies.com",
+  "social_media": {
+    "facebook": "https://facebook.com/pyladiesmavs",
+    "meetup": "https://www.meetup.com/PyLadies-Arlington/"
+  }
+}
