@@ -1,0 +1,9 @@
+{
+  "name": "PyLadies Freiburg",
+  "city": "Freiburg",
+  "country": "Germany",
+  "email": "freiburg@pyladies.com",
+  "social_media": {
+    "github": "https://github.com/PyLadies-Freiburg"
+  }
+}
