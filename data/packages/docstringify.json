@@ -2,7 +2,6 @@
   "name": "docstringify",
   "title": "docstringify",
   "description": "Flag missing docstrings and, optionally, generate them from signatures and type annotations.",
-  "logo_url": "https://github.com/stefmolin.png",
   "repo_url": "https://github.com/stefmolin/docstringify",
   "bug_reports_url": "https://github.com/stefmolin/docstringify/issues",
   "pypi_url": "https://pypi.org/project/docstringify/",
