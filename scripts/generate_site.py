@@ -14,6 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT_DIR  = os.path.join(ROOT, "data", "content")
 PACKAGES_DIR = os.path.join(ROOT, "data", "packages")
 SOFTWARE_DIR = os.path.join(ROOT, "data", "software")
+PEOPLE_DIR   = os.path.join(ROOT, "data", "people")
 OUT_FILE     = os.path.join(ROOT, "docs", "index.html")
 
 # ── Inline SVG paths for social platforms ──────────────────────────────────────
@@ -119,10 +120,12 @@ def avatar_fallback(name):
 TAG_CLASS = {
     "blog": "tag-blog", "youtube": "tag-youtube",
     "podcast": "tag-podcast", "package": "tag-package",
+    "member": "tag-member",
 }
 TYPE_LABEL = {
     "blog": "Blog", "youtube": "YouTube",
     "podcast": "Podcast", "package": "Package",
+    "member": "Member",
 }
 BADGE_CLASS = {
     "blog": "badge-blog", "youtube": "badge-youtube", "podcast": "badge-podcast",
@@ -147,11 +150,11 @@ class PersonProfile:
         self.photo_url = ""  # first non-empty photo URL
 
 
-def build_person_registry(content_data, all_package_data):
+def build_person_registry(content_data, all_package_data, people_data=None):
     """
-    Walk every content entry and every package, collecting each person's
-    types, social handles, primary URL, and photo. Handles appearing in
-    multiple entries get their types unioned and their social dicts merged
+    Walk every content entry, package, and people-only entry, collecting each
+    person's types, social handles, primary URL, and photo. Handles appearing
+    in multiple entries get their types unioned and their social dicts merged
     (first non-empty value per platform wins, so explicit data is never
     overwritten by a sparser duplicate entry).
     """
@@ -195,6 +198,19 @@ def build_person_registry(content_data, all_package_data):
                          or pkg.get("website_url") or "#")
             merge_social(p, m.get("social_media", []))
 
+    for person in (people_data or []):
+        name = person.get("name", "")
+        if not name:
+            continue
+        if name not in registry:
+            registry[name] = PersonProfile()
+        p = registry[name]
+        if "member" not in p.types:
+            p.types.append("member")
+        if not p.photo_url:
+            p.photo_url = person.get("photo_url", "")
+        merge_social(p, person.get("social_media", []))
+
     return registry
 
 
@@ -209,13 +225,15 @@ def render_person_card(name, profile):
         f'<span class="person-tag {TAG_CLASS.get(t, "tag-blog")}">{TYPE_LABEL.get(t, t.title())}</span>'
         for t in profile.types
     )
-    url = escape(profile.url)
+    url = escape(profile.url) if profile.url and profile.url != "#" else ""
     search_text = escape(name.lower())
+    click_js = f"window.open('{url}','_blank','noopener')" if url else ""
+    role_attr = ' role="link" tabindex="0"' if url else ""
+    onclick_attr = f' onclick="{click_js}"' if click_js else ""
+    onkeydown_attr = f' onkeydown="if(event.key===\'Enter\'){click_js}"' if click_js else ""
     # div wrapper avoids invalid <a> inside <a> (social icon links inside card link)
     return f"""
-        <div class="person-card" data-type="{escape(data_types)}" data-search="{search_text}"
-             onclick="window.open('{url}','_blank','noopener')" role="link" tabindex="0"
-             onkeydown="if(event.key==='Enter')window.open('{url}','_blank','noopener')">
+        <div class="person-card" data-type="{escape(data_types)}" data-search="{search_text}"{role_attr}{onclick_attr}{onkeydown_attr}>
           <img class="person-avatar" src="{photo_src}" alt="{escape(name)}" loading="lazy"
                onerror="this.src='{fallback}'"/>
           <div class="person-info">
@@ -525,8 +543,9 @@ JS_PACKAGES = """
 
 # ── Section builders ────────────────────────────────────────────────────────────
 
-def section_people_full(people_cards, n_podcasts):
+def section_people_full(people_cards, n_podcasts, n_members=0):
     podcast_btn = "<button class='filter-btn' data-filter='podcast'>Podcasters</button>" if n_podcasts else ""
+    member_btn  = "<button class='filter-btn' data-filter='member'>Members</button>" if n_members else ""
     return f"""
   <section class="section" id="people">
     <div class="container">
@@ -544,6 +563,7 @@ def section_people_full(people_cards, n_podcasts):
         <button class="filter-btn" data-filter="youtube">YouTubers</button>
         {podcast_btn}
         <button class="filter-btn" data-filter="package">Package Maintainers</button>
+        {member_btn}
       </div>
       <div class="people-grid">{"".join(people_cards)}</div>
     </div>
@@ -665,10 +685,12 @@ def main():
     content_data  = load_json_files(CONTENT_DIR)
     package_data  = load_json_files(PACKAGES_DIR)
     software_data = load_json_files(SOFTWARE_DIR)
+    people_data   = load_json_files(PEOPLE_DIR)
 
     content_data.sort(key=lambda x: x.get("authors", [{}])[0].get("name", ""))
     package_data.sort(key=lambda x: x.get("name", ""))
     software_data.sort(key=lambda x: x.get("name", ""))
+    people_data.sort(key=lambda x: x.get("name", ""))
 
     all_data = package_data + software_data
 
@@ -677,7 +699,7 @@ def main():
     n_podcasts = sum(1 for e in content_data if e.get("type") == "podcast")
     n_packages = len(all_data)
 
-    registry = build_person_registry(content_data, all_data)
+    registry = build_person_registry(content_data, all_data, people_data)
     n_people   = len(registry)  # count after pyladies:false filter is applied
     registry_sorted = sorted(registry.items(), key=lambda kv: kv[0])
 
@@ -740,9 +762,11 @@ def main():
     with open(os.path.join(ROOT, "docs", "index.html"), "w", encoding="utf-8") as f:
         f.write(index)
 
+    n_members = sum(1 for _, p in registry_sorted if "member" in p.types)
+
     # ── people.html ───────────────────────────────────────────────────────────
     people_page = nav_html(home="index.html", active="people") + \
-        section_people_full(all_people_cards, n_podcasts) + \
+        section_people_full(all_people_cards, n_podcasts, n_members) + \
         footer_html(updated) + JS_PEOPLE
 
     with open(os.path.join(ROOT, "docs", "people.html"), "w", encoding="utf-8") as f:

@@ -489,6 +489,7 @@ h1 {
 .tag-youtube { background: #fef3c7; color: #b45309; }
 .tag-podcast { background: #ede9fe; color: #6d28d9; }
 .tag-package { background: #e0f2fe; color: #0369a1; }
+.tag-member  { background: #f0fdf4; color: #15803d; }
 
 .person-social {
   display: flex;

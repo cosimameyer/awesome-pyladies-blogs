@@ -1,0 +1,16 @@
+{
+  "name": "Your Name",
+  "photo_url": "https://link-to-your-photo.jpg",
+  "social_media": [
+    {
+      "website":   "",
+      "github":    "",
+      "linkedin":  "",
+      "mastodon":  "",
+      "bluesky":   "",
+      "instagram": "",
+      "youtube":   "",
+      "twitter":   ""
+    }
+  ]
+}
