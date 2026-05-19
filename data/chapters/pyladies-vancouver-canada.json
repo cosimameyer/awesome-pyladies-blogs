@@ -1,0 +1,11 @@
+{
+  "name": "PyLadies Vancouver",
+  "city": "Vancouver",
+  "country": "Canada",
+  "email": "vancouver@pyladies.com",
+  "website": "https://vancouver.pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/pyladiesvan",
+    "meetup": "https://www.meetup.com/PyLadies-Vancouver/"
+  }
+}
