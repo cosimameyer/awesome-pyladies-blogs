@@ -1,0 +1,10 @@
+{
+  "name": "PyLadies Ho Chi Minh City",
+  "city": "Ho Chi Minh City",
+  "country": "Vietnam",
+  "email": "hcmc@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/pyladies1",
+    "facebook": "https://facebook.com/PyladiesHCM"
+  }
+}
