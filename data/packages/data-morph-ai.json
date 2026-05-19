@@ -2,7 +2,7 @@
   "name": "data-morph-ai",
   "title": "data-morph-ai",
   "description": "Morph your data into different shapes using AI — generates animated transitions between datasets like those in the Datasaurus Dozen.",
-  "logo_url": "https://github.com/stefmolin.png",
+  "logo_url": "https://stefaniemolin.com/data-morph/stable/_static/logo.png",
   "repo_url": "https://github.com/stefmolin/data-morph",
   "bug_reports_url": "https://github.com/stefmolin/data-morph/issues",
   "pypi_url": "https://pypi.org/project/data-morph-ai/",
