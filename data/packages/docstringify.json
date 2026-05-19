@@ -1,7 +1,7 @@
 {
   "name": "docstringify",
   "title": "docstringify",
-  "description": "Automatically generates and inserts docstrings into Python source code using a configurable LLM.",
+  "description": "Flag missing docstrings and, optionally, generate them from signatures and type annotations.",
   "logo_url": "https://github.com/stefmolin.png",
   "repo_url": "https://github.com/stefmolin/docstringify",
   "bug_reports_url": "https://github.com/stefmolin/docstringify/issues",
