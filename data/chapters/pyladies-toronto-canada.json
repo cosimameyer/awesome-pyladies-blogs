@@ -1,0 +1,9 @@
+{
+  "name": "PyLadies Toronto",
+  "city": "Toronto",
+  "country": "Canada",
+  "email": "toronto@pyladies.com",
+  "social_media": {
+    "meetup": "https://www.meetup.com/Pyladies-Toronto/"
+  }
+}
