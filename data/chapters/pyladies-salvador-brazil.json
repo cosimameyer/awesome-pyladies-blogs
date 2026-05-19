@@ -1,0 +1,11 @@
+{
+  "name": "PyLadies Salvador",
+  "city": "Salvador",
+  "country": "Brazil",
+  "email": "salvador@pyladies.com",
+  "website": "https://pyladiessalvador.github.io/",
+  "social_media": {
+    "github": "https://github.com/PyLadiesSalvador",
+    "facebook": "https://facebook.com/PyLadiesSalvador"
+  }
+}
