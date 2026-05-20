@@ -385,7 +385,7 @@ def render_chapter_card(chapter, content_entry=None):
 
 # ── Region grouping ────────────────────────────────────────────────────────────
 
-REGION_ORDER = ["North America", "Latin America", "Europe", "Africa", "Asia", "Oceania", "Global"]
+REGION_ORDER = ["Africa", "Asia", "Europe", "Global", "Latin America", "North America", "Oceania"]
 
 COUNTRY_TO_REGION = {
     # North America
