@@ -3,6 +3,7 @@
   "city": "Freiburg",
   "country": "Germany",
   "email": "freiburg@pyladies.com",
+  "photo_url": "https://pyladies.com/assets/images/pyladies-sq-logo.png",
   "social_media": {
     "github": "https://github.com/PyLadies-Freiburg"
   }
