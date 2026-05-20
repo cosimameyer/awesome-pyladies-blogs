@@ -355,12 +355,15 @@ def render_chapter_card(chapter):
                 f'title="{platform}" class="social-icon" onclick="event.stopPropagation()">{svg}</a>'
             )
 
-    pin_svg = social_icon_svg("map-pin", 14)
-    onclick_attr = f' onclick="window.open(\'{url}\',\'_blank\',\'noopener\')"' if url != "#" else ""
-    role_attr    = ' role="link" tabindex="0"' if url != "#" else ""
+    photo_url     = escape(chapter.get("photo_url", ""))
+    pin_svg       = social_icon_svg("map-pin", 14)
+    onclick_attr  = f' onclick="window.open(\'{url}\',\'_blank\',\'noopener\')"' if url != "#" else ""
+    role_attr     = ' role="link" tabindex="0"' if url != "#" else ""
     social_joined = "".join(icon_html)
+    logo_html     = f'<div class="chapter-logo-wrap"><img class="chapter-logo" src="{photo_url}" alt="{name} logo" loading="lazy" onerror="this.style.display=\'none\'"></div>' if photo_url else ""
     return f"""
         <div class="chapter-card" data-search="{search_text}"{role_attr}{onclick_attr}>
+          {logo_html}
           <div class="chapter-card-header">
             <span class="chapter-pin">{pin_svg}</span>
             <span class="chapter-location">{escape(location)}</span>

@@ -6,7 +6,8 @@
     "city":    { "type": "string" },
     "country": { "type": "string" },
     "email":   { "type": "string" },
-    "website": { "type": "string" },
+    "website":   { "type": "string" },
+    "photo_url": { "type": "string" },
     "social_media": {
       "type": "object",
       "properties": {

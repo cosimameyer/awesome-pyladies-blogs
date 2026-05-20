@@ -865,6 +865,21 @@ h1 {
   transform: translateY(-2px);
 }
 
+.chapter-logo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.chapter-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--slate-200);
+  background: var(--slate-50);
+}
+
 .chapter-card-header {
   display: flex;
   align-items: center;
