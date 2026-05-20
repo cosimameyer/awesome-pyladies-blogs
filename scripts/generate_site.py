@@ -481,8 +481,8 @@ def nav_html(css_path="assets/style.css", home="index.html", active=""):
       </a>
       <ul class="nav-links">
         {nav_link("people.html", "People", "people")}
-        {nav_link("content.html", "Content", "content")}
         {nav_link("chapters.html", "Chapters", "chapters")}
+        {nav_link("content.html", "Content", "content")}
         {nav_link("packages.html", "Packages", "packages")}
         {nav_link("about.html", "About", "about")}
       </ul>
