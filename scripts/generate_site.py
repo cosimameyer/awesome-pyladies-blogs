@@ -551,7 +551,6 @@ def nav_html(css_path="assets/style.css", home="index.html", active="", extra_he
         {nav_link("content.html", "Content", "content")}
         {nav_link("packages.html", "Packages", "packages")}
         {nav_link("about.html", "About", "about")}
-        {nav_link("contribute.html", "Contribute", "contribute")}
       </ul>
       <a class="nav-cta" href="https://github.com/cosimameyer/awesome-pyladies-creations" target="_blank" rel="noopener">
         {gh_svg} Contribute
@@ -566,8 +565,7 @@ def footer_html(updated):
     <div class="container cta-inner">
       <h2>Are you a PyLady?</h2>
       <p>Add your blog, package, YouTube channel, or other work to the directory — it takes just one JSON file.</p>
-      <a href="https://github.com/cosimameyer/awesome-pyladies-creations/blob/main/CONTRIBUTING.md"
-         class="btn-primary" target="_blank" rel="noopener">Read the Contributing Guide</a>
+      <a href="contribute.html" class="btn-primary">Read the Contributing Guide</a>
     </div>
   </section>
   <footer class="site-footer">
@@ -838,16 +836,22 @@ def section_featured(label, title, desc, cards, grid_class, view_all_href, secti
 
 def render_contributing_md():
     if not os.path.exists(CONTRIBUTING_MD):
-        return "<p>Contributing guide not found.</p>"
+        return "<p>Contributing guide not found.</p>", []
     with open(CONTRIBUTING_MD, encoding="utf-8") as f:
         src = f.read()
-    converter = _md.Markdown(extensions=["fenced_code", "tables", "nl2br", "md_in_html"])
-    return converter.convert(src)
+    converter = _md.Markdown(extensions=["fenced_code", "tables", "nl2br", "md_in_html", "toc"])
+    html = converter.convert(src)
+    # Extract top-level headings for TOC
+    toc_items = [(item["id"], item["name"]) for item in converter.toc_tokens if item.get("id")]
+    return html, toc_items
 
 
 def section_contribute():
-    contributing_html = render_contributing_md()
+    contributing_html, toc_items = render_contributing_md()
+    toc_links = "".join(f'<a href="#{tid}">{name}</a>' for tid, name in toc_items)
+    toc_html = f'<nav class="contribute-toc">{toc_links}</nav>' if toc_links else ""
     return f"""
+  {toc_html}
   <section class="section" id="contribute">
     <div class="container contribute-wrap">
 
@@ -862,16 +866,18 @@ def section_contribute():
         <div class="contribute-card">
           <h3>Add your work</h3>
           <p>New to the directory? Follow the guide below to submit a blog, YouTube channel,
-             podcast, or Python package in one JSON file.</p>
+             podcast, Python package, or chapter in one JSON file.</p>
         </div>
         <div class="contribute-card">
           <h3>Edit an existing entry</h3>
           <p>Found a mistake or want to update your details? Every entry lives in a single
-             JSON file in the repository. Find your file in
+             JSON file. Find your file in
              <a href="https://github.com/cosimameyer/awesome-pyladies-creations/tree/main/data/content"
-                target="_blank" rel="noopener"><code>data/content/</code></a> or
+                target="_blank" rel="noopener"><code>data/content/</code></a>,
              <a href="https://github.com/cosimameyer/awesome-pyladies-creations/tree/main/data/packages"
-                target="_blank" rel="noopener"><code>data/packages/</code></a>,
+                target="_blank" rel="noopener"><code>data/packages/</code></a>, or
+             <a href="https://github.com/cosimameyer/awesome-pyladies-creations/tree/main/data/chapters"
+                target="_blank" rel="noopener"><code>data/chapters/</code></a>,
              click the pencil icon on GitHub to edit it directly in your browser,
              and open a pull request — no local setup needed.</p>
         </div>
@@ -920,9 +926,9 @@ def section_about():
         <h3>Want to be added?</h3>
         <p>
           If you're a PyLadies member and would like your work featured, contributions are
-          very welcome! Check out the
-          <a href="contribute.html">contributing guide</a> — it only takes one JSON file.
+          very welcome! It only takes one JSON file.
         </p>
+        <a href="contribute.html" class="about-contribute-btn">Contributing guide →</a>
 
         <h3>Don't want to be featured?</h3>
         <p>

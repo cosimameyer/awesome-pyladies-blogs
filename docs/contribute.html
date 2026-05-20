@@ -20,13 +20,13 @@
         <li><a href="content.html">Content</a></li>
         <li><a href="packages.html">Packages</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contribute.html" class="nav-active">Contribute</a></li>
       </ul>
       <a class="nav-cta" href="https://github.com/cosimameyer/awesome-pyladies-creations" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg> Contribute
       </a>
     </nav>
   </header>
+  <nav class="contribute-toc"><a href="#welcome">Welcome!</a><a href="#about">About</a><a href="#contributing-checklist">Contributing Checklist</a><a href="#contribution-details">Contribution Details</a></nav>
   <section class="section" id="contribute">
     <div class="container contribute-wrap">
 
@@ -41,16 +41,18 @@
         <div class="contribute-card">
           <h3>Add your work</h3>
           <p>New to the directory? Follow the guide below to submit a blog, YouTube channel,
-             podcast, or Python package in one JSON file.</p>
+             podcast, Python package, or chapter in one JSON file.</p>
         </div>
         <div class="contribute-card">
           <h3>Edit an existing entry</h3>
           <p>Found a mistake or want to update your details? Every entry lives in a single
-             JSON file in the repository. Find your file in
+             JSON file. Find your file in
              <a href="https://github.com/cosimameyer/awesome-pyladies-creations/tree/main/data/content"
-                target="_blank" rel="noopener"><code>data/content/</code></a> or
+                target="_blank" rel="noopener"><code>data/content/</code></a>,
              <a href="https://github.com/cosimameyer/awesome-pyladies-creations/tree/main/data/packages"
-                target="_blank" rel="noopener"><code>data/packages/</code></a>,
+                target="_blank" rel="noopener"><code>data/packages/</code></a>, or
+             <a href="https://github.com/cosimameyer/awesome-pyladies-creations/tree/main/data/chapters"
+                target="_blank" rel="noopener"><code>data/chapters/</code></a>,
              click the pencil icon on GitHub to edit it directly in your browser,
              and open a pull request — no local setup needed.</p>
         </div>
@@ -65,18 +67,18 @@
       </div>
 
       <div class="contribute-body md-content">
-        <h1>Welcome!</h1>
+        <h1 id="welcome">Welcome!</h1>
 <p>Thank you for your interest in contributing to <strong>awesome-pyladies-creations</strong>! This repository collects blogs, YouTube channels, podcasts, and Python packages created by PyLadies members from around the world. The goal is to make this work more visible and to celebrate the community's contributions.</p>
 <p>There are two main ways to contribute:<br />
 - <strong>Content</strong> (blogs, YouTube channels, podcasts) → add a file to <a href="data/content/"><code>data/content/</code></a><br />
 - <strong>Python packages</strong> → add a file to <a href="data/packages/"><code>data/packages/</code></a></p>
 <p>Not sure where to start? <a href="https://github.com/cosimameyer/awesome-pyladies-creations/issues/new/choose">Open an issue</a> and I'll help you out!</p>
 <hr />
-<h1>About</h1>
+<h1 id="about">About</h1>
 <p>This repository relies heavily on the <a href="https://github.com/rladies/awesome-rladies-blogs">Awesome R-Ladies+ blogs repository</a>, to whom all credit goes. I can only repeat their words and their excellent description of how to submit a new entry below:</p>
 <p>It has a similar goal and collects PyLadies blogs. This includes those who identify as a minority gender (including but not limited to cis/trans women, trans men, non-binary, genderqueer, &amp; agender). It would be great to have contributions to this list! If you identify with PyLadies and have a blog, please add yourself.</p>
 <p>With your submission, you agree that these entries will be used for the <a href="https://botsin.space/@pyladies_bot">PyLadies' Mastodon bot</a>, which will post (new) PyLadies' blog entries to promote the work of PyLadies around the world. </p>
-<h1>Contributing Checklist</h1>
+<h1 id="contributing-checklist">Contributing Checklist</h1>
 <ul>
 <li>[ ] The entry will be added to the <a href="data/content/">data/content/</a> folder.</li>
 <li>[ ] The filename of the entry ends with `.json'.</li>
@@ -92,10 +94,10 @@
 </ul>
 </li>
 </ul>
-<h1>Contribution Details</h1>
+<h1 id="contribution-details">Contribution Details</h1>
 <p>All content is listed in the <a href="data/content/">data/content/</a> folder, where each piece of content lives in its own json file. One file describes one blog, one YouTube channel, or one podcast — never several at once. If a contributor has both a blog and a YouTube channel, they will have two files. Follow the instructions below to add to the list. If you have any problems, please create an issue so we can help you.</p>
 <p>Depending on how you are most comfortable, there are several ways to add new entries. </p>
-<h2>Option 1: Not Too Familiar with JSON/GitHub?</h2>
+<h2 id="option-1-not-too-familiar-with-jsongithub">Option 1: Not Too Familiar with JSON/GitHub?</h2>
 <p>If you're not familiar with JSON, open a pre-filled issue and I'll create the JSON for you!</p>
 <ul>
 <li><a href="https://github.com/cosimameyer/awesome-pyladies-creations/issues/new?title=New%20entry%3A%20%5Bblog%5D%20%3CBlog%20Name%3E&amp;body=%2A%2ABlog%20name%2A%2A%3A%20%0A%2A%2AURL%2A%2A%3A%20%0A%2A%2ARSS%20feed%2A%2A%20%28optional%20%E2%80%94%20a%20Python-specific%20feed%20is%20preferred%20if%20available%29%3A%20%0A%2A%2AAuthor%20name%2A%2A%3A%20%0A%2A%2ALanguage%2A%2A%20%28ISO%20639-1%2C%20e.g.%20%60en%60%29%3A%20%0A%2A%2ASocial%20media%2A%2A%20%28GitHub%2C%20Twitter/X%2C%20Mastodon%2C%20LinkedIn%2C%20etc.%29%3A%20%0A">Add a blog</a></li>
@@ -103,11 +105,11 @@
 <li><a href="https://github.com/cosimameyer/awesome-pyladies-creations/issues/new?title=New%20entry%3A%20%5Bpodcast%5D%20%3CPodcast%20Name%3E&amp;body=%2A%2APodcast%20name%2A%2A%3A%20%0A%2A%2AURL%2A%2A%3A%20%0A%2A%2ARSS%20feed%2A%2A%3A%20%0A%2A%2AHost/author%20name%2A%2A%3A%20%0A%2A%2ALanguage%2A%2A%20%28ISO%20639-1%2C%20e.g.%20%60en%60%29%3A%20%0A%2A%2ASocial%20media%2A%2A%20%28GitHub%2C%20Twitter/X%2C%20Mastodon%2C%20LinkedIn%2C%20etc.%29%3A%20%0A">Add a podcast</a></li>
 <li><a href="https://github.com/cosimameyer/awesome-pyladies-creations/issues/new?title=New%20entry%3A%20%5Bpackage%5D%20%3CPackage%20Name%3E&amp;body=%2A%2APackage%20name%2A%2A%3A%20%0A%2A%2APyPI%20URL%2A%2A%3A%20%0A%2A%2ARepository%20URL%2A%2A%3A%20%0A%2A%2AMaintainer%20name%28s%29%2A%2A%3A%20%0A%2A%2ASocial%20media%2A%2A%20%28GitHub%2C%20etc.%29%3A%20%0A">Add a Python package</a></li>
 </ul>
-<h2>Option 2: Create a New File</h2>
-<h3>For General Content (Blog, YouTube, Podcast)</h3>
+<h2 id="option-2-create-a-new-file">Option 2: Create a New File</h2>
+<h3 id="for-general-content-blog-youtube-podcast">For General Content (Blog, YouTube, Podcast)</h3>
 <p>Create a new file in the <a href="data/content/">data/content/</a> folder by <a href="https://github.com/cosimameyer/awesome-pyladies-creations/new/main/?filename=data/content/your-blog-url.com.json&amp;value=%7B%0A%20%20%22title%22%3A%20%22Your%20title%22%2C%20//required%0A%20%20%22subtitle%22%3A%20%22subtitle%20or%20tagline%22%2C%20//optional%0A%20%20%22type%22%3A%20%22blog%22%2C%20//required%3A%20one%20of%20%22blog%22%2C%20%22youtube%22%2C%20%22podcast%22%0A%20%20%22url%22%3A%20%22https%3A//your_blog.com%22%2C%20//required%0A%20%20%22photo_url%22%3A%20%22https%3A//your_blog.com/your_photo.png%22%2C%20//required%0A%20%20%22description%22%3A%20%22Short%20description%20of%20what%20you%20blog%20about%22%2C%0A%20%20%22language%22%3A%20%22en%22%2C%20//required%0A%20%20%22rss_feed%22%3A%20%22%5Burl%5D/file.xml%22%2C%20//required%20if%20you%20want%20your%20feed%20to%20be%20promoted%20by%20the%20bot%0A%20%20%22authors%22%3A%20%5B%20//required%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22name%22%3A%20%22Your%20Name%22%2C%20//required%0A%20%20%20%20%20%20%22social_media%22%3A%20%5B%7B%0A%20%20%20%20%20%20%20%20%20%22twitter%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22mastodon%22%3A%20%22%40username%40server.org%22%2C%0A%20%20%20%20%20%20%20%20%20%22bluesky%22%3A%20%22%40username.bsky.social%22%2C%0A%20%20%20%20%20%20%20%20%20%22github%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22instagram%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22youtube%22%3A%20%22username/end-url%22%2C%0A%20%20%20%20%20%20%20%20%20%22tiktok%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22website%22%3A%20%22url%22%2C%0A%20%20%20%20%20%20%20%20%20%22linkedin%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22facebook%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22orcid%22%3A%20%22member%20number%22%2C%0A%20%20%20%20%20%20%20%20%20%22meetup%22%3A%20%22end-url%22%0A%20%20%20%20%20%20%7D%5D%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D">using this link</a>.</p>
 <p>This link will fork the repository to your user account, and initiate a new file with some template content in it. After filling the file, please <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">create a PR to the main branch</a>.</p>
-<h4>File Name</h4>
+<h4 id="file-name">File Name</h4>
 <p>The name of the file should be the URL of the content itself, without <code>www</code> or <code>http(s)://</code>. This way each file has a unique name and we avoid duplicates.</p>
 <ul>
 <li>For a blog: use the blog's domain, e.g. <code>cosimameyer.com.json</code>.</li>
@@ -115,17 +117,17 @@
 <li>For a podcast: use the podcast feed/landing-page URL.</li>
 </ul>
 <p>If the same person has both a blog and a YouTube channel, they get <strong>two files</strong> — one for each — and the same <code>authors</code> block can appear in both.</p>
-<h4>File Content</h4>
+<h4 id="file-content">File Content</h4>
 <p>Using the link above will create a template for you to start with.<br />
 Fill inn all the information that is relevant for your blog.<br />
 There are several adaptations to an entry you can make that are not highlighted in every entry.<br />
 Remove all mentions of <code>\\required</code>, these are just for making it clear which information you <em>must</em> provide for the file to be valid.<br />
 Any optional field you don't want to add, you may delete entirely.<br />
 For instance, if you don't have a subtitle or tagline for your blog, remove the entire line of <code>"subtite": "subtitle or tagline"</code> rather than leaving it empty with <code>"subtite": ""</code></p>
-<h5>Photo</h5>
+<h5 id="photo">Photo</h5>
 <p>The photo url you provide will be displayed as your blogs thumbnail. <br />
 This may be a picture of you, or if you have a logo for your blog/website, it may be best to use this in stead.</p>
-<h5>RSS Feed</h5>
+<h5 id="rss-feed">RSS Feed</h5>
 <p>The single <code>rss_feed</code> field is used for every content type — the bot picks the right behavior based on <code>type</code>.</p>
 <ul>
 <li>For <code>type: "blog"</code>: a feed of your Python-related posts (a category/tag feed is best; a title-filtered feed works too).</li>
@@ -173,17 +175,17 @@ There is currently a [workaround](https://github.com/rladies/awesome-rladies-cre
 <details><summary>Medium</summary>
 Medium nicely describes on their website how to [get your RSS feed](https://help.medium.com/hc/en-us/articles/214874118-Using-RSS-feeds-of-profiles-publications-and-topics). Unfortunately it's not possible to have a tag specific feed (yet). To keep the bot sorted, please make sure to only post about Python-related topics (= things that could be interesting to the followers of the bot).</details>
 
-<h5>RSS feed for YouTube videos</h5>
+<h5 id="rss-feed-for-youtube-videos">RSS feed for YouTube videos</h5>
 <p>For a YouTube entry, set <code>type: "youtube"</code> and put the channel or playlist feed URL in <code>rss_feed</code>. You first need to get your channel or playlist ID. How to get them is described <a href="https://www.youtube.com/watch?v=vdk8dx08ExU">here</a>.<br />
 Assemble the feed URL together with the base URL:</p>
 <ul>
 <li>For <em>channels</em>: <code>https://www.youtube.com/feeds/videos.xml?channel_id=</code> + <code>CHANNEL_ID</code></li>
 <li>For <em>playlists</em>: <code>https://www.youtube.com/feeds/videos.xml?playlist_id=</code> + <code>PLAYLIST_ID</code></li>
 </ul>
-<h3>For Python Libraries</h3>
+<h3 id="for-python-libraries">For Python Libraries</h3>
 <p>Create a new file in the <a href="data/content/">data/content/</a> folder by <a href="https://github.com/cosimameyer/awesome-pyladies-creations/new/main/?filename=data/packages/your-package-name.json&amp;value=%7B%0A%20%20%22name%22%3A%20%22Your%20title%22%2C%20%2F%2Frequired%0A%20%20%22description%22%3A%20%22Short%20description%20of%20what%20you%20package%20is%20about%22%2C%0A%20%20%22logo_url%22%3A%20%22https%3A%2F%2Fgithub.com%2Fusername%2Fpackage%2Fman%2Flogo.png%22%0A%20%20%22repo_url%22%3A%20%22https%3A%2F%2Fgithub.com%2Fusername%2Fpackage%22%2C%0A%20%20%22pypi_url%3A%20%22https%3A%2F%2Fpypi.site%22%2C%0A%20%20%22maintainers%22%3A%20%5B%20%2F%2Frequired%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22name%22%3A%20%22Your%20Name%22%2C%20%2F%2Frequired%0A%20%20%20%20%20%20%22social_media%22%3A%20%5B%7B%0A%20%20%20%20%20%20%20%20%20%22twitter%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22mastodon%22%3A%20%22%40username%40server.org%22%2C%0A%20%20%20%20%20%20%20%20%20%22bluesky%22%3A%20%22username.domain%22%2C%0A%20%20%20%20%20%20%20%20%20%22github%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22instagram%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22youtube%22%3A%20%22username%2Fend-url%22%2C%0A%20%20%20%20%20%20%20%20%20%22tiktok%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22periscope%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22researchgate%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22website%22%3A%20%22url%22%2C%0A%20%20%20%20%20%20%20%20%20%22linkedin%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22facebook%22%3A%20%22username%22%2C%0A%20%20%20%20%20%20%20%20%20%22orcid%22%3A%20%22member%20number%22%2C%0A%20%20%20%20%20%20%20%20%20%22meetup%22%3A%20%22end-url%22%0A%20%20%20%20%20%20%7D%5D%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D">using this link</a></p>
-<h2>General Remarks</h2>
-<h4>Authors</h4>
+<h2 id="general-remarks">General Remarks</h2>
+<h4 id="authors">Authors</h4>
 <p>The entry may have several authors. This is for blogs where maybe there are several blogging together. If it is a blog that mainly has guest bloggers, its better to list the editors/maintainers of the blog and add "guest bloggers" as authors also.</p>
 <p>Adding several authors means duplicating the content between the curlies <code>{}</code> in the author section, and adding a comma between each one.</p>
 <pre><code class="language-json">&quot;authors&quot;: [
@@ -206,7 +208,7 @@ Assemble the feed URL together with the base URL:</p>
   }
 ]
 </code></pre>
-<h4>Social Media</h4>
+<h4 id="social-media">Social Media</h4>
 <pre><code class="language-json">&quot;twitter&quot;: &quot;username&quot;
 &quot;mastodon&quot;: &quot;@username@instance&quot;
 &quot;github&quot;: &quot;username&quot;
@@ -221,10 +223,10 @@ Assemble the feed URL together with the base URL:</p>
 &quot;orcid&quot;: &quot;member number&quot;
 &quot;meetup&quot;: &quot;end-url&quot;
 </code></pre>
-<h4>Language</h4>
+<h4 id="language">Language</h4>
 <p>The language field should be populated with the <a href="https://www.w3schools.com/tags/ref_language_codes.asp">ISO 639-1 Language Codes</a> of the site content.<br />
 Please be thorough when entering this information.</p>
-<h4>Help Needed?</h4>
+<h4 id="help-needed">Help Needed?</h4>
 <p>If there is help needed, feel free to reach out to <a href="mailto:contact@cosimameyer.com">me directly</a>.</p>
       </div>
 
@@ -234,13 +236,12 @@ Please be thorough when entering this information.</p>
     <div class="container cta-inner">
       <h2>Are you a PyLady?</h2>
       <p>Add your blog, package, YouTube channel, or other work to the directory — it takes just one JSON file.</p>
-      <a href="https://github.com/cosimameyer/awesome-pyladies-creations/blob/main/CONTRIBUTING.md"
-         class="btn-primary" target="_blank" rel="noopener">Read the Contributing Guide</a>
+      <a href="contribute.html" class="btn-primary">Read the Contributing Guide</a>
     </div>
   </section>
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>Built from <a href="https://github.com/cosimameyer/awesome-pyladies-creations" target="_blank" rel="noopener">awesome-pyladies-creations</a> · CC0 · updated 2026-05-20 08:43 UTC</span>
+      <span>Built from <a href="https://github.com/cosimameyer/awesome-pyladies-creations" target="_blank" rel="noopener">awesome-pyladies-creations</a> · CC0 · updated 2026-05-20 08:48 UTC</span>
     </div>
   </footer>
 </body>

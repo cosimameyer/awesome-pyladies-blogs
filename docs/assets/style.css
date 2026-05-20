@@ -783,8 +783,49 @@ h1 {
 .about-body a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
 .about-body a:hover { color: var(--red-dark); }
 
+.about-contribute-btn {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--red);
+  text-decoration: none;
+  border: 1.5px solid var(--red);
+  border-radius: 99px;
+  padding: 6px 16px;
+  transition: background .15s, color .15s;
+}
+.about-contribute-btn:hover { background: var(--red); color: var(--white); }
+
 /* ── Contribute page ──────────────────────────────────── */
 .contribute-wrap { max-width: 800px; }
+
+.contribute-toc {
+  position: fixed;
+  right: 1.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 200;
+}
+
+.contribute-toc a {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  color: var(--slate-400);
+  text-decoration: none;
+  padding: 3px 0 3px 10px;
+  border-left: 2px solid transparent;
+  transition: color .15s, border-color .15s;
+  white-space: nowrap;
+}
+
+.contribute-toc a:hover { color: var(--red); border-left-color: var(--red); }
+
+@media (max-width: 1300px) { .contribute-toc { display: none; } }
 
 .contribute-intro {
   display: grid;
