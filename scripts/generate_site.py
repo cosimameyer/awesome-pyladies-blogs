@@ -383,6 +383,49 @@ def render_chapter_card(chapter, content_entry=None):
         </div>"""
 
 
+# ── Region grouping ────────────────────────────────────────────────────────────
+
+REGION_ORDER = ["North America", "Latin America", "Europe", "Africa", "Asia", "Oceania", "Global"]
+
+COUNTRY_TO_REGION = {
+    # North America
+    "USA": "North America", "Canada": "North America", "Mexico": "North America",
+    # Latin America
+    "Brazil": "Latin America", "Bolivia": "Latin America", "Chile": "Latin America",
+    "Ecuador": "Latin America", "Guatemala": "Latin America", "Panama": "Latin America",
+    "Peru": "Latin America", "Uruguay": "Latin America",
+    # Europe
+    "Albania": "Europe", "Austria": "Europe", "Belgium": "Europe",
+    "Bosnia and Herzegovina": "Europe", "Czech Republic": "Europe", "Finland": "Europe",
+    "France": "Europe", "Germany": "Europe", "Greece": "Europe", "Ireland": "Europe",
+    "Italy": "Europe", "Kosovo": "Europe", "Norway": "Europe", "Poland": "Europe",
+    "Portugal": "Europe", "Russia": "Europe", "Scotland": "Europe", "Slovakia": "Europe",
+    "Spain": "Europe", "Sweden": "Europe", "Turkey": "Europe", "United Kingdom": "Europe",
+    # Africa
+    "Ethiopia": "Africa", "Ghana": "Africa", "Liberia": "Africa", "Madagascar": "Africa",
+    "Morocco": "Africa", "Mozambique": "Africa", "Nigeria": "Africa", "Tunisia": "Africa",
+    "Uganda": "Africa",
+    # Asia
+    "India": "Asia", "Indonesia": "Asia", "Japan": "Asia", "Malaysia": "Asia",
+    "Singapore": "Asia", "South Korea": "Asia", "Taiwan": "Asia", "Vietnam": "Asia",
+    # Oceania
+    "Australia": "Oceania",
+    # Global
+    "Everywhere": "Global",
+}
+
+
+def chapter_region(chapter):
+    return COUNTRY_TO_REGION.get(chapter.get("country", ""), "Global")
+
+
+def group_chapters_by_region(chapters_data):
+    groups = {r: [] for r in REGION_ORDER}
+    for c in chapters_data:
+        groups[chapter_region(c)].append(c)
+    return groups
+
+
 # ── Counts & stats ─────────────────────────────────────────────────────────────
 
 FEATURED_PEOPLE   = 10
@@ -591,8 +634,14 @@ JS_CHAPTERS_SEARCH = """
   <script>
     document.querySelector('.search-input')?.addEventListener('input', function() {
       const q = this.value.toLowerCase();
-      document.querySelectorAll('.chapter-card').forEach(card => {
-        card.style.display = (!q || card.dataset.search.includes(q)) ? '' : 'none';
+      document.querySelectorAll('.chapter-region-group').forEach(group => {
+        let anyVisible = false;
+        group.querySelectorAll('.chapter-card').forEach(card => {
+          const show = !q || card.dataset.search.includes(q);
+          card.style.display = show ? '' : 'none';
+          if (show) anyVisible = true;
+        });
+        group.style.display = anyVisible ? '' : 'none';
       });
     });
   </script>"""
@@ -702,8 +751,20 @@ def section_packages_full(package_cards):
   </section>"""
 
 
-def section_chapters_full(chapter_cards, chapters_data=None):
+def section_chapters_full(chapter_groups, chapter_content_map=None, chapters_data=None):
     map_div = '<div id="chapters-map"></div>' if chapters_data else ""
+    content_map = chapter_content_map or {}
+    groups_html = []
+    for region in REGION_ORDER:
+        cards = chapter_groups.get(region, [])
+        if not cards:
+            continue
+        card_html = "".join(render_chapter_card(c, content_map.get(c.get("name", ""))) for c in cards)
+        groups_html.append(f"""
+      <div class="chapter-region-group" data-region="{region}">
+        <h3 class="chapter-region-label">{region}</h3>
+        <div class="chapters-grid">{card_html}</div>
+      </div>""")
     return f"""
   <section class="section section-alt" id="chapters">
     <div class="container">
@@ -716,7 +777,7 @@ def section_chapters_full(chapter_cards, chapters_data=None):
       </div>
       {map_div}
       {search_bar_html("Search chapters by city or country…")}
-      <div class="chapters-grid">{"".join(chapter_cards)}</div>
+      {"".join(groups_html)}
     </div>
   </section>"""
 
@@ -830,6 +891,7 @@ def main():
     all_content_cards = [render_content_card(e) for e in content_data]
     all_package_cards = [render_package_card(p) for p in all_data]
     all_chapter_cards = [render_chapter_card(c, chapter_content_map.get(c.get("name", ""))) for c in chapters_data]
+    chapter_groups    = group_chapters_by_region(chapters_data)
 
     # Pass all cards — JS on the index page will randomly pick N to show on each load
 
@@ -917,7 +979,7 @@ def main():
     # ── chapters.html ─────────────────────────────────────────────────────────
     leaflet_css = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />'
     chapters_page = nav_html(home="index.html", active="chapters", extra_head=leaflet_css) + \
-        section_chapters_full(all_chapter_cards, chapters_data) + \
+        section_chapters_full(chapter_groups, chapter_content_map, chapters_data) + \
         footer_html(updated) + JS_CHAPTERS_SEARCH + js_chapters_map(chapters_data)
 
     with open(os.path.join(ROOT, "docs", "chapters.html"), "w", encoding="utf-8") as f:

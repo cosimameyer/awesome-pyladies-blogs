@@ -859,6 +859,21 @@ h1 {
   box-shadow: 0 1px 4px rgba(0,0,0,.35);
 }
 
+.chapter-region-group {
+  margin-bottom: 2.5rem;
+}
+
+.chapter-region-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--slate-400);
+  margin-bottom: 1rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--slate-200);
+}
+
 .chapters-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
