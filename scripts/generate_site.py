@@ -155,15 +155,17 @@ class PersonProfile:
         self.photo_url = ""  # first non-empty photo URL
 
 
-def build_person_registry(content_data, all_package_data):
+def build_person_registry(content_data, all_package_data, chapter_names=None):
     """
     Walk every content entry and every package, collecting each person's
     types, social handles, primary URL, and photo. Handles appearing in
     multiple entries get their types unioned and their social dicts merged
     (first non-empty value per platform wins, so explicit data is never
     overwritten by a sparser duplicate entry).
+    chapter_names: set of chapter names to exclude from the people registry.
     """
     registry = {}
+    chapter_names = chapter_names or set()
 
     def merge_social(profile, social_media_list):
         for sm in social_media_list:
@@ -177,6 +179,8 @@ def build_person_registry(content_data, all_package_data):
             name = author.get("name", "")
             if not name or author.get("pyladies") is False:
                 continue
+            if name in chapter_names:
+                continue  # chapters have their own section
             if name not in registry:
                 registry[name] = PersonProfile()
             p = registry[name]
@@ -329,14 +333,18 @@ def render_package_card(pkg):
         </div>"""
 
 
-def render_chapter_card(chapter):
+def render_chapter_card(chapter, content_entry=None):
     name     = escape(chapter.get("name", ""))
     city     = escape(chapter.get("city", ""))
     country  = escape(chapter.get("country", ""))
     location = f"{city}, {country}" if city and country else city or country
     social   = chapter.get("social_media", {})
     website  = escape(chapter.get("website", "") or social.get("website", "") or "")
-    url      = website or "#"
+
+    # If this chapter has content, use the content URL as primary click target
+    ctype = content_entry.get("type", "blog") if content_entry else None
+    content_url = content_entry.get("url", "") if content_entry else ""
+    url   = content_url or website or "#"
     search_text = escape(f"{chapter.get('name','')} {city} {country}".lower())
 
     # Build social icons — chapters store full URLs directly
@@ -361,6 +369,7 @@ def render_chapter_card(chapter):
     role_attr     = ' role="link" tabindex="0"' if url != "#" else ""
     social_joined = "".join(icon_html)
     logo_html     = f'<div class="chapter-logo-wrap"><img class="chapter-logo" src="{photo_url}" alt="{name} logo" loading="lazy" onerror="this.style.display=\'none\'"></div>' if photo_url else ""
+    badge_html    = f'<span class="person-tag {badge_class(ctype)}">{type_label(ctype)}</span>' if ctype else ""
     return f"""
         <div class="chapter-card" data-search="{search_text}"{role_attr}{onclick_attr}>
           {logo_html}
@@ -369,6 +378,7 @@ def render_chapter_card(chapter):
             <span class="chapter-location">{escape(location)}</span>
           </div>
           <h3 class="chapter-name">{name}</h3>
+          {badge_html}
           <div class="chapter-social">{social_joined}</div>
         </div>"""
 
@@ -764,14 +774,23 @@ def main():
     n_packages = len(all_data)
     n_chapters = len(chapters_data)
 
-    registry = build_person_registry(content_data, all_data)
+    # Build chapter name set and content map for cross-referencing
+    chapter_names = {c.get("name", "") for c in chapters_data}
+    chapter_content_map = {}
+    for entry in content_data:
+        for author in entry.get("authors", []):
+            aname = author.get("name", "")
+            if aname in chapter_names:
+                chapter_content_map[aname] = entry
+
+    registry = build_person_registry(content_data, all_data, chapter_names)
     n_people   = len(registry)  # count after pyladies:false filter is applied
     registry_sorted = sorted(registry.items(), key=lambda kv: kv[0])
 
     all_people_cards  = [render_person_card(n, p) for n, p in registry_sorted]
     all_content_cards = [render_content_card(e) for e in content_data]
     all_package_cards = [render_package_card(p) for p in all_data]
-    all_chapter_cards = [render_chapter_card(c) for c in chapters_data]
+    all_chapter_cards = [render_chapter_card(c, chapter_content_map.get(c.get("name", ""))) for c in chapters_data]
 
     # Pass all cards — JS on the index page will randomly pick N to show on each load
 
