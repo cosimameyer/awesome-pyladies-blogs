@@ -1,0 +1,11 @@
+{
+  "name": "PyLadies Madrid",
+  "city": "Madrid",
+  "country": "Spain",
+  "email": "madrid@pyladies.com",
+  "social_media": {
+    "github": "https://github.com/PyLadiesMadrid",
+    "twitter": "https://twitter.com/PyLadiesMadrid",
+    "meetup": "https://www.meetup.com/PyLadiesMadrid/"
+  }
+}

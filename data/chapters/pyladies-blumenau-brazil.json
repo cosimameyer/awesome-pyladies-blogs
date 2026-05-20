@@ -1,0 +1,12 @@
+{
+  "name": "PyLadies Blumenau",
+  "city": "Blumenau",
+  "country": "Brazil",
+  "email": "blumenau@pyladies.com",
+  "social_media": {
+    "github": "https://github.com/pyladies-blumenau",
+    "twitter": "https://twitter.com/pyladiesbnu",
+    "facebook": "https://facebook.com/pyladiesbnu",
+    "instagram": "https://www.instagram.com/pyladies_blumenau/"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "PyLadies Dallas",
+  "city": "Dallas",
+  "country": "USA",
+  "email": "dfw@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/pyladiesdallas"
+  }
+}

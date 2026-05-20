@@ -1,0 +1,9 @@
+{
+  "name": "PyLadies Lisbon",
+  "city": "Lisbon",
+  "country": "Portugal",
+  "email": "lisboa@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/PyLadiesLisboa"
+  }
+}

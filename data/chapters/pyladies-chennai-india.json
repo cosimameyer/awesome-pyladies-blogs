@@ -1,0 +1,12 @@
+{
+  "name": "PyLadies Chennai",
+  "city": "Chennai",
+  "country": "India",
+  "email": "chn@pyladies.com",
+  "social_media": {
+    "github": "https://github.com/pyladieschennai",
+    "twitter": "https://twitter.com/pyladieschennai",
+    "facebook": "https://facebook.com/pyladiesofchennai",
+    "meetup": "https://www.meetup.com/pyladieschennai/"
+  }
+}

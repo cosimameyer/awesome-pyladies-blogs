@@ -1,0 +1,10 @@
+{
+  "name": "PyLadies Manaus",
+  "city": "Manaus",
+  "country": "Brazil",
+  "email": "manaus@pyladies.com",
+  "social_media": {
+    "twitter": "https://twitter.com/@pyladiesmanaus",
+    "facebook": "https://facebook.com/www.facebook.com/pyladiesmanaus/"
+  }
+}

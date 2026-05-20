@@ -1,0 +1,9 @@
+{
+  "name": "PyLadies Brussels",
+  "city": "Brussels",
+  "country": "Belgium",
+  "email": "brussels@pyladies.com",
+  "social_media": {
+    "meetup": "https://www.meetup.com/PyLadies-brussels/"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "PyLadies Australia",
+  "city": "Various",
+  "country": "Australia",
+  "email": "australia@pyladies.com",
+  "website": "http://australia.pyladies.com/",
+  "social_media": {
+    "github": "https://github.com/PyLadiesAU",
+    "twitter": "https://twitter.com/pyladiesau",
+    "facebook": "https://facebook.com/pyladiesau"
+  }
+}

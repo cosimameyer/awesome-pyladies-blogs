@@ -1,0 +1,13 @@
+{
+  "name": "PyLadies Melbourne",
+  "city": "Melbourne",
+  "country": "Australia",
+  "email": "melbourne@pyladies.com",
+  "website": "http://melbourne.pyladies.com/",
+  "social_media": {
+    "github": "https://github.com/pyladiesmelbourne",
+    "twitter": "https://twitter.com/PyLadiesMEL",
+    "facebook": "https://facebook.com/pyladiesau",
+    "meetup": "https://www.meetup.com/PyLadies-Melbourne/"
+  }
+}
