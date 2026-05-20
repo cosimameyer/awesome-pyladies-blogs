@@ -483,6 +483,7 @@ h1 {
   text-transform: uppercase;
   padding: 2px 8px;
   border-radius: 99px;
+  align-self: flex-start;
 }
 
 .tag-blog    { background: #fce7eb; color: var(--red); }

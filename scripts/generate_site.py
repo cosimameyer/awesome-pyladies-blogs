@@ -615,9 +615,9 @@ def js_chapters_map(chapters_data):
   <script>
     (function() {{
       var map = L.map('chapters-map', {{scrollWheelZoom: false}}).setView([20, 10], 2);
-      L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 18
+      L.tileLayer('https://{{s}}.basemaps.cartocdn.com/light_all/{{z}}/{{x}}/{{y}}{{r}}.png', {{
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        maxZoom: 19
       }}).addTo(map);
       var dot = L.divIcon({{className:'', html:'<div class="map-dot"></div>', iconSize:[12,12], iconAnchor:[6,6]}});
       var pts = [
