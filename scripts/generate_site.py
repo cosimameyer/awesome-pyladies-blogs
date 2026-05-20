@@ -3,6 +3,7 @@ Generate docs/index.html from data/ JSON files.
 Reads the same data as generate_readme.py; outputs a static GitHub Pages site.
 """
 import json
+import markdown as _md
 import os
 import re
 import urllib.parse
@@ -10,12 +11,13 @@ from datetime import datetime, timezone
 from html import escape
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CONTENT_DIR  = os.path.join(ROOT, "data", "content")
-PACKAGES_DIR = os.path.join(ROOT, "data", "packages")
-SOFTWARE_DIR = os.path.join(ROOT, "data", "software")
-CHAPTERS_DIR = os.path.join(ROOT, "data", "chapters")
-OUT_FILE     = os.path.join(ROOT, "docs", "index.html")
+ROOT            = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONTENT_DIR     = os.path.join(ROOT, "data", "content")
+PACKAGES_DIR    = os.path.join(ROOT, "data", "packages")
+SOFTWARE_DIR    = os.path.join(ROOT, "data", "software")
+CHAPTERS_DIR    = os.path.join(ROOT, "data", "chapters")
+CONTRIBUTING_MD = os.path.join(ROOT, "CONTRIBUTING.md")
+OUT_FILE        = os.path.join(ROOT, "docs", "index.html")
 
 # ── Inline SVG paths for social platforms ──────────────────────────────────────
 SVG_PATHS = {
@@ -542,6 +544,7 @@ def nav_html(css_path="assets/style.css", home="index.html", active="", extra_he
         {nav_link("content.html", "Content", "content")}
         {nav_link("packages.html", "Packages", "packages")}
         {nav_link("about.html", "About", "about")}
+        {nav_link("contribute.html", "Contribute", "contribute")}
       </ul>
       <a class="nav-cta" href="https://github.com/cosimameyer/awesome-pyladies-creations" target="_blank" rel="noopener">
         {gh_svg} Contribute
@@ -826,6 +829,63 @@ def section_featured(label, title, desc, cards, grid_class, view_all_href, secti
   </section>"""
 
 
+def render_contributing_md():
+    if not os.path.exists(CONTRIBUTING_MD):
+        return "<p>Contributing guide not found.</p>"
+    with open(CONTRIBUTING_MD, encoding="utf-8") as f:
+        src = f.read()
+    converter = _md.Markdown(extensions=["fenced_code", "tables", "nl2br", "md_in_html"])
+    return converter.convert(src)
+
+
+def section_contribute():
+    contributing_html = render_contributing_md()
+    return f"""
+  <section class="section" id="contribute">
+    <div class="container contribute-wrap">
+
+      <div class="section-header">
+        <div>
+          <p class="section-label">Get Involved</p>
+          <h2 class="section-title">Contribute</h2>
+        </div>
+      </div>
+
+      <div class="contribute-intro">
+        <div class="contribute-card">
+          <h3>Add your work</h3>
+          <p>New to the directory? Follow the guide below to submit a blog, YouTube channel,
+             podcast, or Python package in one JSON file.</p>
+        </div>
+        <div class="contribute-card">
+          <h3>Edit an existing entry</h3>
+          <p>Found a mistake or want to update your details? Every entry lives in a single
+             JSON file in the repository. Find your file in
+             <a href="https://github.com/cosimameyer/awesome-pyladies-creations/tree/main/data/content"
+                target="_blank" rel="noopener"><code>data/content/</code></a> or
+             <a href="https://github.com/cosimameyer/awesome-pyladies-creations/tree/main/data/packages"
+                target="_blank" rel="noopener"><code>data/packages/</code></a>,
+             click the pencil icon on GitHub to edit it directly in your browser,
+             and open a pull request — no local setup needed.</p>
+        </div>
+        <div class="contribute-card">
+          <h3>Remove your entry</h3>
+          <p>Prefer not to be listed?
+             <a href="https://github.com/cosimameyer/awesome-pyladies-creations/issues/new"
+                target="_blank" rel="noopener">Open an issue</a>
+             or <a href="https://cosimameyer.com" target="_blank" rel="noopener">contact me directly</a>
+             and I'll take care of it promptly.</p>
+        </div>
+      </div>
+
+      <div class="contribute-body md-content">
+        {contributing_html}
+      </div>
+
+    </div>
+  </section>"""
+
+
 def section_about():
     return """
   <section class="section">
@@ -854,8 +914,7 @@ def section_about():
         <p>
           If you're a PyLadies member and would like your work featured, contributions are
           very welcome! Check out the
-          <a href="https://github.com/cosimameyer/awesome-pyladies-creations/blob/main/CONTRIBUTING.md"
-             target="_blank" rel="noopener">contributing guide</a> — it only takes one JSON file.
+          <a href="contribute.html">contributing guide</a> — it only takes one JSON file.
         </p>
 
         <h3>Don't want to be featured?</h3>
@@ -1015,6 +1074,13 @@ def main():
 
     with open(os.path.join(ROOT, "docs", "about.html"), "w", encoding="utf-8") as f:
         f.write(about_page)
+
+    # ── contribute.html ───────────────────────────────────────────────────────
+    contribute_page = nav_html(home="index.html", active="contribute") + \
+        section_contribute() + footer_html(updated)
+
+    with open(os.path.join(ROOT, "docs", "contribute.html"), "w", encoding="utf-8") as f:
+        f.write(contribute_page)
 
     print(
         f"Generated index.html (shows {FEATURED_PEOPLE}/{len(all_people_cards)} people, "
