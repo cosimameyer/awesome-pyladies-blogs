@@ -91,44 +91,50 @@ For blog feeds specifically, ideally you have a Python-only feed. A title-based 
 
 Depending on how your website is set up, the implementation may differ. If you need more input on how to get your RSS, have a look [here](https://zapier.com/blog/how-to-find-rss-feed-url/). If you want to check how your RSS looks like, you can use [simple pie](https://simplepie.org/demo/). We collected a few of the most common approaches below: 
 
-<details><summary>Quarto</summary>
+<details markdown="1"><summary>Quarto</summary>
+
 - Change the code in `index.qmd` as (under listing, also described [here](https://quarto.org/docs/websites/website-blog.html#rss-feed)):
 
   ```
   feed:
     categories: [Python]
-    
   ```
-  
+
 - Note to new users that the category names will be the names of your category tags used in the blogs (not `posts`, which are the posts folder for Quarto blogs)
 - Then provide the RSS feed links as, `[url]/blog/index-r.xml` for R category posts (`[url]/blog/index.xml` will be the RSS feed link for main posts only)
 
 </details>
 
-<details><summary>Distill</summary>
+<details markdown="1"><summary>Distill</summary>
+
 There is currently a [workaround](https://github.com/rladies/awesome-rladies-creations/pull/54#issuecomment-1501263818) for adding RSS feeds in distill (from the R-Ladies+ repo) that works as follows:
 
 - In distill, there is a categories folder generated when a post is rendered which gets deleted when the blog is rendered
 - Store the folder and add it later because we need a categories folder, containing each specified category with an `index.xml` for each category
+
 </details>
 
-<details><summary>Hugo</summary>
+<details markdown="1"><summary>Hugo</summary>
 
-####### Hugo Academic
+#### Hugo Academic
 
 - Apparently the RSS feed is enabled by default and you can access it by using the field `category` in the YAML of your posts
 - Further readings for [Hugo Academic](https://cosimameyer.com/post/adding-your-hugo-academic-blog-to-r-bloggers-and-python-bloggers/)
 
-####### Hugo Portio
+#### Hugo Portio
 
 - Copy and paste the content of [this file](https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/rss.xml) (it’s Hugo’s default RSS settings)
 - Store it under `layouts/_default/rss.xml` (if there is no file, you need to create this one).
 - Exchange one line. Instead of `<description>{{ .Summary | html }}</description>`, we want `<description>{{ .Content | html }}</description>` (it’s at the very bottom of the file). This way, you RSS feed doesn’t show an excerpt but the full text.
 - More about [Hugo Portio](https://cosimameyer.com/post/adding-your-hugo-academic-blog-to-r-bloggers-and-python-bloggers/)
+
 </details>
 
-<details><summary>Medium</summary>
-Medium nicely describes on their website how to [get your RSS feed](https://help.medium.com/hc/en-us/articles/214874118-Using-RSS-feeds-of-profiles-publications-and-topics). Unfortunately it's not possible to have a tag specific feed (yet). To keep the bot sorted, please make sure to only post about Python-related topics (= things that could be interesting to the followers of the bot).</details>
+<details markdown="1"><summary>Medium</summary>
+
+Medium nicely describes on their website how to [get your RSS feed](https://help.medium.com/hc/en-us/articles/214874118-Using-RSS-feeds-of-profiles-publications-and-topics). Unfortunately it’s not possible to have a tag specific feed (yet). To keep the bot sorted, please make sure to only post about Python-related topics (= things that could be interesting to the followers of the bot).
+
+</details>
 
 ##### RSS feed for YouTube videos
 
