@@ -841,6 +841,23 @@ h1 {
 .footer-inner a:hover { color: var(--white); }
 
 /* ── Chapters ─────────────────────────────────────────── */
+#chapters-map {
+  height: 420px;
+  border-radius: var(--radius-md);
+  margin-bottom: 2rem;
+  border: 1px solid var(--slate-200);
+  overflow: hidden;
+}
+
+.map-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--red);
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,.35);
+}
+
 .chapters-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));

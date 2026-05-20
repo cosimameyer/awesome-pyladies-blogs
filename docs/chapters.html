@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
   <header class="site-header">
@@ -34,6 +35,7 @@
         </div>
         <p class="section-desc">PyLadies chapters around the world — find your local community.</p>
       </div>
+      <div id="chapters-map"></div>
       
       <div class="search-wrap">
         <input class="search-input" type="search" placeholder="Search chapters by city or country…" aria-label="Search chapters by city or country…" />
@@ -1431,7 +1433,7 @@
   </section>
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>Built from <a href="https://github.com/cosimameyer/awesome-pyladies-creations" target="_blank" rel="noopener">awesome-pyladies-creations</a> · CC0 · updated 2026-05-20 05:04 UTC</span>
+      <span>Built from <a href="https://github.com/cosimameyer/awesome-pyladies-creations" target="_blank" rel="noopener">awesome-pyladies-creations</a> · CC0 · updated 2026-05-20 05:24 UTC</span>
     </div>
   </footer>
 </body>
@@ -1443,4 +1445,162 @@
         card.style.display = (!q || card.dataset.search.includes(q)) ? '' : 'none';
       });
     });
+  </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    (function() {
+      var map = L.map('chapters-map', {scrollWheelZoom: false}).setView([20, 10], 2);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18
+      }).addTo(map);
+      var dot = L.divIcon({className:'', html:'<div class="map-dot"></div>', iconSize:[12,12], iconAnchor:[6,6]});
+      var pts = [
+        [9.0358287,38.7524127,'PyLadies Addis Ababa',''],
+      [-18.9100122,47.5255809,'PyLadies Antananarivo',''],
+      [-4.558259,-37.767894,'PyLadies Aracati',''],
+      [-16.3988667,-71.5369607,'PyLadies Arequipa',''],
+      [6.1858825,6.7297071,'PyLadies Asaba',''],
+      [37.9755648,23.7348324,'PyLadies Athens',''],
+      [33.7544657,-84.3898151,'PyLadies Atlanta',''],
+      [30.2711286,-97.7436995,'PyLadies Austin',''],
+      [-24.7761086,134.755,'PyLadies Australia','http://australia.pyladies.com/'],
+      [12.9767936,77.590082,'PyLadies Bangalore',''],
+      [41.3825802,2.177073,'PyLadies Barcelona','https://pybcn.org/pyladies-bcn/'],
+      [10.3168749,9.8410189,'PyLadies Bauchi',''],
+      [-19.9227318,-43.9450948,'PyLadies Belo Horizonte','http://bh.pyladies.com'],
+      [-1.45056,-48.4682453,'PyLadies Belém',''],
+      [52.5173885,13.3951309,'PyLadies Berlin','http://berlin.pyladies.com'],
+      [20.2602964,85.8394521,'PyLadies Bhubaneswar',''],
+      [-26.9195567,-49.0658025,'PyLadies Blumenau',''],
+      [42.3588336,-71.0578303,'PyLadies Boston','http://boston.pyladies.com'],
+      [40.0149856,-105.270545,'PyLadies Boulder',''],
+      [-10.3333333,-53.2,'PyLadies Brasília','http://df.pyladies.com'],
+      [48.1516988,17.1093063,'PyLadies Bratislava',''],
+      [-10.3333333,-53.2,'PyLadies Brazil','http://brasil.pyladies.com/'],
+      [-27.4689623,153.0235009,'PyLadies Brisbane',''],
+      [49.1922443,16.6113382,'PyLadies Brno',''],
+      [50.8467372,4.352493,'PyLadies Brussels',''],
+      [51.0456064,-114.057541,'PyLadies Calgary',''],
+      [-22.9056391,-47.059564,'PyLadies Campinas','http://brasil.pyladies.com'],
+      [-29.1685045,-51.1796385,'PyLadies Caxias do Sul','http://caxiasdosul.pyladies.com'],
+      [32.7884363,-79.9399309,'PyLadies Charleston','http://charleston.pyladies.com'],
+      [13.0836939,80.270186,'PyLadies Chennai',''],
+      [41.8755616,-87.6244212,'PyLadies Chicago','http://chicago.pyladies.com'],
+      [41.4996574,-81.6936772,'PyLadies Cleveland','https://clepyladies.github.io/pyladies-official'],
+      [-17.4012458,-66.1675681,'PyLadies Cochabamba',''],
+      [18.9331321,-99.2599579,'PyLadies Cuernavaca','https://pyladies-cuernavaca.quarto.pub/web/'],
+      [-25.4295963,-49.2712724,'PyLadies Curitiba','http://brasil.pyladies.com/'],
+      [32.7762719,-96.7968559,'PyLadies Dallas',''],
+      [32.7762719,-96.7968559,'PyLadies Dallas',''],
+      [39.7392364,-104.984862,'PyLadies Denver',''],
+      [44.7324559,18.0850157,'PyLadies Doboj','http://doboj.pyladies.com/'],
+      [53.3493795,-6.2605593,'PyLadies Dublin',''],
+      [-22.6429163,-43.3021266,'PyLadies Duque de Caxias','http://duquedecaxias.pyladies.com/'],
+      [55.9533456,-3.1883749,'PyLadies Edinburgh',''],
+      [-16.5048228,-68.1624337,'PyLadies El Alto',''],
+      [47.9960901,7.8494005,'PyLadies Freiburg',''],
+      [8.0300284,-1.0800271,'PyLadies Ghana','https://ghana.pyladies.com'],
+      [42.9632425,-85.6678639,'PyLadies Grand Rapids','http://grandrapids.pyladies.com'],
+      [14.6416142,-90.5132836,'PyLadies Guatemala City',''],
+      [22.3850051,71.745261,'PyLadies Gujarat',''],
+      [53.5501721,10.0013165,'PyLadies Hamburg','http://hamburg.pyladies.com'],
+      [60.1666204,24.9435408,'PyLadies Helsinki',''],
+      [29.0948207,-110.9692202,'PyLadies Hermosillo','https://hermosillo.pyladies.com'],
+      [10.7737261,106.7166008,'PyLadies Ho Chi Minh City',''],
+      [29.7589382,-95.3676974,'PyLadies Houston',''],
+      [-17.5833671,-71.2358866,'PyLadies Ilo',''],
+      [5.5859456,7.0669651,'PyLadies Imo',''],
+      [22.3511148,78.6677428,'PyLadies India',''],
+      [-2.4833826,117.8902853,'PyLadies Indonesia',''],
+      [9.9175125,8.8979401,'PyLadies Jos',''],
+      [0.3177137,32.5813539,'PyLadies Kampala',''],
+      [22.6203348,120.3120375,'PyLadies Kaohsiung','https://kaohsiung.pyladies.com'],
+      [55.7946485,49.1115022,'PyLadies Kazan',''],
+      [48.7172272,21.2496774,'PyLadies Kosice',''],
+      [3.1516964,101.6942371,'PyLadies Kuala Lumpur','http://kl.pyladies.com'],
+      [35.0115754,135.7681441,'PyLadies Kyoto','http://pyladies-kyoto.connpass.com'],
+      [-16.4955455,-68.1336229,'PyLadies La Paz','https://www.meetup.com/La-Paz-PyLadies-Meetup'],
+      [-21.2425512,-44.9991978,'PyLadies Lavras',''],
+      [38.7077507,-9.1365919,'PyLadies Lisbon',''],
+      [51.5074456,-0.1277653,'PyLadies London',''],
+      [34.0536909,-118.242766,'PyLadies Los Angeles','https://pyladiesla.netlify.com/'],
+      [-9.6476843,-35.7339264,'PyLadies Maceió',''],
+      [40.416782,-3.703507,'PyLadies Madrid',''],
+      [-3.1316333,-59.9825041,'PyLadies Manaus',''],
+      [-25.966213,32.56745,'PyLadies Maputo',''],
+      [-37.8142454,144.9631732,'PyLadies Melbourne','http://melbourne.pyladies.com/'],
+      [19.3207722,-99.1514678,'PyLadies Mexico City',''],
+      [45.4641943,9.1896346,'PyLadies Milan',''],
+      [30.7041168,76.7176885,'PyLadies Mohali',''],
+      [6.3203562,-10.8060492,'PyLadies Monrovia',''],
+      [45.5031824,-73.5698065,'PyLadies Montreal',''],
+      [28.3347722,-10.3713379,'PyLadies Morocco',''],
+      [19.054999,72.8692035,'PyLadies Mumbai',''],
+      [48.1371079,11.5753822,'PyLadies Munich',''],
+      [36.1622767,-86.7742984,'PyLadies Nashville',''],
+      [-5.805398,-35.2080905,'PyLadies Natal','http://pyladiesnatal.github.io/'],
+      [40.7127281,-74.0060152,'PyLadies New York City','http://nyc.pyladies.com'],
+      [40.735657,-74.1723667,'PyLadies Newark',''],
+      [9.6000359,7.9999721,'PyLadies Nigeria',''],
+      [-22.6955964,-43.4654372,'PyLadies Nova Iguaçu',''],
+      [7.1065815,3.3351611,'PyLadies Ojere',''],
+      [26.5707754,128.0255901,'PyLadies Okinawa',''],
+      [59.9133301,10.7389701,'PyLadies Oslo',''],
+      [8.9714493,-79.5341802,'PyLadies Panama City',''],
+      [-7.1219366,-36.7246845,'PyLadies Paraíba',''],
+      [48.8534951,2.3483915,'PyLadies Paris',''],
+      [52.215933,19.134422,'PyLadies Poland',''],
+      [45.5202471,-122.674194,'PyLadies Portland','http://pyladiespdx.github.io'],
+      [-30.0324999,-51.2303767,'PyLadies Porto Alegre','https://pyladiespoa.pythonanywhere.com'],
+      [42.6638771,21.1640849,'PyLadies Prishtina',''],
+      [18.5213738,73.8545071,'PyLadies Pune','http://pune.pyladies.com/'],
+      [-32.8755548,-56.0201525,'PyLadies PyLadies Uruguay','http://uy.pyladies.com'],
+      [-0.2201641,-78.5123274,'PyLadies Quito',''],
+      [35.8803614,-78.7872382,'PyLadies Raleigh-Durham',''],
+      [-8.0584933,-34.8848193,'PyLadies Recife','http://brasil.pyladies.com'],
+      [45.5055196,-122.6564484,'PyLadies Remote','http://remote.pyladies.com'],
+      [-22.9110137,-43.2093727,'PyLadies Rio de Janeiro','http://brasil.pyladies.com'],
+      [59.9606739,30.1586551,'PyLadies Saint Petersburg','http://spb.pyladies.com'],
+      [40.7596198,-111.886797,'PyLadies Salt Lake City',''],
+      [-12.9822499,-38.4812772,'PyLadies Salvador','https://pyladiessalvador.github.io/'],
+      [32.7174202,-117.162772,'PyLadies San Diego',''],
+      [37.7879363,-122.4075201,'PyLadies San Francisco',''],
+      [37.050096,-121.99059,'PyLadies Santa Cruz',''],
+      [-33.4376995,-70.6510671,'PyLadies Santiago',''],
+      [47.6038321,-122.330062,'PyLadies Seattle',''],
+      [37.5666791,126.9782914,'PyLadies Seoul',''],
+      [34.9751974,138.3831697,'PyLadies Shizuoka','https://pyladiesshizuoka.github.io/'],
+      [37.4429964,-122.1545229,'PyLadies Silicon Valley','http://siliconvalley.pyladies.com'],
+      [1.357107,103.8194992,'PyLadies Singapore',''],
+      [-23.5003451,-47.4582864,'PyLadies Sorocaba',''],
+      [37.1670484,-94.8463851,'PyLadies South Florida',''],
+      [39.3260685,-4.8379791,'PyLadies Spain',''],
+      [59.3251172,18.0710935,'PyLadies Stockholm',''],
+      [-19.8356534,-43.978433,'PyLadies Sul de Minas',''],
+      [-33.8698439,151.2082848,'PyLadies Sydney',''],
+      [-22.0180395,-47.891154,'PyLadies São Carlos','http://brasil.pyladies.com'],
+      [-2.5295265,-44.2963942,'PyLadies São Luís',''],
+      [23.9739374,120.9820179,'PyLadies Taiwan','http://tw.pyladies.com'],
+      [-5.0874608,-42.8049571,'PyLadies Teresina','https://pyladiesteresina.github.io/'],
+      [41.3281482,19.8184435,'PyLadies Tirana',''],
+      [35.6768601,139.7638947,'PyLadies Tokyo','http://tokyo.pyladies.com/'],
+      [43.6534817,-79.3839347,'PyLadies Toronto',''],
+      [33.8439408,9.400138,'PyLadies Tunis',''],
+      [-22.5304721,-44.1440705,'PyLadies Vale do Paraíba','http://vale.pyladies.com'],
+      [49.2608724,-123.113952,'PyLadies Vancouver','https://vancouver.pyladies.com'],
+      [48.2083537,16.3725042,'PyLadies Vienna',''],
+      [38.8950982,-77.0363849,'PyLadies Washington',''],
+      [11.0248119,7.6518533,'PyLadies Zaria',''],
+      [45.5055196,-122.6564484,'PyLadies en Español',''],
+      [40.0549886,26.9278292,'PyLadies Çanakkale','']
+      ];
+      pts.forEach(function(p) {
+        var m = L.marker([p[0],p[1]], {icon: dot}).addTo(map);
+        var popup = p[3]
+          ? '<a href="' + p[3] + '" target="_blank" rel="noopener" style="font-weight:600;color:#EE264D">' + p[2] + '</a>'
+          : '<span style="font-weight:600">' + p[2] + '</span>';
+        m.bindPopup(popup);
+      });
+    })();
   </script>

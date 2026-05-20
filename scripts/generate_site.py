@@ -472,7 +472,7 @@ def hero_wordmark_html(color="#EE264D"):
 
 # ── Shared page chrome ─────────────────────────────────────────────────────────
 
-def nav_html(css_path="assets/style.css", home="index.html", active=""):
+def nav_html(css_path="assets/style.css", home="index.html", active="", extra_head=""):
     gh_svg = social_icon_svg("github", 16)
     def nav_link(href, label, key):
         cls = ' class="nav-active"' if active == key else ""
@@ -483,6 +483,7 @@ def nav_html(css_path="assets/style.css", home="index.html", active=""):
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="{css_path}" />
+  {extra_head}
 </head>
 <body>
   <header class="site-header">
@@ -586,7 +587,7 @@ JS_PACKAGES = """
     });
   </script>"""
 
-JS_CHAPTERS = """
+JS_CHAPTERS_SEARCH = """
   <script>
     document.querySelector('.search-input')?.addEventListener('input', function() {
       const q = this.value.toLowerCase();
@@ -594,6 +595,42 @@ JS_CHAPTERS = """
         card.style.display = (!q || card.dataset.search.includes(q)) ? '' : 'none';
       });
     });
+  </script>"""
+
+
+def js_chapters_map(chapters_data):
+    markers = []
+    for c in chapters_data:
+        lat = c.get("lat")
+        lon = c.get("lon")
+        if lat is None or lon is None:
+            continue
+        name = escape(c.get("name", "")).replace("'", "\\'")
+        website = c.get("website", "") or c.get("social", {}).get("website", "")
+        url = escape(website) if website else ""
+        markers.append(f"[{lat},{lon},'{name}','{url}']")
+    markers_js = ",\n      ".join(markers)
+    return f"""
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    (function() {{
+      var map = L.map('chapters-map', {{scrollWheelZoom: false}}).setView([20, 10], 2);
+      L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png', {{
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18
+      }}).addTo(map);
+      var dot = L.divIcon({{className:'', html:'<div class="map-dot"></div>', iconSize:[12,12], iconAnchor:[6,6]}});
+      var pts = [
+        {markers_js}
+      ];
+      pts.forEach(function(p) {{
+        var m = L.marker([p[0],p[1]], {{icon: dot}}).addTo(map);
+        var popup = p[3]
+          ? '<a href="' + p[3] + '" target="_blank" rel="noopener" style="font-weight:600;color:#EE264D">' + p[2] + '</a>'
+          : '<span style="font-weight:600">' + p[2] + '</span>';
+        m.bindPopup(popup);
+      }});
+    }})();
   </script>"""
 
 
@@ -665,7 +702,8 @@ def section_packages_full(package_cards):
   </section>"""
 
 
-def section_chapters_full(chapter_cards):
+def section_chapters_full(chapter_cards, chapters_data=None):
+    map_div = '<div id="chapters-map"></div>' if chapters_data else ""
     return f"""
   <section class="section section-alt" id="chapters">
     <div class="container">
@@ -676,6 +714,7 @@ def section_chapters_full(chapter_cards):
         </div>
         <p class="section-desc">PyLadies chapters around the world — find your local community.</p>
       </div>
+      {map_div}
       {search_bar_html("Search chapters by city or country…")}
       <div class="chapters-grid">{"".join(chapter_cards)}</div>
     </div>
@@ -876,9 +915,10 @@ def main():
         f.write(packages_page)
 
     # ── chapters.html ─────────────────────────────────────────────────────────
-    chapters_page = nav_html(home="index.html", active="chapters") + \
-        section_chapters_full(all_chapter_cards) + \
-        footer_html(updated) + JS_CHAPTERS
+    leaflet_css = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />'
+    chapters_page = nav_html(home="index.html", active="chapters", extra_head=leaflet_css) + \
+        section_chapters_full(all_chapter_cards, chapters_data) + \
+        footer_html(updated) + JS_CHAPTERS_SEARCH + js_chapters_map(chapters_data)
 
     with open(os.path.join(ROOT, "docs", "chapters.html"), "w", encoding="utf-8") as f:
         f.write(chapters_page)
