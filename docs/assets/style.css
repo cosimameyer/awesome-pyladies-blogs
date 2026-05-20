@@ -783,19 +783,14 @@ h1 {
 .about-body a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
 .about-body a:hover { color: var(--red-dark); }
 
-.about-contribute-btn {
-  display: inline-block;
-  margin-top: 12px;
-  font-size: 14px;
+.about-contribute-link {
+  display: inline;
   font-weight: 600;
   color: var(--red);
-  text-decoration: none;
-  border: 1.5px solid var(--red);
-  border-radius: 99px;
-  padding: 6px 16px;
-  transition: background .15s, color .15s;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
-.about-contribute-btn:hover { background: var(--red); color: var(--white); }
+.about-contribute-link:hover { color: var(--red-dark); }
 
 /* ── Contribute page ──────────────────────────────────── */
 .contribute-wrap { max-width: 800px; }

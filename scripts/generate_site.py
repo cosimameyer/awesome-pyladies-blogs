@@ -923,22 +923,11 @@ def section_about():
           PyLadies members are joining all the time.
         </p>
 
-        <h3>Want to be added?</h3>
+        <h3>Want to add or update an entry?</h3>
         <p>
-          If you're a PyLadies member and would like your work featured, contributions are
-          very welcome! It only takes one JSON file.
-        </p>
-        <a href="contribute.html" class="about-contribute-btn">Contributing guide →</a>
-
-        <h3>Don't want to be featured?</h3>
-        <p>
-          If you'd prefer your content or profile not to appear on this site, please don't
-          hesitate to reach out. You can
-          <a href="https://github.com/cosimameyer/awesome-pyladies-creations/issues/new"
-             target="_blank" rel="noopener">open an issue on GitHub</a>
-          or contact me directly via
-          <a href="https://cosimameyer.com" target="_blank" rel="noopener">cosimameyer.com</a>
-          and I'll take care of it as soon as possible.
+          If you're a PyLadies member and would like your work featured — or need to update
+          or remove an existing entry — it only takes one JSON file.
+          <a href="contribute.html" class="about-contribute-link">See the full guide →</a>
         </p>
       </div>
 
@@ -1004,7 +993,7 @@ def main():
       <div class="hero-badge">Open Source · Community · Python</div>
       <h1>Awesome</h1>
       {hero_wordmark_html()}
-      <p class="hero-sub">A curated directory of content, tools, and packages created by PyLadies members — celebrating their voices and work in the Python ecosystem.</p>
+      <p class="hero-sub">A curated directory of chapters, content, tools, and packages created by PyLadies members — celebrating their voices and work in the Python ecosystem.</p>
       <div class="hero-stats">{stats}</div>
       <div class="hero-actions">
         <a href="people.html" class="btn-primary">Explore the Directory</a>
