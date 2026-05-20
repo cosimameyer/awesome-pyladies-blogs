@@ -644,6 +644,21 @@ JS_CHAPTERS_SEARCH = """
         group.style.display = anyVisible ? '' : 'none';
       });
     });
+
+    (function() {
+      var toc = document.querySelector('.chapters-toc');
+      if (!toc) return;
+      var groups = Array.from(document.querySelectorAll('.chapter-region-group'));
+      var links = {};
+      toc.querySelectorAll('a').forEach(function(a) { links[a.getAttribute('href').slice(1)] = a; });
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          var link = links[e.target.id];
+          if (link) link.classList.toggle('toc-active', e.isIntersecting);
+        });
+      }, {rootMargin: '-10% 0px -70% 0px'});
+      groups.forEach(function(g) { observer.observe(g); });
+    })();
   </script>"""
 
 
@@ -751,21 +766,30 @@ def section_packages_full(package_cards):
   </section>"""
 
 
+def region_slug(region):
+    return "region-" + region.lower().replace(" ", "-")
+
+
 def section_chapters_full(chapter_groups, chapter_content_map=None, chapters_data=None):
     map_div = '<div id="chapters-map"></div>' if chapters_data else ""
     content_map = chapter_content_map or {}
     groups_html = []
+    toc_items = []
     for region in REGION_ORDER:
         cards = chapter_groups.get(region, [])
         if not cards:
             continue
+        slug = region_slug(region)
         card_html = "".join(render_chapter_card(c, content_map.get(c.get("name", ""))) for c in cards)
         groups_html.append(f"""
-      <div class="chapter-region-group" data-region="{region}">
+      <div class="chapter-region-group" id="{slug}" data-region="{region}">
         <h3 class="chapter-region-label">{region}</h3>
         <div class="chapters-grid">{card_html}</div>
       </div>""")
+        toc_items.append(f'<a href="#{slug}">{region}</a>')
+    toc_html = f'<nav class="chapters-toc">{"".join(toc_items)}</nav>'
     return f"""
+  {toc_html}
   <section class="section section-alt" id="chapters">
     <div class="container">
       <div class="section-header">

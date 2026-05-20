@@ -859,6 +859,37 @@ h1 {
   box-shadow: 0 1px 4px rgba(0,0,0,.35);
 }
 
+.chapters-toc {
+  position: fixed;
+  right: 1.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 200;
+}
+
+.chapters-toc a {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  color: var(--slate-400);
+  text-decoration: none;
+  padding: 3px 0 3px 10px;
+  border-left: 2px solid transparent;
+  transition: color .15s, border-color .15s;
+  white-space: nowrap;
+}
+
+.chapters-toc a:hover,
+.chapters-toc a.toc-active {
+  color: var(--red);
+  border-left-color: var(--red);
+}
+
+@media (max-width: 1300px) { .chapters-toc { display: none; } }
+
 .chapter-region-group {
   margin-bottom: 2.5rem;
 }
