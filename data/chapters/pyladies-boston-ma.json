@@ -1,0 +1,12 @@
+{
+  "name": "PyLadies Boston",
+  "city": "Boston",
+  "country": "USA",
+  "email": "boston@pyladies.com",
+  "website": "http://boston.pyladies.com",
+  "photo_url": "https://pyladies.com/assets/images/pyladies_boston_logo_2_white.png",
+  "social_media": {
+    "twitter": "https://twitter.com/PyLadiesBoston",
+    "meetup": "https://www.meetup.com/PyLadies-Boston/"
+  }
+}
