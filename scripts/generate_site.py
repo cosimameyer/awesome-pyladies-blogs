@@ -943,16 +943,16 @@ def main():
     <div class="hero-grid-bg" aria-hidden="true"><div class="dot-grid"></div></div>
   </section>
 
-  {section_featured("Community", "The People", "PyLadies members sharing knowledge, code, and passion with the world.",
+  {section_featured("Featured", "The People", "PyLadies members sharing knowledge, code, and passion with the world.",
       all_people_cards, "people-grid", "people.html", "featured-people", alt_bg=False)}
 
-  {section_featured("Global Community", "PyLadies Chapters", "PyLadies chapters around the world — find your local community.",
+  {section_featured("Featured", "PyLadies Chapters", "PyLadies chapters around the world — find your local community.",
       all_chapter_cards, "chapters-grid", "chapters.html", "featured-chapters", alt_bg=True)}
 
-  {section_featured("Reading &amp; Watching", "Content", "Blogs, YouTube channels, and podcasts produced by PyLadies members.",
+  {section_featured("Featured", "Content", "Blogs, YouTube channels, and podcasts produced by PyLadies members.",
       all_content_cards, "content-grid", "content.html", "featured-content", alt_bg=False)}
 
-  {section_featured("Open Source", "Packages &amp; Tools", "Python packages and software built and maintained by PyLadies members.",
+  {section_featured("Featured", "Packages &amp; Tools", "Python packages and software built and maintained by PyLadies members.",
       all_package_cards, "packages-grid", "packages.html", "featured-packages", alt_bg=True)}
 """ + footer_html(updated) + f"""
   <script>
