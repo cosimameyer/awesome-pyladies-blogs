@@ -340,7 +340,14 @@ def render_chapter_card(chapter, content_entry=None):
     city     = escape(chapter.get("city", ""))
     country  = escape(chapter.get("country", ""))
     location = f"{city}, {country}" if city and country else city or country
-    social   = chapter.get("social_media", {})
+    social = dict(chapter.get("social_media") or {})
+    # Merge social links from the paired content entry (chapter data takes precedence)
+    if content_entry:
+        for author in content_entry.get("authors", []):
+            for sm in author.get("social_media", []):
+                for k, v in sm.items():
+                    if k not in social:
+                        social[k] = v
     website  = escape(chapter.get("website", "") or social.get("website", "") or "")
 
     # If this chapter has content, use the content URL as primary click target
